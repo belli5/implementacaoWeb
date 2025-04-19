@@ -1,0 +1,108 @@
+Domain PrestacaoServicos{
+    Subdomain Usuarios
+    Subdomain Pedidos
+    Subdomain Servicos
+    Subdomain Avaliacao
+    Subdomain Favoritos
+}
+
+BoundedContext Usuarios implements Usuarios{
+
+     ValueObject Endereco {
+        String rua
+        String bairro
+        String cidade
+        String estado
+    }
+
+    Aggregate Cliente{
+        Entity Cliente{
+            aggregateRoot
+
+            int id
+            String nome
+            String email
+            String telefone
+            Endereco endereco
+        }
+    }
+
+    Aggregate Prestador{
+        Entity Prestador{
+            aggregateRoot
+
+            int id
+            String nome
+            String tipoServico
+            String email
+            String telefone
+            Endereco endereco
+        }
+
+    }
+
+}
+
+BoundedContext Pedidos implements Pedidos{
+    Aggregate Pedido{
+        Entity Pedido{
+            aggregateRoot
+
+            int id
+            int prestadorId
+            int clienteId
+            date data
+            String status
+        }
+
+    }
+
+}
+
+BoundedContext Servicos implements Servicos{
+
+    Aggregate Servico{
+        Entity Servico{
+            aggregateRoot
+
+            int id
+            String nomeServico
+            String descricao
+            float valor
+
+        }
+
+    }
+
+}
+
+BoundedContext Avaliacao implements Avaliacao{
+    Aggregate Avaliacao{
+        Entity Avaliacao{
+            aggregateRoot
+
+            int id
+            int prestadorId
+            int clienteId
+            float nota
+            String comentario
+        }
+
+    }
+
+}
+
+BoundedContext Favoritos implements Favoritos{
+
+    Aggregate Favoritos{
+        Entity Favoritos{
+            aggregateRoot
+
+            int id
+            int prestadorId
+            int clienteId
+        }
+
+    }
+
+}
