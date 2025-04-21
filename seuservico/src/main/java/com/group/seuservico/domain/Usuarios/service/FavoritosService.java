@@ -11,6 +11,9 @@ public class FavoritosService {
     public void adicionarFavorito(Prestador prestador) {
         if (!favoritos.contains(prestador)) {
             favoritos.add(prestador);
+            System.out.println("Prestador adicionado com sucesso!");
+        } else {
+            System.out.println("Não é possível adicionar o prestador duas vezes.");
         }
     }
 

@@ -30,4 +30,13 @@ public class Endereco {
         return estado; 
     }
 
+    @Override
+    public String toString() {
+        return "Endereço:" +
+                "rua:" + rua +
+                ", bairro:"+ bairro +
+                ", cidade:" + cidade +
+                ", estado:" + estado;
+    }
+
 }

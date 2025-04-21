@@ -20,6 +20,7 @@ public class Prestador {
         this.endereco = endereco;
     }
 
+
     public int getId() {
         return id;
     }
@@ -44,4 +45,14 @@ public class Prestador {
         return endereco;
     }
 
+    @Override
+    public String toString() {
+        return "Prestador:" +
+                "id:" + id +
+                ", nome:"+ nome +
+                ", especialidade:" + tipoServico +
+                ", email:" + email +
+                ", telefone:" + telefone +
+                ", endereco:" + endereco;
+    }
 }
