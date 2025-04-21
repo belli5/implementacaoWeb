@@ -9,7 +9,7 @@ public class ServicosService {
     private List<PrestacaoServico> servicos = new ArrayList<>();
 
     public String adicionarServico(PrestacaoServico servico) {
-        if (servico.getNomeServico() == null || servico.getNomeServico().trim().isEmpty()) {
+        if (servico.getCategoria() == null || servico.getCategoria().trim().isEmpty()) {
             return "Nome do serviço é obrigatório.";
         }
         if (!servicos.contains(servico)) {
