@@ -3,7 +3,6 @@ Domain PrestacaoServicos{
     Subdomain Pedidos
     Subdomain Servicos
     Subdomain Avaliacao
-    Subdomain Favoritos
 }
 
 BoundedContext Usuarios implements Usuarios{
@@ -24,6 +23,7 @@ BoundedContext Usuarios implements Usuarios{
             String email
             String telefone
             Endereco endereco
+            List<Prestador> prestadoresFavoritos
         }
     }
 
@@ -86,21 +86,6 @@ BoundedContext Avaliacao implements Avaliacao{
             int clienteId
             float nota
             String comentario
-        }
-
-    }
-
-}
-
-BoundedContext Favoritos implements Favoritos{
-
-    Aggregate Favoritos{
-        Entity Favoritos{
-            aggregateRoot
-
-            int id
-            int prestadorId
-            int clienteId
         }
 
     }

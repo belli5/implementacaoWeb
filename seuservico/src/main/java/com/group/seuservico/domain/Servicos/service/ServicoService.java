@@ -1,0 +1,26 @@
+package com.group.seuservico.domain.Servicos.service;
+
+import com.group.seuservico.domain.Servicos.model.Servico;
+import com.group.seuservico.domain.Servicos.repository.ServicoRepository;
+
+public class ServicoService {
+
+    private final ServicoRepository servicoRepository;
+
+    public ServicoService(ServicoRepository servicoRepository) {
+        this.servicoRepository = servicoRepository;
+    }
+
+    public Servico cadastrarServico(Servico servico) {
+        return servicoRepository.save(servico);
+    }
+
+    public void deletarServico(int id) {
+        servicoRepository.delete(id);
+    }
+
+    public void atualizarServico(int id) {
+        servicoRepository.update(id);
+    }
+    
+}
