@@ -1,11 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="" />
+    <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/implementacaoWeb.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bdd/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain1/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/persistence/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/presentation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/prestacao-servicos.cml" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/prestacao-servicos.cml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/SeuservicoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/SeuservicoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Avaliacao/model/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Avaliacao/model/Avaliacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Avaliacao/repository/AvaliacaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Avaliacao/repository/AvaliacaoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Avaliacao/service/AvaliacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Avaliacao/service/AvaliacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Pedidos/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Pedidos/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Pedidos/repository/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Pedidos/repository/PedidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Pedidos/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Pedidos/service/PedidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Servicos/model/Servico.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Servicos/model/Servico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Servicos/repository/ServicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Servicos/repository/ServicoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Servicos/service/ServicoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Servicos/service/ServicoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Usuarios/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Usuarios/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Usuarios/model/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Usuarios/model/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Usuarios/model/Prestador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Usuarios/model/Prestador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Usuarios/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Usuarios/repository/ClienteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Usuarios/repository/PrestadorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Usuarios/repository/PrestadorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Usuarios/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Usuarios/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Usuarios/service/FavoritosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Usuarios/service/FavoritosService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/java/com/group/seuservico/domain/Usuarios/service/PrestadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/java/com/group/seuservico/domain/Usuarios/service/PrestadorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/test/java/com/group/seuservico/SeuservicoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/test/java/com/group/seuservico/SeuservicoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seuservico/src/test/java/com/group/seuservico/tests/FavoritosServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/src/test/java/com/group/seuservico/tests/FavoritosServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -15,20 +67,74 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2w1a3aevEemWwVx2EGsmsLIfxXL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.FavoritosServiceTest.executor": "Run",
+    "Maven.bdd [clean].executor": "Run",
+    "Maven.bdd [compile].executor": "Run",
+    "Maven.bdd [deploy].executor": "Run",
+    "Maven.bdd [install].executor": "Run",
+    "Maven.bdd [package].executor": "Run",
+    "Maven.bdd [site].executor": "Run",
+    "Maven.bdd [test].executor": "Run",
+    "Maven.bdd [validate].executor": "Run",
+    "Maven.bdd [verify].executor": "Run",
+    "Maven.persistence [clean].executor": "Run",
+    "Maven.persistence [compile].executor": "Run",
+    "Maven.persistence [deploy].executor": "Run",
+    "Maven.persistence [install].executor": "Run",
+    "Maven.persistence [package].executor": "Run",
+    "Maven.persistence [site].executor": "Run",
+    "Maven.persistence [test].executor": "Run",
+    "Maven.persistence [validate].executor": "Run",
+    "Maven.persistence [verify].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/julia/OneDrive/Documentos/GitHub/implementacaoWeb/seuservico"
+    "last_opened_file_path": "/Users/talitafraga/Documents/validação/implementacaoWeb/persistence/src/main/java/org/example/presistence/repository/usuarios"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/usuarios" />
+      <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/servicos" />
+      <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/pedidos" />
+      <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/avaliacao" />
+      <recent name="$PROJECT_DIR$/domain1/src/main/java/org/example/service/usuario" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FavoritosServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="seuservico" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.group.seuservico.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.group.seuservico.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.group.seuservico.tests.FavoritosServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FavoritosServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
