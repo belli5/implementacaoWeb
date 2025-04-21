@@ -11,6 +11,7 @@ public class FavoritosService {
     public void adicionarFavorito(Prestador prestador) {
         if (!favoritos.contains(prestador)) {
             favoritos.add(prestador);
+        }
     }
 
     public void removerFavorito(Prestador prestador) {
