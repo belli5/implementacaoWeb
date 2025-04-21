@@ -5,36 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/ImplementacaoWeb2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/ImplementacaoWeb2Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/avaliacao/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/Avaliacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/cliente/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/ClienteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/cliente/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/cliente/FavoritosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/FavoritosService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/compartilhados/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/compartilhados/Endereco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/pedidos/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServicoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServicoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServicoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/prestador/Prestador.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestador/Prestador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/prestador/PrestadorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestador/PrestadorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/java/com/exemple/implementacaoweb2/prestador/PrestadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestador/PrestadorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/implementacaoWeb2/src/test/java/com/exemple/implementacaoweb2/ImplementacaoWeb2ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ImplementacaoWeb2ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/Avaliacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -52,16 +27,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Victorgalves"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Victorgalves&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/belli5/implementacaoWeb.git",
-    "accountId": "814cdfc9-5c28-48c5-a7bc-d51520cb9c42"
+    "accountId": "589b6463-9019-4e00-9ab7-06c2b1744232"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -80,7 +55,10 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.src.main.java.org.example.Main.executor": "Run",
+    "JUnit.AvaliacaoClienteTest.executor": "Run",
+    "JUnit.AvaliacaoServiceTest.executor": "Run",
     "JUnit.FavoritosServiceTest.executor": "Run",
+    "JUnit.HistoricoServicosTest.executor": "Run",
     "Maven.bdd [clean].executor": "Run",
     "Maven.bdd [compile].executor": "Run",
     "Maven.bdd [deploy].executor": "Run",
@@ -131,8 +109,11 @@
       <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/pedidos" />
       <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/avaliacao" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.exemple.implementacaoweb2" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.FavoritosServiceTest (1)">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="implementacaoWeb" />
@@ -205,14 +186,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -227,5 +200,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
