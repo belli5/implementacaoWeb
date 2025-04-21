@@ -10,8 +10,9 @@ public class ServicosService {
 
     public String adicionarServico(PrestacaoServico servico) {
         if (servico.getCategoria() == null || servico.getCategoria().trim().isEmpty()) {
-            return "Nome do serviço é obrigatório.";
+            return "Categoria do serviço é obrigatória.";
         }
+
         if (!servicos.contains(servico)) {
             servicos.add(servico);
             return "Serviço adicionado com sucesso!";
