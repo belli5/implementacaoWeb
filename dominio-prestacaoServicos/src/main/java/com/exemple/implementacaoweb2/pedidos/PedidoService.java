@@ -1,6 +1,8 @@
 package com.exemple.implementacaoweb2.pedidos;
 
 
+import java.time.LocalDate;
+
 public class PedidoService {
 
     private final PedidoRepository pedidoRepository;
@@ -9,7 +11,10 @@ public class PedidoService {
         this.pedidoRepository = pedidoRepository;
     }
 
-    public Pedido cadastrarPedido(Pedido pedido) {
+    public Pedido contratarServico(Pedido pedido) {
+        if (!pedidoRepository.prestadorEstaDisponivel(pedido.getPrestadorId(), pedido.getData())) {
+            throw new IllegalArgumentException("Prestador indisponível nesta data.");
+        }
         return pedidoRepository.save(pedido);
     }
 
@@ -21,4 +26,6 @@ public class PedidoService {
         pedidoRepository.update(id);
     }
 
+
 }
+

@@ -3,13 +3,13 @@ import java.time.LocalDate;
 
 public class Pedido {
 
-    private final int id;
-    private final int prestadorId;
-    private final int clienteId;
-    private final LocalDate data;
-    private final String status;
+    private int id;
+    private int prestadorId;
+    private int clienteId;
+    private LocalDate data;
+    private StatusPedido status;
 
-    public Pedido(int id, int prestadorId, int clienteId, LocalDate data, String status) {
+    public Pedido(int id, int prestadorId, int clienteId, LocalDate data, StatusPedido status) {
         this.id = id;
         this.prestadorId = prestadorId;
         this.clienteId = clienteId;
@@ -33,7 +33,7 @@ public class Pedido {
         return data;
     }
 
-    public String getStatus() {
+    public StatusPedido getStatus() {
         return status;
     }
 

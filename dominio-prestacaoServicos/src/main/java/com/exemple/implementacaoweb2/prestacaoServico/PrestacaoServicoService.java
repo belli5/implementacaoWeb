@@ -1,6 +1,7 @@
 package com.exemple.implementacaoweb2.prestacaoServico;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PrestacaoServicoService {
 
@@ -24,5 +25,13 @@ public class PrestacaoServicoService {
 
     public List<PrestacaoServico> buscarServicoPorBairro(String bairro){
         return servicoRepository.buscarPorBairro(bairro);
+    }
+
+    public List<PrestacaoServico> filtrarPorCategoria(String categoria) {
+        List<PrestacaoServico> todosServicos = servicoRepository.findAll();
+
+        return todosServicos.stream()
+                .filter(s -> s.getCategoria().equalsIgnoreCase(categoria))
+                .collect(Collectors.toList());
     }
 }
