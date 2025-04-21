@@ -3,7 +3,7 @@ package com.group.seuservico.domain.Avaliacao.repository;
 import com.group.seuservico.domain.Avaliacao.model.Avaliacao;
 
 
-public interface AvaliacoRepository {
+public interface AvaliacaoRepository {
 
     Avaliacao save(Avaliacao avaliacao);
     void delete(int id);
