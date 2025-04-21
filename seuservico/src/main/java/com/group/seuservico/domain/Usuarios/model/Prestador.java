@@ -20,7 +20,6 @@ public class Prestador {
         this.endereco = endereco;
     }
 
-
     public int getId() {
         return id;
     }

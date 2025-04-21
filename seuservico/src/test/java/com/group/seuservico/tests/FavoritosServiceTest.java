@@ -61,4 +61,24 @@ public class FavoritosServiceTest {
         assertTrue(favoritos.contains(prestador));
         assertTrue(favoritos.contains(prestador2));
     }
+
+    @Test
+    public void testLimiteFavoritos() {
+        for (int i = 0; i < 50; i++) {
+            Endereco endereco = new Endereco("Rua " + i, "Bairro " + i, "Recife", "PE");
+            Prestador prestador = new Prestador(i, "Prestador " + i, "Serviço " + i, "email" + i + "@teste.com", "123456789", endereco);
+            String resposta = favoritosService.adicionarFavorito(prestador);
+            assertEquals("Prestador adicionado com sucesso!", resposta);
+        }
+
+        Endereco enderecoExtra = new Endereco("Rua Extra", "Bairro Extra", "Recife", "PE");
+        Prestador prestadorExtra = new Prestador(100, "Extra", "Serviço Extra", "extra@email.com", "999999999", enderecoExtra);
+        String respostaFinal = favoritosService.adicionarFavorito(prestadorExtra);
+
+        assertEquals("Limite de favoritos atingido.", respostaFinal);
+
+        List<Prestador> favoritos = favoritosService.getFavoritos();
+        assertEquals(50, favoritos.size());
+    }
+
 }

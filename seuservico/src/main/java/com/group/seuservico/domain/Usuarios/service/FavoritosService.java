@@ -6,16 +6,20 @@ import java.util.List;
 
 public class FavoritosService {
 
+    private static final int LIMITE_FAVORITOS = 50;
     private List<Prestador> favoritos = new ArrayList<>();
 
-    public void adicionarFavorito(Prestador prestador) {
-        if (!favoritos.contains(prestador)) {
+    public String adicionarFavorito(Prestador prestador) {
+        if (favoritos.size() >= LIMITE_FAVORITOS) {
+            return "Limite de favoritos atingido.";
+        } else if (!favoritos.contains(prestador)) {
             favoritos.add(prestador);
-            System.out.println("Prestador adicionado com sucesso!");
+            return "Prestador adicionado com sucesso!";
         } else {
-            System.out.println("Não é possível adicionar o prestador duas vezes.");
+            return "Não é possível adicionar o prestador duas vezes.";
         }
     }
+
 
     public void removerFavorito(Prestador prestador) {
         favoritos.remove(prestador);
