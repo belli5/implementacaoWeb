@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ContratarServicoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ContratarServicoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FavoritosServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FavoritosServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FiltrarServicoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FiltrarServicoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ServicosServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ServicosServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -64,59 +53,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.src.main.java.org.example.Main.executor": "Run",
-    "JUnit.AvaliacaoClienteTest.executor": "Run",
-    "JUnit.AvaliacaoServiceTest.executor": "Run",
-    "JUnit.FavoritosServiceTest.executor": "Run",
-    "JUnit.HistoricoServicosTest.executor": "Run",
-    "JUnit.ReagendarServicoTest.executor": "Run",
-    "JUnit.VisualizarAvaliacoesPrestadorTest.executor": "Run",
-    "Maven.bdd [clean].executor": "Run",
-    "Maven.bdd [compile].executor": "Run",
-    "Maven.bdd [deploy].executor": "Run",
-    "Maven.bdd [install].executor": "Run",
-    "Maven.bdd [package].executor": "Run",
-    "Maven.bdd [site].executor": "Run",
-    "Maven.bdd [test].executor": "Run",
-    "Maven.bdd [validate].executor": "Run",
-    "Maven.bdd [verify].executor": "Run",
-    "Maven.persistence [clean].executor": "Run",
-    "Maven.persistence [compile].executor": "Run",
-    "Maven.persistence [deploy].executor": "Run",
-    "Maven.persistence [install].executor": "Run",
-    "Maven.persistence [package].executor": "Run",
-    "Maven.persistence [site].executor": "Run",
-    "Maven.persistence [test].executor": "Run",
-    "Maven.persistence [validate].executor": "Run",
-    "Maven.persistence [verify].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ImplementacaoWeb2Application.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/guilherme/implementacaoWeb/domain1/src/main/java/org/example/model/avaliacao",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.src.main.java.org.example.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoClienteTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FavoritosServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HistoricoServicosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReagendarServicoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VisualizarAvaliacoesPrestadorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ImplementacaoWeb2Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/guilherme/implementacaoWeb/domain1/src/main/java/org/example/model/avaliacao&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.exemple.implementacaoweb2.avaliacao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/domain1/src/main/java/org/example/model/avaliacao" />
       <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/usuarios" />
@@ -128,20 +120,7 @@
       <recent name="com.exemple.implementacaoweb2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.VisualizarAvaliacoesPrestadorTest">
-    <configuration name="src.main.java.org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.example.Main" />
-      <module name="implementacaoWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.main.java.org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos">
     <configuration name="FavoritosServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dominio-prestacaoServicos" />
       <extension name="coverage">
@@ -202,6 +181,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.exemple.implementacaoweb2 in dominio-prestacaoServicos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dominio-prestacaoServicos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exemple.implementacaoweb2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exemple.implementacaoweb2" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ImplementacaoWeb2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dominio-prestacaoServicos" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.exemple.implementacaoweb2.ImplementacaoWeb2Application" />
@@ -211,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VisualizarAvaliacoesPrestadorTest" />
+        <item itemvalue="JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos" />
         <item itemvalue="JUnit.ReagendarServicoTest" />
+        <item itemvalue="JUnit.VisualizarAvaliacoesPrestadorTest" />
         <item itemvalue="JUnit.FavoritosServiceTest (1)" />
         <item itemvalue="JUnit.FavoritosServiceTest" />
-        <item itemvalue="Application.src.main.java.org.example.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -233,6 +226,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
