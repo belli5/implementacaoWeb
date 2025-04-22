@@ -22,9 +22,9 @@ Avaliação: feedback dado por um cliente após a conclusão do serviço, atribu
 
 🚀 Documentação Externa:
 
-Histórias e Cenários BDD: https://docs.google.com/document/d/1AXrL6elS9H3-nyVWdiUt-6mJM2_Uifz94ZalWvoYugE/edit?usp=sharing
-Mapa de Histórias e Personas: https://www.figma.com/design/N4CYtO4mzZJMHILO6nxinc/Projetos-Requisitos?node-id=47-1200&p=f&t=ljenmHa3GwALgNdG-0
-Protótipos de Baixa Fidelidade: https://www.figma.com/design/N4CYtO4mzZJMHILO6nxinc/Projetos-Requisitos?node-id=0-1&p=f&t=ljenmHa3GwALgNdG-0
+- Histórias e Cenários BDD: https://docs.google.com/document/d/1AXrL6elS9H3-nyVWdiUt-6mJM2_Uifz94ZalWvoYugE/edit?usp=sharing
+- Mapa de Histórias e Personas: https://www.figma.com/design/N4CYtO4mzZJMHILO6nxinc/Projetos-Requisitos?node-id=47-1200&p=f&t=ljenmHa3GwALgNdG-0
+- Protótipos de Baixa Fidelidade: https://www.figma.com/design/N4CYtO4mzZJMHILO6nxinc/Projetos-Requisitos?node-id=0-1&p=f&t=ljenmHa3GwALgNdG-0
 
 👥 Grupo:
 
