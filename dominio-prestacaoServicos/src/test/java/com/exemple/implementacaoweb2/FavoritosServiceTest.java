@@ -21,7 +21,7 @@ public class FavoritosServiceTest {
     @Test
     public void testAdicionarFavorito() {
         Endereco endereco = new Endereco("Rua das Flores", "Boa Viagem", "Recife", "PE");
-        PrestacaoServico servico = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada");
+        PrestacaoServico servico = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada", "Fernando Consultor");
         List<PrestacaoServico> servicos = List.of(servico);
         Prestador prestador = new Prestador(1, "João", servicos, "joao@email.com", "123456789", endereco);
 
@@ -34,7 +34,7 @@ public class FavoritosServiceTest {
     @Test
     public void testAdicionarNovamenteFavorito() {
         Endereco endereco = new Endereco("Rua das Flores", "Boa Viagem", "Recife", "PE");
-        PrestacaoServico servico = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada");
+        PrestacaoServico servico = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada", "Fernando Consultor");
         List<PrestacaoServico> servicos = List.of(servico);
         Prestador prestador = new Prestador(1, "João", servicos, "joao@email.com", "123456789", endereco);
 
@@ -49,12 +49,12 @@ public class FavoritosServiceTest {
     @Test
     public void testVisualizarFavoritos() {
         Endereco endereco1 = new Endereco("Rua das Flores", "Boa Viagem", "Recife", "PE");
-        PrestacaoServico servico1 = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada");
+        PrestacaoServico servico1 = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada", "Fernando Consultor");
         List<PrestacaoServico> servicos1 = List.of(servico1);
         Prestador prestador1 = new Prestador(1, "João", servicos1, "joao@email.com", "123456789", endereco1);
 
         Endereco endereco2 = new Endereco("Avenida Brasil", "Pina", "Recife", "PE");
-        PrestacaoServico servico2 = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada");
+        PrestacaoServico servico2 = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada", "Fernando Consultor");
         List<PrestacaoServico> servicos2 = List.of(servico2);
         Prestador prestador2 = new Prestador(2, "Maria", servicos2, "maria@email.com", "987654321", endereco2);
 
@@ -71,7 +71,7 @@ public class FavoritosServiceTest {
     public void testLimiteFavoritos() {
         for (int i = 0; i < 50; i++) {
             Endereco endereco = new Endereco("Rua " + i, "Bairro " + i, "Recife", "PE");
-            PrestacaoServico servico = new PrestacaoServico(i, "Serviço " + i, 100.0f + i, "Bairro " + i, "Descrição " + i);
+            PrestacaoServico servico = new PrestacaoServico(i, "Serviço " + i, 100.0f + i, "Bairro " + i, "Descrição " + i, "Fernando Consultor") ;
             List<PrestacaoServico> servicos = List.of(servico);
             Prestador prestador = new Prestador(i, "Prestador " + i, servicos, "email" + i + "@teste.com", "123456789", endereco);
 
@@ -80,7 +80,7 @@ public class FavoritosServiceTest {
         }
 
         Endereco enderecoExtra = new Endereco("Rua Extra", "Bairro Extra", "Recife", "PE");
-        PrestacaoServico servicoExtra = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada");
+        PrestacaoServico servicoExtra = new PrestacaoServico(1, "Consultoria", 200, "Boa Viagem", "Consultoria especializada", "Fernando Consultor");
         List<PrestacaoServico> servicosExtra = List.of(servicoExtra);
         Prestador prestadorExtra = new Prestador(100, "Extra", servicosExtra, "extra@email.com", "999999999", enderecoExtra);
 

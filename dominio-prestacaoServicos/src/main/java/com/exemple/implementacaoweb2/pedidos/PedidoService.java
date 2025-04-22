@@ -1,7 +1,7 @@
 package com.exemple.implementacaoweb2.pedidos;
 
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class PedidoService {
 
@@ -26,6 +26,25 @@ public class PedidoService {
         pedidoRepository.update(id);
     }
 
+    public Optional<Pedido> buscarPorId(Long id) {
+        return pedidoRepository.findById(id.intValue()); // porque seu Pedido usa id int
+    }
+
+    public Pedido criarNovoPedido(Long idPedidoOriginal, LocalDateTime novaData) {
+        Pedido pedidoOriginal = pedidoRepository.findById(idPedidoOriginal.intValue())
+                .orElseThrow(() -> new IllegalArgumentException("Pedido não encontrado"));
+
+        Pedido novoPedido = new Pedido(
+                0, // novo ID
+                pedidoOriginal.getServico(), // copia o serviço
+                pedidoOriginal.getPrestadorId(),
+                pedidoOriginal.getClienteId(),
+                novaData,
+                StatusPedido.PENDENTE
+        );
+
+        return pedidoRepository.save(novoPedido);
+    }
 
 }
 

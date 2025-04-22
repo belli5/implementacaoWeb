@@ -25,9 +25,9 @@ public class FiltrarServicoTest {
         prestacaoServicoService = new PrestacaoServicoService(servicoRepository);
 
         when(servicoRepository.findAll()).thenReturn(Arrays.asList(
-                new PrestacaoServico(1, "Instalação de tomadas", 150.0f, "Centro", "Eletricista"),
-                new PrestacaoServico(2, "Reparo em encanamento", 200.0f, "Jardim", "Encanador"),
-                new PrestacaoServico(3, "Troca de disjuntor", 120.0f, "Centro", "Eletricista")
+                new PrestacaoServico(1, "Instalação de tomadas", 150.0f, "Centro", "Eletricista", "João Eletricista"),
+                new PrestacaoServico(2, "Reparo em encanamento", 200.0f, "Jardim", "Encanador", "Carlos Encanador"),
+                new PrestacaoServico(3, "Troca de disjuntor", 120.0f, "Centro", "Eletricista", "João Eletricista")
         ));
     }
 
