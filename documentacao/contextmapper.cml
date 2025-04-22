@@ -24,6 +24,7 @@ BoundedContext Usuarios implements Usuarios{
             String telefone
             Endereco endereco
             List<Prestador> prestadoresFavoritos
+            List<PrestacaoServico> historicoDeServicos
         }
     }
 
@@ -49,26 +50,36 @@ BoundedContext Pedidos implements Pedidos{
             aggregateRoot
 
             int id
+            PrestacaoServico servico
             int prestadorId
             int clienteId
             date data
-            String status
+            StatusPedido status
         }
+        ValueObject StatusPedido {
+            Enum StatusPedido {
+                PENDENTE,
+                CONCLUIDO,
+                CANCELADO;
+            }
 
+        }
     }
 
 }
 
 BoundedContext Servicos implements Servicos{
 
-    Aggregate Servico{
-        Entity Servico{
+    Aggregate PrestacaoServico{
+        Entity PrestacaoServico{
             aggregateRoot
 
-            int id
-            String nomeServico
-            String descricao
-            float valor
+            int id;
+            String descricao;
+            float valor;
+            String bairro;
+            String categoria;
+            String prestador;
 
         }
 
@@ -86,8 +97,14 @@ BoundedContext Avaliacao implements Avaliacao{
             int clienteId
             float nota
             String comentario
+            TipoAvaliacao tipoAvaliacao
+        }
+        ValueObject TipoAvaliacao {
+            Enum TipoAvaliacao {
+                CLIENTE_AVALIA_PRESTADOR
+                PRESTADOR_AVALIA_CLIENTE
+            }
         }
 
     }
-
 }

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
+    <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="ajustando erros do merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentacao/contextmapper.cml" beforeDir="false" afterPath="$PROJECT_DIR$/documentacao/contextmapper.cml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,58 +54,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.example.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AvaliacaoClienteTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AvaliacaoServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FavoritosServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HistoricoServicosTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ReagendarServicoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VisualizarAvaliacoesPrestadorTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ImplementacaoWeb2Application.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/guilherme/implementacaoWeb/domain1/src/main/java/org/example/model/avaliacao&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.src.main.java.org.example.Main.executor": "Run",
+    "JUnit.AvaliacaoClienteTest.executor": "Run",
+    "JUnit.AvaliacaoServiceTest.executor": "Run",
+    "JUnit.FavoritosServiceTest.executor": "Run",
+    "JUnit.HistoricoServicosTest.executor": "Run",
+    "JUnit.ReagendarServicoTest.executor": "Run",
+    "JUnit.VisualizarAvaliacoesPrestadorTest.executor": "Run",
+    "JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos.executor": "Run",
+    "Maven.bdd [clean].executor": "Run",
+    "Maven.bdd [compile].executor": "Run",
+    "Maven.bdd [deploy].executor": "Run",
+    "Maven.bdd [install].executor": "Run",
+    "Maven.bdd [package].executor": "Run",
+    "Maven.bdd [site].executor": "Run",
+    "Maven.bdd [test].executor": "Run",
+    "Maven.bdd [validate].executor": "Run",
+    "Maven.bdd [verify].executor": "Run",
+    "Maven.persistence [clean].executor": "Run",
+    "Maven.persistence [compile].executor": "Run",
+    "Maven.persistence [deploy].executor": "Run",
+    "Maven.persistence [install].executor": "Run",
+    "Maven.persistence [package].executor": "Run",
+    "Maven.persistence [site].executor": "Run",
+    "Maven.persistence [test].executor": "Run",
+    "Maven.persistence [validate].executor": "Run",
+    "Maven.persistence [verify].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ImplementacaoWeb2Application.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/guilherme/implementacaoWeb/domain1/src/main/java/org/example/model/avaliacao",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.exemple.implementacaoweb2.avaliacao" />
@@ -222,6 +224,15 @@
       <updated>1745211337858</updated>
       <workItem from="1745250628463" duration="6952000" />
     </task>
+    <task id="LOCAL-00001" summary="ajustando erros do merge">
+      <option name="closed" value="true" />
+      <created>1745288606993</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745288606993</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +248,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ajustando erros do merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajustando erros do merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
