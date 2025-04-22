@@ -5,6 +5,7 @@ import com.exemple.implementacaoweb2.pedidos.PedidoRepository;
 import com.exemple.implementacaoweb2.pedidos.PedidoService;
 import com.exemple.implementacaoweb2.pedidos.StatusPedido;
 
+import com.exemple.implementacaoweb2.prestacaoServico.PrestacaoServico;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -23,15 +24,19 @@ public class ContratarServicoTest {
     public void setUp() {
         pedidoRepository = Mockito.mock(PedidoRepository.class);
         pedidoService = new PedidoService(pedidoRepository);
+
     }
+
 
     @Test
     public void testClienteContrataPrestadorComSucesso() {
+        PrestacaoServico servico = new PrestacaoServico(1, "Instalação elétrica", 250.0f, "Centro", "Eletricista", "Carlos Eletricista");
+
         // Dado
-        Pedido pedido = new Pedido(1, 101, 202, LocalDate.of(2025, 4, 25), StatusPedido.PENDENTE);
+        Pedido pedido = new Pedido(1, servico, 101, 202, LocalDate.of(2025, 4, 25).atStartOfDay(), StatusPedido.PENDENTE);
 
         // E: o prestador está disponível
-        when(pedidoRepository.prestadorEstaDisponivel(101, LocalDate.of(2025, 4, 25))).thenReturn(true);
+        when(pedidoRepository.prestadorEstaDisponivel(101, LocalDate.of(2025, 4, 25).atStartOfDay())).thenReturn(true);
         when(pedidoRepository.save(pedido)).thenReturn(pedido);
 
         // Quando
@@ -45,11 +50,13 @@ public class ContratarServicoTest {
 
     @Test
     public void testClienteTentaContratarPrestadorIndisponivel() {
+        PrestacaoServico servico = new PrestacaoServico(1, "Instalação elétrica", 250.0f, "Centro", "Eletricista", "Carlos Eletricista");
+
         // Dado
-        Pedido pedido = new Pedido(2, 102, 203, LocalDate.of(2025, 4, 25), StatusPedido.PENDENTE);
+        Pedido pedido = new Pedido(2, servico,102, 203, LocalDate.of(2025, 4, 25).atStartOfDay(), StatusPedido.PENDENTE);
 
         // E: o prestador está indisponível
-        when(pedidoRepository.prestadorEstaDisponivel(102, LocalDate.of(2025, 4, 25))).thenReturn(false);
+        when(pedidoRepository.prestadorEstaDisponivel(102, LocalDate.of(2025, 4, 25).atStartOfDay())).thenReturn(false);
 
         // Quando
         try {
