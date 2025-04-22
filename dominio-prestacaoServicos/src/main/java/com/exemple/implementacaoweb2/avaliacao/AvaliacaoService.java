@@ -1,6 +1,7 @@
 package com.exemple.implementacaoweb2.avaliacao;
 
 
+import java.util.List;
 
 public class AvaliacaoService {
 
@@ -20,6 +21,10 @@ public class AvaliacaoService {
 
     public void atualizarAvalicao(int id) {
         avaliacaoRepository.update(id);
+    }
+
+    public List<Avaliacao> buscarAvaliacoesDoPrestador(int prestadorId) {
+        return avaliacaoRepository.findByPrestadorId(prestadorId);
     }
 
 }

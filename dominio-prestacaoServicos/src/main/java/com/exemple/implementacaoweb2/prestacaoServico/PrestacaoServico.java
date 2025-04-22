@@ -4,25 +4,23 @@ package com.exemple.implementacaoweb2.prestacaoServico;
 public class PrestacaoServico {
 
     private final int id;
-    private final String nomeServico;
     private final String descricao;
     private final float valor;
     private final String bairro;
+    private final String categoria;
+    private String prestador;
 
-    public PrestacaoServico(int id, String nomeServico, String descricao, float valor, String bairro) {
+    public PrestacaoServico(int id, String descricao, float valor, String bairro, String categoria, String prestador) {
         this.id = id;
-        this.nomeServico = nomeServico;
         this.descricao = descricao;
         this.valor = valor;
         this.bairro = bairro;
+        this.categoria = categoria;
+        this.prestador = prestador;
     }
 
     public int getId() {
         return id;
-    }
-
-    public String getNomeServico() {
-        return nomeServico;
     }
 
     public String getDescricao() {
@@ -35,4 +33,15 @@ public class PrestacaoServico {
 
     public String getBairro(){return bairro;}
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setPrestador(String prestador) {
+        this.prestador = prestador;
+    }
+
+    public String getPrestador() {
+        return prestador;
+    }
 }

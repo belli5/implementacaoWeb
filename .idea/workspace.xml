@@ -7,8 +7,16 @@
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/Avaliacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ContratarServicoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ContratarServicoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FavoritosServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FavoritosServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FiltrarServicoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FiltrarServicoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ServicosServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ServicosServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +33,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="testes-5-7-9" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -33,12 +46,12 @@
     &quot;assignee&quot;: &quot;Victorgalves&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/belli5/implementacaoWeb.git",
-    "accountId": "589b6463-9019-4e00-9ab7-06c2b1744232"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/belli5/implementacaoWeb.git&quot;,
+    &quot;accountId&quot;: &quot;814cdfc9-5c28-48c5-a7bc-d51520cb9c42&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -59,6 +72,8 @@
     "JUnit.AvaliacaoServiceTest.executor": "Run",
     "JUnit.FavoritosServiceTest.executor": "Run",
     "JUnit.HistoricoServicosTest.executor": "Run",
+    "JUnit.ReagendarServicoTest.executor": "Run",
+    "JUnit.VisualizarAvaliacoesPrestadorTest.executor": "Run",
     "Maven.bdd [clean].executor": "Run",
     "Maven.bdd [compile].executor": "Run",
     "Maven.bdd [deploy].executor": "Run",
@@ -113,20 +128,7 @@
       <recent name="com.exemple.implementacaoweb2" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="implementacaoWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.VisualizarAvaliacoesPrestadorTest">
     <configuration name="src.main.java.org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.main.java.org.example.Main" />
       <module name="implementacaoWeb" />
@@ -170,6 +172,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ReagendarServicoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dominio-prestacaoServicos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exemple.implementacaoweb2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exemple.implementacaoweb2" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.implementacaoweb2.ReagendarServicoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VisualizarAvaliacoesPrestadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dominio-prestacaoServicos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exemple.implementacaoweb2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exemple.implementacaoweb2" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.implementacaoweb2.VisualizarAvaliacoesPrestadorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ImplementacaoWeb2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="dominio-prestacaoServicos" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.exemple.implementacaoweb2.ImplementacaoWeb2Application" />
@@ -179,10 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VisualizarAvaliacoesPrestadorTest" />
+        <item itemvalue="JUnit.ReagendarServicoTest" />
         <item itemvalue="JUnit.FavoritosServiceTest (1)" />
-        <item itemvalue="Application.src.main.java.org.example.Main" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FavoritosServiceTest" />
+        <item itemvalue="Application.src.main.java.org.example.Main" />
       </list>
     </recent_temporary>
   </component>
