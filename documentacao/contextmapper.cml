@@ -1,24 +1,16 @@
 Domain PrestacaoServicos {
-    Subdomain Usuarios
-    Subdomain Pedidos
-    Subdomain Servicos
-    Subdomain Avaliacao
+    Subdomain Usuarios_e_Pedidos
+    Subdomain Servicos_e_Avaliacao
 }
 
 ContextMap {
-    contains Usuarios
-    contains Pedidos
-    contains Servicos
-    contains Avaliacao
+    contains Usuarios_e_Pedidos
+    contains Servicos_e_Avaliacao
 
-    Pedidos Shared-Kernel Usuarios
-    Servicos Shared-Kernel Usuarios
-    Avaliacao Shared-Kernel Usuarios
-    Pedidos Shared-Kernel Servicos
-    Avaliacao Shared-Kernel Servicos
+    Usuarios_e_Pedidos Shared-Kernel Servicos_e_Avaliacao
 }
 
-BoundedContext Usuarios implements Usuarios {
+BoundedContext Usuarios_e_Pedidos implements Usuarios_e_Pedidos {
     Aggregate Cliente {
         Entity Cliente {
             aggregateRoot
@@ -27,8 +19,7 @@ BoundedContext Usuarios implements Usuarios {
             String email
             String telefone
             Endereco endereco
-            List<Prestador> prestadoresFavoritos
-            List<PrestacaoServico> historicoDeServicos
+            List<int> prestadoresFavoritos
         }
     }
 
@@ -52,28 +43,24 @@ BoundedContext Usuarios implements Usuarios {
     }
 
     Repository ClienteRepository {
-
         +save(cliente : Cliente) : void
         +findAll() : List<Cliente>
         +delete(cliente : Cliente) : void
-
     }
 
     Repository PrestadorRepository {
-            +save(prestador : Prestador) : void
-            +findByName(name : String) : List<Prestador>
-            +findById(id : int) : Prestador
-            +findAll() : List<Prestador>
-            +delete(prestador : Prestador) : void
+        +save(prestador : Prestador) : void
+        +findByName(name : String) : List<Prestador>
+        +findById(id : int) : Prestador
+        +findAll() : List<Prestador>
+        +delete(prestador : Prestador) : void
     }
-}
 
-BoundedContext Pedidos implements Pedidos {
     Aggregate Pedido {
         Entity Pedido {
             aggregateRoot
             -int id
-            PrestacaoServico servico
+            int servicoId
             int prestadorId
             int clienteId
             date data
@@ -90,18 +77,15 @@ BoundedContext Pedidos implements Pedidos {
     }
 
     Repository PedidosRepository {
-
-                +save(pedido : Pedido) : void
-                +findByClientName(nome : String) : List<Pedido>
-                +findByPrestadorName(nome: String): List<Pedido>
-                +findById(id : int) : Servico
-                +deleteById(id : int) : void
-
+        +save(pedido : Pedido) : void
+        +findByClientName(nome : String) : List<Pedido>
+        +findByPrestadorName(nome: String) : List<Pedido>
+        +findById(id : int) : Pedido
+        +deleteById(id : int) : void
     }
-
 }
 
-BoundedContext Servicos implements Servicos {
+BoundedContext Servicos_e_Avaliacao implements Servicos_e_Avaliacao {
     Aggregate PrestacaoServico {
         Entity PrestacaoServico {
             aggregateRoot
@@ -110,20 +94,17 @@ BoundedContext Servicos implements Servicos {
             float valor
             String bairro
             String categoria
-            String prestador
+            int prestadorId
         }
     }
+
     Repository ServicosRepository {
-
-                +save(servico : Servico) : void
-                +findByPrestadorName(nome: String): List<Servico>
-                +findById(id : int) : Servico
-                +deleteById(id : int) : void
-
+        +save(servico : PrestacaoServico) : void
+        +findByPrestadorName(nome: String) : List<PrestacaoServico>
+        +findById(id : int) : PrestacaoServico
+        +deleteById(id : int) : void
     }
-}
 
-BoundedContext Avaliacao implements Avaliacao {
     Aggregate Avaliacao {
         Entity Avaliacao {
             aggregateRoot
@@ -144,9 +125,7 @@ BoundedContext Avaliacao implements Avaliacao {
     }
 
     Repository AvaliacaoRepository {
-
-                    +save(avaliacao : Avaliacao) : void
-                    +deleteById(id : int) : void
-
-        }
+        +save(avaliacao : Avaliacao) : void
+        +deleteById(id : int) : void
+    }
 }
