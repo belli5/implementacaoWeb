@@ -1,24 +1,28 @@
-Domain PrestacaoServicos{
+Domain PrestacaoServicos {
     Subdomain Usuarios
     Subdomain Pedidos
     Subdomain Servicos
     Subdomain Avaliacao
 }
 
-BoundedContext Usuarios implements Usuarios{
+ContextMap {
+    contains Usuarios
+    contains Pedidos
+    contains Servicos
+    contains Avaliacao
 
-     ValueObject Endereco {
-        String rua
-        String bairro
-        String cidade
-        String estado
-    }
+    Pedidos Shared-Kernel Usuarios
+    Servicos Shared-Kernel Usuarios
+    Avaliacao Shared-Kernel Usuarios
+    Pedidos Shared-Kernel Servicos
+    Avaliacao Shared-Kernel Servicos
+}
 
-    Aggregate Cliente{
-        Entity Cliente{
+BoundedContext Usuarios implements Usuarios {
+    Aggregate Cliente {
+        Entity Cliente {
             aggregateRoot
-
-            int id
+            -int id
             String nome
             String email
             String telefone
@@ -28,83 +32,121 @@ BoundedContext Usuarios implements Usuarios{
         }
     }
 
-    Aggregate Prestador{
-        Entity Prestador{
+    Aggregate Prestador {
+        Entity Prestador {
             aggregateRoot
-
-            int id
+            -int id
             String nome
             String tipoServico
             String email
             String telefone
             Endereco endereco
         }
+    }
+
+    ValueObject Endereco {
+        String rua
+        String bairro
+        String cidade
+        String estado
+    }
+
+    Repository ClienteRepository {
+
+        +save(cliente : Cliente) : void
+        +findAll() : List<Cliente>
+        +delete(cliente : Cliente) : void
 
     }
 
+    Repository PrestadorRepository {
+            +save(prestador : Prestador) : void
+            +findByName(name : String) : List<Prestador>
+            +findById(id : int) : Prestador
+            +findAll() : List<Prestador>
+            +delete(prestador : Prestador) : void
+    }
 }
 
-BoundedContext Pedidos implements Pedidos{
-    Aggregate Pedido{
-        Entity Pedido{
+BoundedContext Pedidos implements Pedidos {
+    Aggregate Pedido {
+        Entity Pedido {
             aggregateRoot
-
-            int id
+            -int id
             PrestacaoServico servico
             int prestadorId
             int clienteId
             date data
             StatusPedido status
         }
+
         ValueObject StatusPedido {
             Enum StatusPedido {
                 PENDENTE,
                 CONCLUIDO,
-                CANCELADO;
+                CANCELADO
             }
-
         }
     }
 
-}
+    Repository PedidosRepository {
 
-BoundedContext Servicos implements Servicos{
-
-    Aggregate PrestacaoServico{
-        Entity PrestacaoServico{
-            aggregateRoot
-
-            int id;
-            String descricao;
-            float valor;
-            String bairro;
-            String categoria;
-            String prestador;
-
-        }
+                +save(pedido : Pedido) : void
+                +findByClientName(nome : String) : List<Pedido>
+                +findByPrestadorName(nome: String): List<Pedido>
+                +findById(id : int) : Servico
+                +deleteById(id : int) : void
 
     }
 
 }
 
-BoundedContext Avaliacao implements Avaliacao{
-    Aggregate Avaliacao{
-        Entity Avaliacao{
+BoundedContext Servicos implements Servicos {
+    Aggregate PrestacaoServico {
+        Entity PrestacaoServico {
             aggregateRoot
+            -int id
+            String descricao
+            float valor
+            String bairro
+            String categoria
+            String prestador
+        }
+    }
+    Repository ServicosRepository {
 
-            int id
+                +save(servico : Servico) : void
+                +findByPrestadorName(nome: String): List<Servico>
+                +findById(id : int) : Servico
+                +deleteById(id : int) : void
+
+    }
+}
+
+BoundedContext Avaliacao implements Avaliacao {
+    Aggregate Avaliacao {
+        Entity Avaliacao {
+            aggregateRoot
+            -int id
             int prestadorId
             int clienteId
             float nota
             String comentario
             TipoAvaliacao tipoAvaliacao
         }
+
         ValueObject TipoAvaliacao {
             Enum TipoAvaliacao {
-                CLIENTE_AVALIA_PRESTADOR
+                CLIENTE_AVALIA_PRESTADOR,
                 PRESTADOR_AVALIA_CLIENTE
             }
         }
-
     }
+
+    Repository AvaliacaoRepository {
+
+                    +save(avaliacao : Avaliacao) : void
+                    +deleteById(id : int) : void
+
+        }
 }
