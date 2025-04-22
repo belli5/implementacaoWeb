@@ -7,13 +7,19 @@ public class Avaliacao {
     private final int clienteId;
     private final float nota;
     private final String comentario;
+    private final TipoAvaliacao tipoAvaliacao;
 
-    public Avaliacao(int id, int prestadorId, int clienteId, float nota, String comentario) {
+    public Avaliacao(int id, int prestadorId, int clienteId, float nota, String comentario, TipoAvaliacao tipoAvaliacao) {
         this.id = id;
         this.prestadorId = prestadorId;
         this.clienteId = clienteId;
         this.nota = nota;
         this.comentario = comentario;
+        this.tipoAvaliacao = tipoAvaliacao;
+    }
+
+    public TipoAvaliacao getTipoAvaliacao() {
+        return tipoAvaliacao;
     }
 
     public int getId() {

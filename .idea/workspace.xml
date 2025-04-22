@@ -27,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -67,7 +68,10 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.src.main.java.org.example.Main.executor": "Run",
+    "JUnit.AvaliacaoClienteTest.executor": "Run",
+    "JUnit.AvaliacaoServiceTest.executor": "Run",
     "JUnit.FavoritosServiceTest.executor": "Run",
+    "JUnit.HistoricoServicosTest.executor": "Run",
     "JUnit.ReagendarServicoTest.executor": "Run",
     "JUnit.VisualizarAvaliacoesPrestadorTest.executor": "Run",
     "Maven.bdd [clean].executor": "Run",
@@ -119,6 +123,9 @@
       <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/servicos" />
       <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/pedidos" />
       <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/avaliacao" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.exemple.implementacaoweb2" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.VisualizarAvaliacoesPrestadorTest">
@@ -212,14 +219,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -234,5 +233,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
