@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/implementacaoWeb2/pom.xml" />
+        <option value="$PROJECT_DIR$/dominio-prestacaoServicos/pom.xml" />
       </list>
     </option>
   </component>
