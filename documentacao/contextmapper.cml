@@ -50,7 +50,7 @@ BoundedContext Usuarios_e_Pedidos implements Usuarios_e_Pedidos {
 
     Repository PrestadorRepository {
         +save(prestador : Prestador) : void
-        +findByName(name : String) : List<Prestador>
+        +findByName(name : String) : List<int>
         +findById(id : int) : Prestador
         +findAll() : List<Prestador>
         +delete(prestador : Prestador) : void
@@ -78,8 +78,8 @@ BoundedContext Usuarios_e_Pedidos implements Usuarios_e_Pedidos {
 
     Repository PedidosRepository {
         +save(pedido : Pedido) : void
-        +findByClientName(nome : String) : List<Pedido>
-        +findByPrestadorName(nome: String) : List<Pedido>
+        +findByClientName(nome : String) : List<int>
+        +findByPrestadorName(nome: String) : List<int>
         +findById(id : int) : Pedido
         +deleteById(id : int) : void
     }
