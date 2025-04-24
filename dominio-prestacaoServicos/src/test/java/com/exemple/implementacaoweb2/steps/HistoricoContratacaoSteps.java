@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class HistoricoContratacaoSteps {
 
     private final Map<String, PrestacaoServico> servicosDisponiveis = new HashMap<>();
-    private List<Pedido> historico;  // Inicializando a lista de histórico
+    private List<Pedido> historico;
 
     @Before
     public void setup() {
