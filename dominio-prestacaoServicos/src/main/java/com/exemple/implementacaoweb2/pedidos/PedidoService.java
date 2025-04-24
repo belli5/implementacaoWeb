@@ -27,16 +27,22 @@ public class PedidoService {
     }
 
     public Optional<Pedido> buscarPorId(Long id) {
-        return pedidoRepository.findById(id.intValue()); // porque seu Pedido usa id int
+        return pedidoRepository.findById(id.intValue());
     }
 
     public Pedido criarNovoPedido(Long idPedidoOriginal, LocalDateTime novaData) {
         Pedido pedidoOriginal = pedidoRepository.findById(idPedidoOriginal.intValue())
                 .orElseThrow(() -> new IllegalArgumentException("Pedido não encontrado"));
 
+        int prestadorId = pedidoOriginal.getPrestadorId();
+
+        if (!pedidoRepository.prestadorEstaDisponivel(prestadorId, novaData)) {
+            throw new IllegalArgumentException("Prestador indisponível nesta data.");
+        }
+
         Pedido novoPedido = new Pedido(
-                0, // novo ID
-                pedidoOriginal.getServico(), // copia o serviço
+                0,
+                pedidoOriginal.getServico(),
                 pedidoOriginal.getPrestadorId(),
                 pedidoOriginal.getClienteId(),
                 novaData,
@@ -45,6 +51,4 @@ public class PedidoService {
 
         return pedidoRepository.save(novoPedido);
     }
-
 }
-
