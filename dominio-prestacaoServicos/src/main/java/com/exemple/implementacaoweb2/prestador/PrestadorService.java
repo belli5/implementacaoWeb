@@ -1,5 +1,7 @@
 package com.exemple.implementacaoweb2.prestador;
 
+import com.exemple.implementacaoweb2.prestacaoServico.PrestacaoServico;
+
 public class PrestadorService {
 
     private final PrestadorRepository prestadorRepository;
@@ -16,7 +18,13 @@ public class PrestadorService {
         prestadorRepository.delete(id);
     }
 
-    public void atualizarPrestador(int id) {
-        prestadorRepository.update(id);
+    public void atualizarPrestador(Prestador prestador) throws Exception {
+        for(PrestacaoServico servico : prestador.getServicos()){
+            if(servico.getDescricao() == null || servico.getDescricao().isEmpty()){
+                throw new Exception("Descrição do serviço é obrigatória.");
+            }
+        }
+        prestadorRepository.save(prestador);
     }
+
 }

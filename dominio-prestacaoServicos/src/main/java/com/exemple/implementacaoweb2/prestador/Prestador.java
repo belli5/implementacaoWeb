@@ -48,6 +48,10 @@ public class Prestador {
         return endereco;
     }
 
+    public void adicionarServico(PrestacaoServico novoServico){
+        this.servicos.add(novoServico);
+    }
+
     @Override
     public String toString() {
         return "Prestador:" +

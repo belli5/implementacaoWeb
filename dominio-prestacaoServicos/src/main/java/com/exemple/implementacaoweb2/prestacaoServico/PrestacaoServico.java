@@ -4,7 +4,7 @@ package com.exemple.implementacaoweb2.prestacaoServico;
 public class PrestacaoServico {
 
     private final int id;
-    private final String descricao;
+    private String descricao;
     private final float valor;
     private final String bairro;
     private final String categoria;
@@ -36,6 +36,8 @@ public class PrestacaoServico {
     public String getCategoria() {
         return categoria;
     }
+
+    public void setDescricao(String descricao){this.descricao = descricao;}
 
     public void setPrestador(String prestador) {
         this.prestador = prestador;

@@ -5,7 +5,6 @@ import com.exemple.implementacaoweb2.prestacaoServico.PrestacaoServicoRepository
 import com.exemple.implementacaoweb2.prestacaoServico.PrestacaoServicoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.Arrays;
 import java.util.List;
