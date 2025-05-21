@@ -14,10 +14,24 @@ footer .menu-item {
   font-size: 12px;
 }
 
-footer .menu-item.active {
+footer .menu-item .active {
   color: #a68ddf;
 }
 
 footer .menu-item span {
   margin-top: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  transition: color 0.3s;
+}
+
+a :hover {
+  color: #b472d9; 
 }
