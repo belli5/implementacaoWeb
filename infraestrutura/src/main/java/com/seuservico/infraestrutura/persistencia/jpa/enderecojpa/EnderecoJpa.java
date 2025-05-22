@@ -1,7 +1,6 @@
-package com.seuservico.infraestrutura.persistencia.jpa;
+package com.seuservico.infraestrutura.persistencia.jpa.enderecojpa;
 
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
 
 @Embeddable
 public class EnderecoJpa {

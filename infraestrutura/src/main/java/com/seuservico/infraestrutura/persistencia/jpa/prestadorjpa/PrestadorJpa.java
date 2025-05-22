@@ -1,13 +1,14 @@
-package com.seuservico.infraestrutura.persistencia.jpa;
-
+package com.seuservico.infraestrutura.persistencia.jpa.prestadorjpa;
 
 import com.exemple.implementacaoweb2.compartilhados.Endereco;
-import com.exemple.implementacaoweb2.prestacaoServico.PrestacaoServico;
-
+import com.seuservico.infraestrutura.persistencia.jpa.enderecojpa.EnderecoJpa;
+import com.seuservico.infraestrutura.persistencia.jpa.prestacaoservicojpa.PrestacaoServicoJpa;
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
+@Table(name = "prestador")
 public class PrestadorJpa {
 
     @Id
@@ -23,13 +24,12 @@ public class PrestadorJpa {
     private String telefone;
 
     @Embedded
-    private Endereco endereco;
+    private EnderecoJpa endereco;
 
-    public PrestadorJpa() {
 
-    }
+    public PrestadorJpa() {}
 
-    public PrestadorJpa(String nome, List<PrestacaoServicoJpa> servicos, String email, String telefone, Endereco endereco) {
+    public PrestadorJpa(String nome, List<PrestacaoServicoJpa> servicos, String email, String telefone, EnderecoJpa endereco) {
         this.nome = nome;
         this.servicos = servicos;
         this.email = email;
@@ -72,12 +72,14 @@ public class PrestadorJpa {
         this.telefone = telefone;
     }
 
-    public Endereco getEndereco() {
+    public EnderecoJpa getEndereco() {
         return endereco;
     }
-    public void setEndereco(Endereco endereco) {
+
+    public void setEndereco(EnderecoJpa endereco) {
         this.endereco = endereco;
     }
+
 
     public void adicionarServico(PrestacaoServicoJpa novoServico){
         this.servicos.add(novoServico);

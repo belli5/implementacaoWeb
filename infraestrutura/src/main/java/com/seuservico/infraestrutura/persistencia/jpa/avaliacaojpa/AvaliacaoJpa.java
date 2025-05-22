@@ -1,4 +1,4 @@
-package com.seuservico.infraestrutura.persistencia.jpa;
+package com.seuservico.infraestrutura.persistencia.jpa.avaliacaojpa;
 
 import com.exemple.implementacaoweb2.avaliacao.TipoAvaliacao;
 import jakarta.persistence.*;
@@ -20,8 +20,7 @@ public class AvaliacaoJpa {
     @Enumerated(EnumType.STRING)
     private TipoAvaliacao tipoAvaliacao;
 
-    public AvaliacaoJpa() {
-    }
+    public AvaliacaoJpa() {}
 
     public AvaliacaoJpa(int prestadorId, int clienteId, float nota, String comentario, TipoAvaliacao tipoAvaliacao) {
         this.prestadorId = prestadorId;
@@ -31,6 +30,7 @@ public class AvaliacaoJpa {
         this.tipoAvaliacao = tipoAvaliacao;
     }
 
+    // Getters e Setters
     public int getId() {
         return id;
     }

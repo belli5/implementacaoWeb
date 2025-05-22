@@ -1,15 +1,15 @@
-package com.seuservico.infraestrutura.persistencia.jpa;
+package com.seuservico.infraestrutura.persistencia.jpa.pedidojpa;
 
-import com.exemple.implementacaoweb2.cliente.Cliente;
 import com.exemple.implementacaoweb2.pedidos.StatusPedido;
-import com.exemple.implementacaoweb2.prestacaoServico.PrestacaoServico;
-import com.exemple.implementacaoweb2.prestador.Prestador;
+import com.seuservico.infraestrutura.persistencia.jpa.clientejpa.ClienteJpa;
+import com.seuservico.infraestrutura.persistencia.jpa.prestacaoservicojpa.PrestacaoServicoJpa;
+import com.seuservico.infraestrutura.persistencia.jpa.prestadorjpa.PrestadorJpa;
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "pedido")
 public class PedidoJpa {
 
     @Id
@@ -42,9 +42,14 @@ public class PedidoJpa {
         this.status = status;
     }
 
+    // Getters e Setters
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public PrestacaoServicoJpa getServico() {

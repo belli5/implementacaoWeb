@@ -1,6 +1,10 @@
-package com.seuservico.infraestrutura.persistencia.jpa;
+package com.seuservico.infraestrutura.persistencia.jpa.clientejpa;
 
+import com.seuservico.infraestrutura.persistencia.jpa.enderecojpa.EnderecoJpa;
+import com.seuservico.infraestrutura.persistencia.jpa.prestacaoservicojpa.PrestacaoServicoJpa;
+import com.seuservico.infraestrutura.persistencia.jpa.prestadorjpa.PrestadorJpa;
 import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +31,8 @@ public class ClienteJpa {
 
     public ClienteJpa() {}
 
-    public ClienteJpa(String nome, String email, String telefone, EnderecoJpa endereco, List<PrestadorJpa> prestadoresFavoritos, List<PrestacaoServicoJpa> historicoDeServicos) {
+    public ClienteJpa(String nome, String email, String telefone, EnderecoJpa endereco,
+                       List<PrestadorJpa> prestadoresFavoritos, List<PrestacaoServicoJpa> historicoDeServicos) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
@@ -37,7 +42,6 @@ public class ClienteJpa {
     }
 
     // Getters e setters
-
     public int getId() {
         return id;
     }
