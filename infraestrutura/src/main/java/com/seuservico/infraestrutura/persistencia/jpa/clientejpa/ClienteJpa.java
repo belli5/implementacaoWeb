@@ -32,7 +32,7 @@ public class ClienteJpa {
     public ClienteJpa() {}
 
     public ClienteJpa(String nome, String email, String telefone, EnderecoJpa endereco,
-                       List<PrestadorJpa> prestadoresFavoritos, List<PrestacaoServicoJpa> historicoDeServicos) {
+                      List<PrestadorJpa> prestadoresFavoritos, List<PrestacaoServicoJpa> historicoDeServicos) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;

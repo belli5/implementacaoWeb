@@ -9,15 +9,16 @@
         <module name="presentation" />
         <module name="infraestrutura" />
         <module name="persistence" />
+        <module name="infraestruturaa" />
         <module name="domain1" />
         <module name="bdd" />
       </profile>
-      <profile name="Annotation profile for dominio-prestacaoServicos" enabled="true">
+      <profile name="Annotation profile for implementacaoWeb" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="dominio-prestacaoServicos" />
       </profile>
@@ -29,7 +30,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="dominio-prestacaoServicos" options="-parameters" />
-      <module name="infraestrutura" options="-parameters" />
+      <module name="infraestruturaa" options="-parameters" />
       <module name="seuservico" options="-parameters" />
     </option>
   </component>
