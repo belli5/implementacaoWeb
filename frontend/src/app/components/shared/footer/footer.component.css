@@ -12,6 +12,7 @@ footer .menu-item {
   align-items: center;
   color: #666;
   font-size: 12px;
+  cursor: pointer;
 }
 
 footer .menu-item .active {
@@ -33,5 +34,5 @@ a {
 }
 
 a :hover {
-  color: #b472d9; 
+  color: #b472d9;
 }

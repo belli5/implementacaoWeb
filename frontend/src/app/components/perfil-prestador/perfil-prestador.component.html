@@ -25,12 +25,25 @@
       </p>
 
       <div class="buttons">
-        <button>Editar Perfil</button>
-        <button>Ver Todas as Avaliações</button>
-        <button>Contratar Serviço</button>
+        <!-- <button>Editar Perfil</button> -->
+        <button (click)="toggleAvaliacoes()">Ver Todas as Avaliações</button>
+        <button (click)="contratarServico()">Contratar Serviço</button>
       </div>
     </div>
 
-    <div class="favorite-icon">🤍</div>
+    <div class="favorite-icon" (click)="addFavoritos()">🤍</div>
   </div>
+
+  @if (mostrarAvaliacoes) {
+    <div class="avaliacoes">
+      @for ( avaliacao of listaAvaliacoes; track $index) {
+        <div class="avaliacao">
+          <p><strong>{{ avaliacao.cliente }}</strong></p>
+          <p>Nota: {{ avaliacao.nota }} ★</p>
+          <p>{{ avaliacao.comentario }}</p>
+          <hr />
+        </div>
+      }
+    </div>
+  }
 </main>

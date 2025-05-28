@@ -120,3 +120,29 @@ img {
   font-size: 1.2rem;
   cursor: pointer;
 }
+
+.avaliacoes {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f8f4fc;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.avaliacoes h4 {
+  margin-bottom: 0.5rem;
+  color: #4b3f65;
+}
+
+.avaliacao {
+  margin-bottom: 1rem;
+}
+
+.avaliacao strong {
+  color: #333;
+}
+
+.avaliacao span {
+  color: #a68ddf;
+  font-size: 0.
+}
