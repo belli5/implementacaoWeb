@@ -164,3 +164,28 @@ h2 {
 .finalizar-btn:hover {
   background-color: #388e3c;
 }
+
+.btn-limpar-filtro {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 2px solid #a68ddf;
+  color: #a68ddf;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-limpar-filtro:hover {
+  background-color: #a68ddf;
+  color: white;
+}
+
+.mensagem-vazia {
+  margin-top: 1rem;
+  color: #a68ddf;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+}

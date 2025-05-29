@@ -1,49 +1,34 @@
 <main>
   <h2>Filtrar por Categoria →</h2>
   <div class="categorias">
-    <div class="categoria">
-      <img src="pedreiro.png" alt="">
-      <span>Pedreiro</span>
-    </div>
-    <div class="categoria">
-      <img src="encanador.png" alt="">
-      <span>Encanador</span>
-    </div>
-    <div class="categoria">
-      <img src="marceneiro.png" alt="">
-      <span>Marceneiro</span>
-    </div>
-    <div class="categoria">
-      <img src="eletricista.png" alt="">
-      <span>Eletricista</span>
-    </div>
-    <div class="categoria">
-      <img src="fazTudo.png" alt="">
-      <span>Faz Tudo</span>
-    </div>
+    @for(categoria of categorias; track categoria){
+      <div class="categoria" (click)="selecionarCategoria(categoria.imagem)">
+        <img src="{{categoria.imagem}}.png" alt="{{categoria.servico}}">
+        <span>{{categoria.servico}}</span>
+      </div>
+    }
   </div>
 
   <div class="destaques">
     <h2>Profissionais em Destaque →</h2>
-    <div class="card-profissional" (click)="verPerfil()">
-      <div class="info-profissional">
-        <div class="avatar">A</div>
-        <div class="dados">
-          <strong>Maria Santos</strong>
-          <span>Encanadora</span>
+    @if(profissionaisFiltrados.length > 0){
+      @for(prestador of profissionaisFiltrados; track prestador){
+        <div class="card-profissional" (click)="verPerfil()">
+          <div class="info-profissional">
+            <div class="avatar">{{prestador.avatar}}</div>
+            <div class="dados">
+              <strong>{{prestador.nome}}</strong>
+              <span>{{prestador.profissao}}</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="card-profissional" (click)="verPerfil()">
-      <div class="info-profissional">
-        <div class="avatar">B</div>
-        <div class="dados">
-          <strong>João Silva</strong>
-          <span>Eletricista</span>
-        </div>
-      </div>
-    </div>
+      }
+    } @else {
+      <p class="mensagem-vazia">Nenhum profissional encontrado para essa categoria.</p>
+    }
+    @if(categoriaSelecionada){
+      <button class="btn-limpar-filtro" (click)="limparFiltro()">Limpar Filtro</button>
+    }
   </div>
 
   <div class="servicos-ativos">
@@ -51,7 +36,7 @@
 
     <div class="card-profissional-servico ativo">
       <div class="info-profissional">
-        <div class="avatar">A</div>
+        <div class="avatar">J</div>
         <div class="dados">
           <strong>João Silva</strong>
           <span>Eletricista</span>

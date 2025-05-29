@@ -12,7 +12,38 @@ import { PopupAvaliacaoComponent } from '../shared/popup-avaliacao/popup-avaliac
 })
 export class HomeComponent {
 
+  categoriaSelecionada: string | null = null;
+
   constructor(private router: Router, private dialog: MatDialog) {}
+
+  categorias = [
+    { imagem: 'marceneiro', servico: 'Marceneiro' },
+    { imagem: 'eletricista', servico: 'Eletricista' },
+    { imagem: 'fazTudo', servico: 'Faz Tudo' },
+    { imagem: 'encanador', servico: 'Encanador' },
+    { imagem: 'pedreiro', servico: 'Pedreiro' },
+  ];
+
+  profissionais = [
+    { nome: 'João Silva', profissao: 'Eletricista', avatar: 'J', servico: 'eletricista' },
+    { nome: 'Maria Santos', profissao: 'Encanador', avatar: 'M', servico: 'encanador' },
+    { nome: 'Carlos Pinto', profissao: 'Faz Tudo', avatar: 'C', servico: 'fazTudo' },
+    { nome: 'Lúcia Rocha', profissao: 'Encanador', avatar: 'L',  servico: 'encanador' },
+    { nome: 'Alberto Junior', profissao: 'Pedreiro', avatar: 'A',  servico: 'pedreiro' },
+  ];
+
+  get profissionaisFiltrados() {
+    if (!this.categoriaSelecionada) return this.profissionais;
+    return this.profissionais.filter(p => p.servico === this.categoriaSelecionada);
+  }
+
+  selecionarCategoria(categoria: string) {
+    this.categoriaSelecionada = categoria;
+  }
+
+  limparFiltro() {
+    this.categoriaSelecionada = null;
+  }
 
   verPerfil() {
     this.router.navigate(['perfilPrestador']);
