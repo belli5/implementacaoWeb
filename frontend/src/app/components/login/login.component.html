@@ -1,0 +1,19 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1>Bem Vindo(a) ao <span>ContrataJá!</span></h1>
+
+    <form class="form">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Digite seu email" (ngModel)="email" name="email" required />
+
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Digite sua senha" (ngModel)="senha" name="senha" required />
+
+      <button (click)="onSubmit()" type="submit">Entrar</button>
+    </form>
+
+    <p class="cadastro">
+      Não possui Conta? <a href="cadastro">Fazer Cadastro</a>
+    </p>
+  </div>
+</div>

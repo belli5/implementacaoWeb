@@ -1,15 +1,23 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-perfil-prestador',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, MatFormFieldModule, MatInputModule, MatButtonModule, FormsModule],
   templateUrl: './perfil-prestador.component.html',
   styleUrl: './perfil-prestador.component.css'
 })
 export class PerfilPrestadorComponent {
   mostrarAvaliacoes = false;
+  mostrarEdicaoPerfil = false;
+  nome = 'João Silva';
+  ocupacao = 'Eletricista';
+  descricao = 'O Lorem Ipsum é um texto modelo da indústria tipográfica...';
 
   listaAvaliacoes = [
     {
@@ -26,8 +34,17 @@ export class PerfilPrestadorComponent {
 
   constructor(private router: Router) {}
 
+  // função pra identificar later
+  usuarioPrestador = true;
+
   toggleAvaliacoes() {
     this.mostrarAvaliacoes = !this.mostrarAvaliacoes;
+    this.mostrarEdicaoPerfil = false;
+  }
+
+  toggleEditarPerfil() {
+    this.mostrarEdicaoPerfil = !this.mostrarEdicaoPerfil;
+    this.mostrarAvaliacoes = false;
   }
 
   addFavoritos(){
@@ -36,5 +53,10 @@ export class PerfilPrestadorComponent {
 
   contratarServico(){
     this.router.navigate(['contratacaoServico']);
+  }
+
+  salvar() {
+    console.log('Perfil salvo:', this.nome, this.ocupacao, this.descricao);
+    this.toggleEditarPerfil();
   }
 }

@@ -1,0 +1,23 @@
+<h2>Serviço concluído!</h2>
+<p>Avalie o trabalhador que realizou o serviço.</p>
+
+<div class="avatar">
+  <span>{{ data.nome[0] }}</span>
+</div>
+<strong class="nome">{{ data.nome }}</strong>
+
+<div class="estrelas">
+  @for (i of [1, 2, 3, 4, 5]; track i) {
+    <span
+      class="estrela"
+      [class.selecionada]="avaliacao >= i"
+      (click)="selecionarEstrela(i)">
+      ★
+    </span>
+  }
+</div>
+
+<div class="botoes">
+  <button mat-button (click)="fechar()">Fechar</button>
+  <button mat-raised-button color="primary" (click)="enviarAvaliacao()">Avaliar</button>
+</div>
