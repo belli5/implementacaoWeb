@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-cliente',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class PerfilClienteComponent {
 
+  constructor(private router: Router){}
+
+  abrirHistorico() {
+    this.router.navigate(['historico']);
+    console.log('Abrir histórico acionado');
+    // navegação ou dialog
+  }
 }

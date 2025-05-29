@@ -59,4 +59,8 @@ export class PerfilPrestadorComponent {
     console.log('Perfil salvo:', this.nome, this.ocupacao, this.descricao);
     this.toggleEditarPerfil();
   }
+
+  cancelar() {
+    this.toggleEditarPerfil();
+  }
 }
