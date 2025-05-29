@@ -5,108 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/bdd-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/classes/org/example/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/css/maven-base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/css/maven-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/css/print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/css/site.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/dependency-info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/collapsed.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/expanded.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/external.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/icon_error_sml.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/icon_info_sml.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/icon_success_sml.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/icon_warning_sml.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/logos/build-by-maven-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/logos/build-by-maven-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/logos/maven-feather.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/images/newwindow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/plugin-management.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/plugins.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/project-info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/target/site/summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dominio-prestacaoServicos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/eletricista.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/encanador.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/fazTudo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/mainIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/marceneiro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/pedreiro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.config.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.routes.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/favoritos/favoritos.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/favoritos/favoritos.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/favoritos/favoritos.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/favoritos/favoritos.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/historico/historico.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/historico/historico.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/historico/historico.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/historico/historico.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/perfil-prestador/perfil-prestador.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/perfil-prestador/perfil-prestador.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/perfil-prestador/perfil-prestador.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/perfil-prestador/perfil-prestador.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/contratacao-servico/contratacao-servico.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/contratacao-servico/contratacao-servico.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/contratacao-servico/contratacao-servico.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/contratacao-servico/contratacao-servico.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/footer/footer.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/footer/footer.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/footer/footer.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/footer/footer.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/header/header.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/header/header.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/header/header.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/shared/header/header.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/infraestrutura/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/target/classes/org/example/Main.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +117,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ImplementacaoWeb2Application.executor": "Run",
-    "git-widget-placeholder": "alteracoes",
+    "git-widget-placeholder": "Rebasing controllers",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
@@ -264,7 +163,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (frontend)">
+  <component name="RunManager" selected="JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos">
     <configuration name="CucumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dominio-prestacaoServicos" />
       <extension name="coverage">
