@@ -1,0 +1,17 @@
+com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpaRepositoryImpl.class
+com/seuservico/infraestrutura/persistencia/jpa/MapperGeral.class
+com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpa.class
+com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpaRepository.class
+com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpaRepository.class
+com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpaRepository.class
+com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpaRepositoryImpl.class
+com/seuservico/infraestrutura/persistencia/jpa/enderecojpa/EnderecoJpa.class
+com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpaRepository.class
+com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpaRepositoryImpl.class
+com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpaRepositoryImpl.class
+com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpaRepository.class
+com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpa.class
+com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpa.class
+com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpa.class
+com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpaRepositoryImpl.class
+com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpa.class

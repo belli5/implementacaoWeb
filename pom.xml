@@ -9,9 +9,12 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
+    <name>implementacaoWeb</name>
+    <description>Projeto multi-módulo com infraestrutura, domínio e apresentação</description>
+
     <modules>
         <module>dominio-prestacaoServicos</module>
-        <module>presentation</module>
+        <module>apresentacao-back</module>
         <module>infraestrutura</module>
     </modules>
 
@@ -26,4 +29,16 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

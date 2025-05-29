@@ -1,0 +1,17 @@
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpaRepositoryImpl.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpaRepository.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpaRepositoryImpl.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpaRepositoryImpl.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/enderecojpa/EnderecoJpa.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpaRepositoryImpl.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpaRepository.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpa.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpaRepository.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpa.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpaRepositoryImpl.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpa.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpa.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpa.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpaRepository.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpaRepository.java
+/home/guilherme/implementacaoWeb/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/MapperGeral.java
