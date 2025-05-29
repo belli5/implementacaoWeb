@@ -2,6 +2,9 @@ package com.exemple.implementacaoweb2.prestador;
 
 import com.exemple.implementacaoweb2.prestacaoServico.PrestacaoServico;
 
+import java.util.List;
+import java.util.Optional;
+
 public class PrestadorService {
 
     private final PrestadorRepository prestadorRepository;
@@ -19,12 +22,23 @@ public class PrestadorService {
     }
 
     public void atualizarPrestador(Prestador prestador) throws Exception {
-        for(PrestacaoServico servico : prestador.getServicos()){
-            if(servico.getDescricao() == null || servico.getDescricao().isEmpty()){
+        for (PrestacaoServico servico : prestador.getServicos()) {
+            if (servico.getDescricao() == null || servico.getDescricao().isEmpty()) {
                 throw new Exception("Descrição do serviço é obrigatória.");
             }
         }
         prestadorRepository.save(prestador);
     }
 
+    public Optional<Prestador> buscarPorId(int id) {
+        return prestadorRepository.findById(id);
+    }
+
+    public List<Prestador> buscarPorServico(String categoria) {
+        return prestadorRepository.findByServico(categoria);
+    }
+
+    public List<Prestador> listarTodos() {
+        return prestadorRepository.findAll();
+    }
 }

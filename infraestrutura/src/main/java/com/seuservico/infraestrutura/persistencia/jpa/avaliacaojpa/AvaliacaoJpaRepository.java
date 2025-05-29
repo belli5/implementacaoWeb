@@ -1,3 +1,4 @@
+// AvaliacaoJpaRepository.java
 package com.seuservico.infraestrutura.persistencia.jpa.avaliacaojpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -7,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AvaliacaoJpaRepository extends JpaRepository<AvaliacaoJpa, Integer> {
-
     List<AvaliacaoJpa> findByPrestadorId(int prestadorId);
-
 }

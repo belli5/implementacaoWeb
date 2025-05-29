@@ -5,19 +5,19 @@ import java.util.Optional;
 
 public interface PrestacaoServicoRepository {
 
-    PrestacaoServico save(PrestacaoServico prestacaoServico);
+    public PrestacaoServico save(PrestacaoServico prestacaoServico);
 
-    void delete(int id);
+    public void delete(int id);
 
-    void update(int id);
+    public void update(int id);
 
-    Optional<PrestacaoServico> findById(int id);
+    public Optional<PrestacaoServico> findById(int id);
 
-    List<PrestacaoServico> buscarPorBairro(String bairro);
+    public List<PrestacaoServico> buscarPorBairro(String bairro);
 
-    List<PrestacaoServico> buscarPorCategoria(String categoria);
+    public List<PrestacaoServico> buscarPorCategoria(String categoria);
 
-    List<PrestacaoServico> buscarPorPrestadorId(int prestadorId);
+    public List<PrestacaoServico> buscarPorPrestadorId(int prestadorId);
 
-    List<PrestacaoServico> findAll();
+    public List<PrestacaoServico> findAll();
 }

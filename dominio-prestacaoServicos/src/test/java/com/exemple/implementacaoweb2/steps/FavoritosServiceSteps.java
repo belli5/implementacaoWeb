@@ -5,6 +5,7 @@ import com.exemple.implementacaoweb2.compartilhados.Endereco;
 import com.exemple.implementacaoweb2.prestacaoServico.PrestacaoServico;
 import com.exemple.implementacaoweb2.prestador.Prestador;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.pt.*;
 
 import java.util.List;
@@ -70,34 +71,34 @@ public class FavoritosServiceSteps {
         mensagemResposta = servicoDeFavoritos.adicionarFavorito(novoPrestador);
     }
 
-    @Então("o sistema adiciona o prestador à lista de favoritos")
+    @Then("o sistema adiciona o prestador à lista de favoritos")
     public void sistema_adiciona_prestador() {
         assertTrue(servicoDeFavoritos.getFavoritos().contains(prestador));
     }
 
-    @Então("confirma a operação")
+    @Then("confirma a operação")
     public void confirma_operacao() {
         assertEquals("Prestador adicionado com sucesso!", mensagemResposta);
     }
 
-    @Então("o sistema não duplica o prestador na lista")
+    @Then("o sistema não duplica o prestador na lista")
     public void sistema_nao_duplica_prestador() {
         long count = servicoDeFavoritos.getFavoritos().stream()
                 .filter(p -> p.getNome().equals(prestador.getNome())).count();
         assertEquals(1, count);
     }
 
-    @Então("informa que ele já está favoritado")
+    @Then("informa que ele já está favoritado")
     public void informa_ja_favoritado() {
         assertEquals("Prestador já está nos favoritos.", mensagemResposta);
     }
 
-    @Então("o sistema rejeita a inclusão")
+    @Then("o sistema rejeita a inclusão")
     public void sistema_rejeita_inclusao() {
         assertFalse(mensagemResposta.contains("sucesso"));
     }
 
-    @Então("informa que o limite foi atingido")
+    @Then("informa que o limite foi atingido")
     public void informa_limite_atingido() {
         assertEquals("Limite de favoritos atingido.", mensagemResposta);
     }

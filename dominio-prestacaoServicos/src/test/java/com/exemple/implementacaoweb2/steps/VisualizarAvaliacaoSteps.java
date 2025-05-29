@@ -3,6 +3,7 @@ package com.exemple.implementacaoweb2.steps;
 import com.exemple.implementacaoweb2.avaliacao.Avaliacao;
 import com.exemple.implementacaoweb2.avaliacao.TipoAvaliacao;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.pt.*;
 
 import java.util.*;
@@ -45,7 +46,7 @@ public class VisualizarAvaliacaoSteps {
                 .collect(Collectors.toList());
     }
 
-    @Então("o sistema retorna todas as avaliações associadas a seus serviços concluídos, {string}, {string} e {string}")
+    @Then("o sistema retorna todas as avaliações associadas a seus serviços concluídos, {string}, {string} e {string}")
     public void retornoComAvaliacoes(String a1, String a2, String a3) {
         assertEquals(3, resultadoVisualizacao.size());
 
@@ -58,7 +59,7 @@ public class VisualizarAvaliacaoSteps {
         assertTrue(comentarios.contains("bem humorado"));
     }
 
-    @Então("o sistema informa que não há avaliações registradas para esse prestador")
+    @Then("o sistema informa que não há avaliações registradas para esse prestador")
     public void retornoSemAvaliacoes() {
         assertTrue(resultadoVisualizacao.isEmpty());
     }

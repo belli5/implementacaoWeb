@@ -1,5 +1,6 @@
 package com.exemple.implementacaoweb2.steps;
 
+import io.cucumber.java.en.Then;
 import io.cucumber.java.pt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -56,17 +57,17 @@ public class AvaliacaoPrestadorSteps {
         }
     }
 
-    @Então("a avaliação é registrada com sucesso no sistema")
+    @Then("a avaliação é registrada com sucesso no sistema")
     public void avaliacao_registrada_com_sucesso() {
         assertTrue(avaliacaoRegistrada);
     }
 
-    @Então("o sistema rejeita a avaliação")
+    @Then("o sistema rejeita a avaliação")
     public void sistema_rejeita_avaliacao() {
         assertFalse(avaliacaoRegistrada);
     }
 
-    @Então("o sistema recusa a avaliação")
+    @Then("o sistema recusa a avaliação")
     public void sistema_recusa_avaliacao() {
         assertFalse(avaliacaoRegistrada);
     }

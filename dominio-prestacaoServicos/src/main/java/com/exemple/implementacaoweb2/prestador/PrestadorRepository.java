@@ -5,15 +5,15 @@ import java.util.Optional;
 
 public interface PrestadorRepository {
 
-    Prestador save(Prestador prestador);
+    public Prestador save(Prestador prestador);
 
-    void delete(int id);
+    public void delete(int id);
 
-    void update(int id);
+    public void update(int id);
 
-    Optional<Prestador> findById(int id);
+    public Optional<Prestador> findById(int id);
 
-    List<Prestador> findByServico(String servico);
+    public List<Prestador> findByServico(String servico);
 
-    List<Prestador> findAll();
+    public List<Prestador> findAll();
 }

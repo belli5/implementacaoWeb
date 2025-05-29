@@ -4,17 +4,17 @@ import java.util.List;
 
 public interface ClienteRepository {
 
-    Cliente save(Cliente cliente);
+    public Cliente save(Cliente cliente);
 
-    void delete(int id);
+    public void delete(int id);
 
-    void update(int id);
+    public void update(int id);
 
-    List<Cliente> findByNome(String nome);
+    public List<Cliente> findByNome(String nome);
 
-    List<Cliente> findByEmail(String email);
+    public List<Cliente> findByEmail(String email);
 
-    List<Cliente> findByTelefone(String telefone);
+    public List<Cliente> findByTelefone(String telefone);
 
-    List<Cliente> findByPrestadoresFavoritosId(int prestadorId);
+    public List<Cliente> findByPrestadoresFavoritosId(int prestadorId);
 }

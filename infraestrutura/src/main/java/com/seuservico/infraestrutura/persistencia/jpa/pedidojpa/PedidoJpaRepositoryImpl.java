@@ -10,7 +10,6 @@ import com.seuservico.infraestrutura.persistencia.jpa.prestacaoservicojpa.Presta
 import com.seuservico.infraestrutura.persistencia.jpa.prestacaoservicojpa.PrestacaoServicoJpaRepository;
 import com.seuservico.infraestrutura.persistencia.jpa.prestadorjpa.PrestadorJpa;
 import com.seuservico.infraestrutura.persistencia.jpa.prestadorjpa.PrestadorJpaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -21,34 +20,34 @@ import java.util.stream.Collectors;
 @Repository
 public class PedidoJpaRepositoryImpl implements PedidoRepository {
 
-    @Autowired
-    private PedidoJpaRepository pedidoJpaRepository;
+    private final PedidoJpaRepository pedidoJpaRepository;
+    private final ClienteJpaRepository clienteJpaRepository;
+    private final PrestadorJpaRepository prestadorJpaRepository;
+    private final PrestacaoServicoJpaRepository prestacaoServicoJpaRepository;
 
-    @Autowired
-    private ClienteJpaRepository clienteJpaRepository;
-
-    @Autowired
-    private PrestadorJpaRepository prestadorJpaRepository;
-
-    @Autowired
-    private PrestacaoServicoJpaRepository prestacaoServicoJpaRepository;
+    public PedidoJpaRepositoryImpl(
+            PedidoJpaRepository pedidoJpaRepository,
+            ClienteJpaRepository clienteJpaRepository,
+            PrestadorJpaRepository prestadorJpaRepository,
+            PrestacaoServicoJpaRepository prestacaoServicoJpaRepository
+    ) {
+        this.pedidoJpaRepository = pedidoJpaRepository;
+        this.clienteJpaRepository = clienteJpaRepository;
+        this.prestadorJpaRepository = prestadorJpaRepository;
+        this.prestacaoServicoJpaRepository = prestacaoServicoJpaRepository;
+    }
 
     @Override
     public Pedido save(Pedido pedido) {
         ClienteJpa clienteJpa = clienteJpaRepository.findById(pedido.getClienteId())
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
-
         PrestadorJpa prestadorJpa = prestadorJpaRepository.findById(pedido.getPrestadorId())
                 .orElseThrow(() -> new RuntimeException("Prestador não encontrado"));
-
         PrestacaoServicoJpa servicoJpa = prestacaoServicoJpaRepository.findById(pedido.getServico().getId())
                 .orElseThrow(() -> new RuntimeException("Serviço não encontrado"));
 
         PedidoJpa pedidoJpa = MapperGeral.toPedidoJpa(pedido, clienteJpa, prestadorJpa, servicoJpa);
-
-        PedidoJpa saved = pedidoJpaRepository.save(pedidoJpa);
-
-        return MapperGeral.toPedido(saved);
+        return MapperGeral.toPedido(pedidoJpaRepository.save(pedidoJpa));
     }
 
     @Override
@@ -58,13 +57,10 @@ public class PedidoJpaRepositoryImpl implements PedidoRepository {
 
     @Override
     public void update(int id) {
-        PedidoJpa pedidoJpa = pedidoJpaRepository.findById(id)
+        PedidoJpa existente = pedidoJpaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
-
-        // Exemplo simples de atualização
-        pedidoJpa.setStatus(StatusPedido.CONCLUIDO);
-
-        pedidoJpaRepository.save(pedidoJpa);
+        existente.setStatus(StatusPedido.CONCLUIDO);
+        pedidoJpaRepository.save(existente);
     }
 
     @Override
@@ -75,39 +71,35 @@ public class PedidoJpaRepositoryImpl implements PedidoRepository {
 
     @Override
     public List<Pedido> findByClienteId(int clienteId) {
-        return pedidoJpaRepository.findByCliente_Id(clienteId)
-                .stream()
+        return pedidoJpaRepository.findByCliente_Id(clienteId).stream()
                 .map(MapperGeral::toPedido)
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Pedido> findByPrestadorId(int prestadorId) {
-        return pedidoJpaRepository.findByPrestador_Id(prestadorId)
-                .stream()
+        return pedidoJpaRepository.findByPrestador_Id(prestadorId).stream()
                 .map(MapperGeral::toPedido)
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Pedido> findByStatus(StatusPedido status) {
-        return pedidoJpaRepository.findByStatus(status)
-                .stream()
+        return pedidoJpaRepository.findByStatus(status).stream()
                 .map(MapperGeral::toPedido)
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Pedido> findByData(LocalDateTime data) {
-        return pedidoJpaRepository.findByData(data)
-                .stream()
+        return pedidoJpaRepository.findByData(data).stream()
                 .map(MapperGeral::toPedido)
                 .collect(Collectors.toList());
     }
 
     @Override
     public boolean prestadorEstaDisponivel(int prestadorId, LocalDateTime data) {
-        List<PedidoJpa> pedidos = pedidoJpaRepository.findByPrestador_Id(prestadorId);
-        return pedidos.stream().noneMatch(p -> p.getData().isEqual(data));
+        return pedidoJpaRepository.findByPrestador_Id(prestadorId).stream()
+                .noneMatch(p -> p.getData().isEqual(data));
     }
 }

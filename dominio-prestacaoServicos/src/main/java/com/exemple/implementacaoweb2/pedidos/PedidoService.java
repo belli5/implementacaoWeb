@@ -1,11 +1,15 @@
 package com.exemple.implementacaoweb2.pedidos;
 
+import com.exemple.implementacaoweb2.strategy.VerificacaoDisponibilidadeStrategy;
+
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 public class PedidoService {
 
     private final PedidoRepository pedidoRepository;
+    private VerificacaoDisponibilidadeStrategy verificacaoDisponibilidade;
 
     public PedidoService(PedidoRepository pedidoRepository) {
         this.pedidoRepository = pedidoRepository;
@@ -50,5 +54,21 @@ public class PedidoService {
         );
 
         return pedidoRepository.save(novoPedido);
+    }
+
+    public List<Pedido> buscarPorPrestadorId(int prestadorId) {
+        return pedidoRepository.findByPrestadorId(prestadorId);
+    }
+
+    public List<Pedido> buscarPorClienteId(int clienteId) {
+        return pedidoRepository.findByClienteId(clienteId);
+    }
+
+    public List<Pedido> buscarPorStatus(StatusPedido status) {
+        return pedidoRepository.findByStatus(status);
+    }
+
+    public VerificacaoDisponibilidadeStrategy setVerificacaoDisponibilidade(VerificacaoDisponibilidadeStrategy strategy) {
+        return this.verificacaoDisponibilidade = strategy;
     }
 }

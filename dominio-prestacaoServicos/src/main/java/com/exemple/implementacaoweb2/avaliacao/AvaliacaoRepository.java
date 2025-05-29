@@ -4,10 +4,10 @@ import java.util.List;
 
 public interface AvaliacaoRepository {
 
-    Avaliacao save(Avaliacao avaliacao);
-    void delete(int id);
-    void update(int id);
+    public Avaliacao save(Avaliacao avaliacao);
+    public void delete(int id);
+    public void update(int id);
 
-    List<Avaliacao> findByPrestadorId(int prestadorId);
+    public List<Avaliacao> findByPrestadorId(int prestadorId);
 
 }

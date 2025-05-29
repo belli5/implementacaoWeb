@@ -1,8 +1,13 @@
 package com.exemple.implementacaoweb2.cliente;
 
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
 public class ClienteService {
 
-    private final ClienteRepository clienteRepository;
+    public final ClienteRepository clienteRepository;
 
     public ClienteService(ClienteRepository clienteRepository) {
         this.clienteRepository = clienteRepository;
@@ -18,5 +23,21 @@ public class ClienteService {
 
     public void atualizarCliente(int id) {
         clienteRepository.update(id);
+    }
+
+    public List<Cliente> buscarPorNome(String nome) {
+        return clienteRepository.findByNome(nome);
+    }
+
+    public List<Cliente> buscarPorEmail(String email) {
+        return clienteRepository.findByEmail(email);
+    }
+
+    public List<Cliente> buscarPorTelefone(String telefone) {
+        return clienteRepository.findByTelefone(telefone);
+    }
+
+    public List<Cliente> buscarPorPrestadorFavorito(int prestadorId) {
+        return clienteRepository.findByPrestadoresFavoritosId(prestadorId);
     }
 }

@@ -11,19 +11,29 @@ public class AvaliacaoService implements IAvaliacaoService {
     }
 
     @Override
-    public Avaliacao cadastrarAvalicao(Avaliacao avaliacao) {
+    public Avaliacao cadastrarAvaliacao(Avaliacao avaliacao) {
         return avaliacaoRepository.save(avaliacao);
     }
 
     @Override
-    public void deletarAvalicao(int id) {
+    public void deletarAvaliacao(int id) {
         avaliacaoRepository.delete(id);
     }
 
     @Override
-    public void atualizarAvalicao(int id) {
-        avaliacaoRepository.update(id);
+    public Avaliacao atualizarAvaliacao(int id, Avaliacao novosDados) {
+        // Aqui você pode buscar o existente e atualizar — ou simplesmente sobrescrever com os novos dados.
+        Avaliacao atualizada = new Avaliacao(
+                id,
+                novosDados.getPrestadorId(),
+                novosDados.getClienteId(),
+                novosDados.getNota(),
+                novosDados.getComentario(),
+                novosDados.getTipoAvaliacao()
+        );
+        return avaliacaoRepository.save(atualizada);
     }
+
 
     @Override
     public List<Avaliacao> buscarAvaliacoesDoPrestador(int prestadorId) {

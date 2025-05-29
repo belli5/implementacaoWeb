@@ -1,60 +1,117 @@
-CREATE TABLE cliente (
-                         id INT PRIMARY KEY,
-                         nome VARCHAR(100),
-                         email VARCHAR(100),
-                         telefone VARCHAR(20),
-                         rua VARCHAR(100),
-                         bairro VARCHAR(100),
-                         cidade VARCHAR(100),
-                         estado VARCHAR(100)
+CREATE TABLE Cliente (
+    id INTEGER PRIMARY KEY,
+    nome VARCHAR,
+    email VARCHAR,
+    telefone VARCHAR,
+    rua VARCHAR,
+    cidade VARCHAR,
+    bairro VARCHAR,
+    estado VARCHAR
 );
 
-CREATE TABLE prestador (
-                           id INT PRIMARY KEY,
-                           nome VARCHAR(100),
-                           email VARCHAR(100),
-                           telefone VARCHAR(20),
-                           rua VARCHAR(100),
-                           bairro VARCHAR(100),
-                           cidade VARCHAR(100),
-                           estado VARCHAR(100)
+CREATE TABLE Prestador (
+    id INTEGER PRIMARY KEY,
+    nome VARCHAR,
+    email VARCHAR,
+    telefone VARCHAR,
+    rua VARCHAR,
+    bairro VARCHAR,
+    cidade VARCHAR,
+    estado VARCHAR
 );
 
-CREATE TABLE prestacao_servico (
-                                   id INT PRIMARY KEY,
-                                   descricao TEXT,
-                                   valor FLOAT,
-                                   bairro VARCHAR(100),
-                                   categoria VARCHAR(100),
-                                   prestador_id INT REFERENCES prestador(id)
+CREATE TABLE Pedido (
+    id INTEGER PRIMARY KEY,
+    data DATE,
+    status VARCHAR,
+    fk_Servicos_nome VARCHAR,
+    fk_Prestador_id INTEGER,
+    fk_Cliente_id INTEGER
 );
 
-CREATE TABLE avaliacao (
-                           id INT PRIMARY KEY,
-                           prestador_id INT REFERENCES prestador(id),
-                           cliente_id INT REFERENCES cliente(id),
-                           nota FLOAT,
-                           comentario TEXT,
-                           tipo_avaliacao VARCHAR(50)
+CREATE TABLE Servicos (
+    nome VARCHAR PRIMARY KEY,
+    categoria VARCHAR,
+    descricao VARCHAR
 );
 
-CREATE TABLE pedido (
-                        id INT PRIMARY KEY,
-                        prestador_id INT REFERENCES prestador(id),
-                        cliente_id INT REFERENCES cliente(id),
-                        data TIMESTAMP,
-                        status VARCHAR(50),
-                        servico_id INT REFERENCES prestacao_servico(id)
+CREATE TABLE cliente_avalia (
+    fk_Prestador_id INTEGER,
+    fk_Cliente_id INTEGER,
+    id INTEGER PRIMARY KEY,
+    nota INTEGER,
+    comentario VARCHAR
 );
 
-CREATE TABLE cliente_prestador_favorito (
-                                            cliente_id INT REFERENCES cliente(id),
-                                            prestador_id INT REFERENCES prestador(id),
-                                            PRIMARY KEY (cliente_id, prestador_id)
+CREATE TABLE prestador_avalia (
+    fk_Prestador_id INTEGER,
+    fk_Cliente_id INTEGER,
+    id INTEGER PRIMARY KEY,
+    nota INTEGER,
+    comentario VARCHAR
 );
 
-CREATE TABLE historico_servico_cliente (
-                                           cliente_id INT REFERENCES cliente(id),
-                                           servico_id INT REFERENCES prestacao_servico(id),
-                                           PRIMARY KEY (cliente_id, servico_id)
+CREATE TABLE oferece (
+    fk_Servicos_nome VARCHAR,
+    fk_Prestador_id INTEGER
 );
+
+CREATE TABLE favoritados (
+    fk_Cliente_id INTEGER,
+    fk_Prestador_id INTEGER
+);
+
+ALTER TABLE Pedido ADD CONSTRAINT FK_Pedido_2
+    FOREIGN KEY (fk_Servicos_nome)
+    REFERENCES Servicos (nome)
+    ON DELETE CASCADE;
+
+ALTER TABLE Pedido ADD CONSTRAINT FK_Pedido_3
+    FOREIGN KEY (fk_Prestador_id)
+    REFERENCES Prestador (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE Pedido ADD CONSTRAINT FK_Pedido_4
+    FOREIGN KEY (fk_Cliente_id)
+    REFERENCES Cliente (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE cliente_avalia ADD CONSTRAINT FK_cliente_avalia_2
+    FOREIGN KEY (fk_Prestador_id)
+    REFERENCES Prestador (id)
+    ON DELETE SET NULL;
+
+ALTER TABLE cliente_avalia ADD CONSTRAINT FK_cliente_avalia_3
+    FOREIGN KEY (fk_Cliente_id)
+    REFERENCES Cliente (id)
+    ON DELETE SET NULL;
+
+ALTER TABLE prestador_avalia ADD CONSTRAINT FK_prestador_avalia_2
+    FOREIGN KEY (fk_Prestador_id)
+    REFERENCES Prestador (id)
+    ON DELETE SET NULL;
+
+ALTER TABLE prestador_avalia ADD CONSTRAINT FK_prestador_avalia_3
+    FOREIGN KEY (fk_Cliente_id)
+    REFERENCES Cliente (id)
+    ON DELETE SET NULL;
+
+ALTER TABLE oferece ADD CONSTRAINT FK_oferece_1
+    FOREIGN KEY (fk_Servicos_nome)
+    REFERENCES Servicos (nome)
+    ON DELETE RESTRICT;
+
+ALTER TABLE oferece ADD CONSTRAINT FK_oferece_2
+    FOREIGN KEY (fk_Prestador_id)
+    REFERENCES Prestador (id)
+    ON DELETE SET NULL;
+
+ALTER TABLE favoritados ADD CONSTRAINT FK_favoritados_1
+    FOREIGN KEY (fk_Cliente_id)
+    REFERENCES Cliente (id)
+    ON DELETE SET NULL;
+
+ALTER TABLE favoritados ADD CONSTRAINT FK_favoritados_2
+    FOREIGN KEY (fk_Prestador_id)
+    REFERENCES Prestador (id)
+    ON DELETE SET NULL;

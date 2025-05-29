@@ -1,9 +1,9 @@
+// AvaliacaoJpaRepositoryImpl.java
 package com.seuservico.infraestrutura.persistencia.jpa.avaliacaojpa;
 
 import com.exemple.implementacaoweb2.avaliacao.Avaliacao;
 import com.exemple.implementacaoweb2.avaliacao.AvaliacaoRepository;
 import com.seuservico.infraestrutura.persistencia.jpa.MapperGeral;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,8 +12,11 @@ import java.util.stream.Collectors;
 @Repository
 public class AvaliacaoJpaRepositoryImpl implements AvaliacaoRepository {
 
-    @Autowired
-    private AvaliacaoJpaRepository avaliacaoJpaRepository;
+    private final AvaliacaoJpaRepository avaliacaoJpaRepository;
+
+    public AvaliacaoJpaRepositoryImpl(AvaliacaoJpaRepository avaliacaoJpaRepository) {
+        this.avaliacaoJpaRepository = avaliacaoJpaRepository;
+    }
 
     @Override
     public Avaliacao save(Avaliacao avaliacao) {
@@ -32,8 +35,8 @@ public class AvaliacaoJpaRepositoryImpl implements AvaliacaoRepository {
         AvaliacaoJpa avaliacaoJpa = avaliacaoJpaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Avaliação não encontrada"));
 
-        // Exemplo de atualização (simples)
-        avaliacaoJpa.setNota(5.0f); // Atualiza a nota para exemplo
+        // Exemplo de atualização — modificar a nota
+        avaliacaoJpa.setNota(5.0f);
 
         avaliacaoJpaRepository.save(avaliacaoJpa);
     }

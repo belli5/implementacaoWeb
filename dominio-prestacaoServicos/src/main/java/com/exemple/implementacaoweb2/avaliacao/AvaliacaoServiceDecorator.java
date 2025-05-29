@@ -11,21 +11,21 @@ public class AvaliacaoServiceDecorator implements IAvaliacaoService {
     }
 
     @Override
-    public Avaliacao cadastrarAvalicao(Avaliacao avaliacao) {
+    public Avaliacao cadastrarAvaliacao(Avaliacao avaliacao) {
         System.out.println("Cadastrando avaliação...");
-        return avaliacaoService.cadastrarAvalicao(avaliacao);
+        return avaliacaoService.cadastrarAvaliacao(avaliacao);
     }
 
     @Override
-    public void deletarAvalicao(int id) {
+    public void deletarAvaliacao(int id) {
         System.out.println("Deletando avaliação id: " + id);
-        avaliacaoService.deletarAvalicao(id);
+        avaliacaoService.deletarAvaliacao(id);
     }
 
     @Override
-    public void atualizarAvalicao(int id) {
+    public Avaliacao atualizarAvaliacao(int id, Avaliacao novosDados) {
         System.out.println("Atualizando avaliação id: " + id);
-        avaliacaoService.atualizarAvalicao(id);
+        return avaliacaoService.atualizarAvaliacao(id, novosDados);
     }
 
     @Override
