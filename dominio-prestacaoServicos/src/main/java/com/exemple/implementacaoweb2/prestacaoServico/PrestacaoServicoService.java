@@ -2,8 +2,9 @@ package com.exemple.implementacaoweb2.prestacaoServico;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Iterator;
 
-public class PrestacaoServicoService {
+public class PrestacaoServicoService implements Iterable<PrestacaoServico>{
 
     private final PrestacaoServicoRepository servicoRepository;
 
@@ -41,5 +42,10 @@ public class PrestacaoServicoService {
 
     public List<PrestacaoServico> buscarTodos() {
         return servicoRepository.findAll();
+    }
+
+    @Override
+    public Iterator<PrestacaoServico> iterator() {
+        return buscarTodos().iterator();
     }
 }

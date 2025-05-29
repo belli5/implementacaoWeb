@@ -1,9 +1,6 @@
 package com.exemple.implementacaoweb2;
 
-import com.exemple.implementacaoweb2.avaliacao.Avaliacao;
-import com.exemple.implementacaoweb2.avaliacao.AvaliacaoService;
-import com.exemple.implementacaoweb2.avaliacao.AvaliacaoRepository;
-import com.exemple.implementacaoweb2.avaliacao.TipoAvaliacao;
+import com.exemple.implementacaoweb2.avaliacao.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,21 +13,19 @@ import static org.mockito.Mockito.*;
 
 public class VisualizarAvaliacoesPrestadorTest {
 
-    private AvaliacaoService avaliacaoService;
+    private IAvaliacaoService avaliacaoService;
     private AvaliacaoRepository avaliacaoRepository;
 
     @BeforeEach
     public void setUp() {
         avaliacaoRepository = mock(AvaliacaoRepository.class);
-        avaliacaoService = new AvaliacaoService(avaliacaoRepository);
+        AvaliacaoService original = new AvaliacaoService(avaliacaoRepository);
+        avaliacaoService = new AvaliacaoServiceDecorator(original);
 
-        // Cenário de avaliações existentes
         Avaliacao avaliacao1 = new Avaliacao(1, 10, 100, 5.0f, "Ótimo serviço!", TipoAvaliacao.CLIENTE_AVALIA_PRESTADOR);
         Avaliacao avaliacao2 = new Avaliacao(2, 10, 101, 4.0f, "Muito bom!", TipoAvaliacao.PRESTADOR_AVALIA_CLIENTE);
 
         when(avaliacaoRepository.findByPrestadorId(10)).thenReturn(Arrays.asList(avaliacao1, avaliacao2));
-
-        // Cenário de nenhuma avaliação
         when(avaliacaoRepository.findByPrestadorId(20)).thenReturn(Collections.emptyList());
     }
 
