@@ -12,11 +12,6 @@
     <name>implementacaoWeb</name>
     <description>Projeto multi-módulo com infraestrutura, domínio e apresentação</description>
 
-    <modules>
-        <module>dominio-prestacaoServicos</module>
-        <module>apresentacao-back</module>
-        <module>infraestrutura</module>
-    </modules>
 
     <dependencyManagement>
         <dependencies>

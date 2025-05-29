@@ -7,15 +7,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="infraestruturaa" />
-        <module name="dominio-prestacaoServicos" />
         <module name="bdd" />
-        <module name="infraestrutura" />
         <module name="persistence" />
-        <module name="apresentacao-back" />
         <module name="domain1" />
+      </profile>
+      <profile name="Annotation profile for backend" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="apresentacao-back" target="1.8" />
+      <module name="dominio-prestacaoServicos" target="1.8" />
+      <module name="infraestrutura" target="1.8" />
       <module name="presentation" target="17" />
       <module name="seuservico" target="17" />
     </bytecodeTargetLevel>
@@ -23,6 +32,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="apresentacao-back" options="" />
+      <module name="backend" options="-parameters" />
       <module name="dominio-prestacaoServicos" options="" />
       <module name="infraestruturaa" options="-parameters" />
       <module name="seuservico" options="-parameters" />

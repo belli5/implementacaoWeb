@@ -10,10 +10,14 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/infraestruturaa/pom.xml" />
         <option value="$PROJECT_DIR$/apresentacao-back/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/apresentacao-back/pom.xml" />
+        <option value="$PROJECT_DIR$/dominio-prestacaoServicos/pom.xml" />
+        <option value="$PROJECT_DIR$/infraestrutura/pom.xml" />
         <option value="$PROJECT_DIR$/presentation/pom.xml" />
       </set>
     </option>
