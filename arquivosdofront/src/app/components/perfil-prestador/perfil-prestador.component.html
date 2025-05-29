@@ -1,0 +1,49 @@
+<div class="top-bar">
+  <h2>👤 João Silva</h2>
+</div>
+
+<main class="container">
+  <div class="profile-card">
+    <div class="profile-pic">
+      <img src="eletricista.png" alt="servico">
+    </div>
+
+    <div class="info">
+      <h3>João Silva</h3>
+      <p class="role">Eletricista</p>
+      <p class="stars">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star empty">★</span>
+        <span class="star empty">★</span>
+        <span class="star empty">★</span>
+      </p>
+      <p class="reviews">Nº de avaliações: 1</p>
+
+      <p class="description">
+        Descrição: O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada.
+      </p>
+
+      <div class="buttons">
+        <!-- <button>Editar Perfil</button> -->
+        <button (click)="toggleAvaliacoes()">Ver Todas as Avaliações</button>
+        <button (click)="contratarServico()">Contratar Serviço</button>
+      </div>
+    </div>
+
+    <div class="favorite-icon" (click)="addFavoritos()">🤍</div>
+  </div>
+
+  @if (mostrarAvaliacoes) {
+    <div class="avaliacoes">
+      @for ( avaliacao of listaAvaliacoes; track $index) {
+        <div class="avaliacao">
+          <p><strong>{{ avaliacao.cliente }}</strong></p>
+          <p>Nota: {{ avaliacao.nota }} ★</p>
+          <p>{{ avaliacao.comentario }}</p>
+          <hr />
+        </div>
+      }
+    </div>
+  }
+</main>
