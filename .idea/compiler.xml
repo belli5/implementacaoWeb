@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="infraestruturaa" />
-        <module name="bdd" />
         <module name="persistence" />
+        <module name="bdd" />
         <module name="domain1" />
       </profile>
       <profile name="Annotation profile for backend" enabled="true">
@@ -16,7 +16,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="backend" />
       </profile>

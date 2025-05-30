@@ -6,114 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/implementacaoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/implementacaoWeb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/src/main/java/com/exemple/apresentacaoback/ApresentacaoBackApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apresentacao-back/src/test/java/com/exemple/apresentacaoback/ApresentacaoBackApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/ImplementacaoWeb2Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/Avaliacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/AvaliacaoServiceDecorator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/IAvaliacaoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/avaliacao/TipoAvaliacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/ClienteRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/ClienteService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/cliente/FavoritosService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/compartilhados/Endereco.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/Pedido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/PedidoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/pedidos/StatusPedido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServico.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServicoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestacaoServico/PrestacaoServicoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestador/Prestador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestador/PrestadorRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestador/PrestadorService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/java/com/exemple/implementacaoweb2/prestador/ServicosService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/FiltrarServicoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ReagendarServicoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/ServicosServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/VisualizarAvaliacoesPrestadorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/runner/CucumberTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/AvaliacaoClienteSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/AvaliacaoPrestadorSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/ContratarServicoSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/EditarPerfilSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/FavoritosServiceSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/FiltrarServicoSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/HistoricoContratacaoSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/ReagendarServicoSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/steps/VisualizarAvaliacaoSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/VisualizarAvaliacoes.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/avaliacaoCliente.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/avaliacaoPrestador.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/contratarServico.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/edicaoPerfilPrestador.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/favoritos.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/filtrarServico.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/historicoContratacao.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/resources/features/reagendarServico.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/MapperGeral.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpaRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpaRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/enderecojpa/EnderecoJpa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpaRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpaRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/java/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpaRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/src/main/resources/db/migration/V1__INIT.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/MapperGeral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/avaliacaojpa/AvaliacaoJpaRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/clientejpa/ClienteJpaRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/enderecojpa/EnderecoJpa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/pedidojpa/PedidoJpaRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/prestacaoservicojpa/PrestacaoServicoJpaRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/com/seuservico/infraestrutura/persistencia/jpa/prestadorjpa/PrestadorJpaRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/classes/db/migration/V1__INIT.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/infraestrutura-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infraestrutura/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +65,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/belli5/implementacaoWeb.git",
-    "accountId": "814cdfc9-5c28-48c5-a7bc-d51520cb9c42"
+    "accountId": "9e4e439a-7e83-495d-bbe7-c3664524972e"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -239,7 +133,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -271,7 +165,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (frontend)">
+  <component name="RunManager" selected="JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos">
     <configuration name="CucumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dominio-prestacaoServicos" />
       <extension name="coverage">
