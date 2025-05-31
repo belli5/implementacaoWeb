@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface ServicoRepository {
     //Precisa??
-    public Optional<Servico> findByName(String name);
+    public Optional<Servico> findByNome(String nome);
     //---------
-    public List<Servico> findByCategory(String category);
+    public List<Servico> findByCategoria(String categoria);
     public List<Servico> findAll();
     public Servico save(Servico servico);
     public void delete(String name);
