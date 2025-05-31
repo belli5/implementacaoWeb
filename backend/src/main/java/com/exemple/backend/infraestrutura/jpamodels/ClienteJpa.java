@@ -27,16 +27,16 @@ public class ClienteJpa implements Serializable {
     @Embedded
     private EnderecoJpa endereco;
 
-    @OneToMany(mappedBy = "Cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<AvaliacaoSobreClienteJpa> avaliacoesRecebidas;
 
-    @OneToMany(mappedBy = "Cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<AvaliacaoSobrePrestadorJpa> avaliacoesFeitas;
 
-    @OneToMany (mappedBy = "Cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany (mappedBy = "cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<FavoritadoJpa> favoritados;
 
-    @OneToMany (mappedBy = "Cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany (mappedBy = "cliente", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<PedidoJpa> pedidosFeitos;
 
     public ClienteJpa(){

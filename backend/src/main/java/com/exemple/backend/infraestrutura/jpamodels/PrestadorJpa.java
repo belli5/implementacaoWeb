@@ -29,19 +29,19 @@ public class PrestadorJpa implements Serializable {
     @Embedded
     private EnderecoJpa endereco;
 
-    @OneToMany(mappedBy = "Prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<OfereceJpa> servicosOferecidos;
 
-    @OneToMany(mappedBy = "Prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<AvaliacaoSobreClienteJpa> avaliacoesFeitas;
 
-    @OneToMany(mappedBy = "Prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<AvaliacaoSobrePrestadorJpa> avaliacoesRecebidas;
 
-    @OneToMany(mappedBy = "Prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<FavoritadoJpa> favoritadoPor;
 
-    @OneToMany(mappedBy = "Prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<PedidoJpa> pedidosRecebidos;
 
 

@@ -19,10 +19,10 @@ public class ServicoJpa implements Serializable {
     @Column(nullable = false)
     private String descricao;
 
-    @OneToMany(mappedBy = "Servico", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "servico", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<OfereceJpa> servicosOferecidos;
 
-    @OneToMany (mappedBy = "Servico", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany (mappedBy = "servico", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<PedidoJpa> pedidosEnvolvidos;
 
     public ServicoJpa(){
