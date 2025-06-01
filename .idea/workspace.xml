@@ -7,25 +7,10 @@
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/repositorys/FavoritadoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/repositorys/FavoritadoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/repositorys/OfereceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/repositorys/OfereceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/repositorys/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/repositorys/PedidoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/repositorys/ServicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/repositorys/ServicoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/AvaliacaoSobrePrestadorJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/AvaliacaoSobrePrestadorJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/FavoritadoJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/FavoritadoJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/OfereceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/OfereceJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobrePrestadorJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobrePrestadorJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/ClienteJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/ClienteJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/OfereceJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/OfereceJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/PedidoJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/PedidoJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/PrestadorJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/PrestadorJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/ServicoJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/ServicoJpaRepository.java" afterDir="false" />
-    </list>
-    <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobreClienteJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobreClienteJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobrePrestadorJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobrePrestadorJpaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/FavoritadoJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/FavoritadoJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorysimpl/FavoritadoJpaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorysimpl/FavoritadoJpaRepositoryImpl.java" afterDir="false" />
     </list>
+    <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,14 +70,6 @@
     &quot;accountId&quot;: &quot;9e4e439a-7e83-495d-bbe7-c3664524972e&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobrePrestadorJpaRepository.java">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="5" changelist="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" />
-        <range start1="2" end1="3" start2="6" end2="12" changelist="e59a65de-398e-4b79-b80b-713d902244d3" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5

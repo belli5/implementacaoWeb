@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface FavoritadoJpaRepository extends JpaRepository<FavoritadoJpa, Integer> {
 
-    List<FavoritadoJpa> findByPrestador_Id(Integer prestador_Id);
-    List<FavoritadoJpa> findByCliente_Id(Integer cliente_Id);
+    List<FavoritadoJpa> findByPrestadorId(Integer prestador_Id);
+    List<FavoritadoJpa> findByClienteId(Integer cliente_Id);
 }
