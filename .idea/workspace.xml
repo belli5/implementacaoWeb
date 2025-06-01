@@ -5,9 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/ClienteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/FavoritadoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/OfereceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/PedidoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/ServicoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/AvaliacaoSobrePrestadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/AvaliacaoSobrePrestadorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/apresentacao/controllers/AvaliacaoSobreClienteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/apresentacao/controllers/AvaliacaoSobrePrestadorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/apresentacao/controllers/ClienteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/apresentacao/controllers/FavoritadoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/apresentacao/controllers/OfereceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/apresentacao/controllers/PedidoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/apresentacao/controllers/PrestadorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/apresentacao/controllers/ServicoController.java" beforeDir="false" />
+    </list>
+    <list id="0f58bd39-4ffa-4fd6-9a0c-22fedd4c8621" name="Changes by Clara" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/FavoritadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/FavoritadoService.java" afterDir="false" />
     </list>
     <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="" />
+    <list id="e54be821-9ecb-440b-b451-efda775385e4" name="Changes by letic" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/PrestadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/PrestadorService.java" afterDir="false" />
+    </list>
+    <list id="5e0d7108-58e9-4ae8-9511-3d5738084995" name="Changes by tony_" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/AvaliacaoSobreClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/AvaliacaoSobreClienteService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

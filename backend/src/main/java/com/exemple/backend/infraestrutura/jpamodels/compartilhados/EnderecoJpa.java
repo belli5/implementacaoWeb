@@ -7,16 +7,16 @@ import java.io.Serializable;
 @Embeddable
 public class EnderecoJpa implements Serializable {
 
-    @Column(nullable = false)
+    @Column
     private String rua;
 
-    @Column(nullable = false)
+    @Column
     private String bairro;
 
-    @Column(nullable = false)
+    @Column
     private String cidade;
 
-    @Column(nullable = false)
+    @Column
     private String estado;
 
     public EnderecoJpa(){

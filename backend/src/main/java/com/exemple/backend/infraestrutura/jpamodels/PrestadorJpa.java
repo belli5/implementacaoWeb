@@ -26,7 +26,7 @@ public class PrestadorJpa implements Serializable {
     @Column(nullable = false)
     private String telefone;
 
-    @Embedded
+    @Embedded(nullable = false)
     private EnderecoJpa endereco;
 
     @OneToMany(mappedBy = "prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)
