@@ -12,5 +12,5 @@ public interface ServicoRepository {
     public List<Servico> findByCategoria(String categoria);
     public List<Servico> findAll();
     public Servico save(Servico servico);
-    public void delete(String name);
+    public void deleteByNome(String nome);
 }

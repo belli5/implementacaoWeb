@@ -18,15 +18,15 @@ public class PedidoJpa implements Serializable {
     private LocalDate data;
 
     @ManyToOne
-    @JoinColumn(name = "nome_Servico", referencedColumnName = "nome")
+    @JoinColumn(name = "servico_Nome", referencedColumnName = "nome")
     private ServicoJpa servico;
 
     @ManyToOne
-    @JoinColumn(name = "Id_Prestador", referencedColumnName = "id")
+    @JoinColumn(name = "prestador_Id", referencedColumnName = "id")
     private PrestadorJpa prestador;
 
     @ManyToOne
-    @JoinColumn(name = "Id_Cliente", referencedColumnName = "id")
+    @JoinColumn(name = "cliente_Id", referencedColumnName = "id")
     private ClienteJpa cliente;
 
     @Column(nullable = false)

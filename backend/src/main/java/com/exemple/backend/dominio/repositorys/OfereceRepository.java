@@ -10,8 +10,8 @@ public interface OfereceRepository {
     public Optional<Oferece> findById(int id);
     public List<Oferece> findAll();
     // -----------
-    public List<Oferece> findByPrestadorId(int prestadorId);
-    public List<Oferece> findByServicoName(String servicoName);
+    public List<Oferece> findByPrestadorId(int prestador_Id);
+    public List<Oferece> findByServicoNome(String servico_Nome);
     public Oferece save(Oferece oferece);
     public void delete(int id);
 }

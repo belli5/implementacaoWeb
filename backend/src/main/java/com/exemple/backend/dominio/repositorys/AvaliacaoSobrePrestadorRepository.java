@@ -10,7 +10,7 @@ public interface AvaliacaoSobrePrestadorRepository {
     public Optional<AvaliacaoSobrePrestador> findById(int id);
     public List<AvaliacaoSobrePrestador> findAll();
     //--------------
-    public List<AvaliacaoSobrePrestador> findByPrestadorId(int prestadorId);
+    public List<AvaliacaoSobrePrestador> findByPrestadorId(int prestador_Id);
     public AvaliacaoSobrePrestador save(AvaliacaoSobrePrestador avaliacaoSobrePrestador);
     public void delete(int id);
 }

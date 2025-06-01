@@ -10,8 +10,8 @@ public interface FavoritadoRepository {
     public Optional<Favoritado> findById(int id);
     public List<Favoritado> findAll();
     // ------------------------------------------------
-    public List<Favoritado> findByPrestadorId(int prestadorId);
-    public List<Favoritado> findbyClienteId(int clienteId);
+    public List<Favoritado> findByPrestadorId(int prestador_Id);
+    public List<Favoritado> findbyClienteId(int cliente_Id);
     public Favoritado save(Favoritado favoritado);
     public void delete(int id);
 

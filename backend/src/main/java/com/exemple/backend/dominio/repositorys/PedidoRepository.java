@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface PedidoRepository {
     public Optional<Pedido> findById(int id);
     public List<Pedido> findAll();
-    public List<Pedido> findByPrestadorId(int prestadorId);
-    public List<Pedido> findByClienteId(int clienteId);
+    public List<Pedido> findByPrestadorId(int prestador_Id);
+    public List<Pedido> findByClienteId(int cliente_Id);
     public Pedido save(Pedido pedido);
     public Pedido update(Pedido pedido);
-    public void delete(int pedidoId);
+    public void delete(int Id);
 }
