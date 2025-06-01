@@ -2,7 +2,6 @@ package com.exemple.backend.infraestrutura.mappers;
 
 import com.exemple.backend.dominio.models.Cliente;
 import com.exemple.backend.infraestrutura.jpamodels.ClienteJpa;
-import com.exemple.backend.infraestrutura.mappers.compartilhados.EnderecoMapper;
 
 import static org.springframework.util.Assert.notNull;
 
@@ -17,8 +16,6 @@ public class ClienteMapper {
         jpa.setSenha(cliente.getSenha());
         jpa.setEmail(cliente.getEmail());
         jpa.setTelefone(cliente.getTelefone());
-        jpa.setEndereco(EnderecoMapper.toEnderecoJpa(cliente.getEndereco()));
-
         return jpa;
     }
 
@@ -31,7 +28,7 @@ public class ClienteMapper {
                 jpa.getSenha(),
                 jpa.getEmail(),
                 jpa.getTelefone(),
-                EnderecoMapper.toEndereco(jpa.getEndereco())
+                null // Endereço omitido para evitar ciclo
         );
     }
 }

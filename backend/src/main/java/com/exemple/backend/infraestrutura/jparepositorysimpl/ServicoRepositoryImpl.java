@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ServicoJpaRepositoryImpl implements ServicoRepository {
+public class ServicoRepositoryImpl implements ServicoRepository {
 
     private final ServicoJpaRepository servicoJpaRepository;
 
-    public ServicoJpaRepositoryImpl(ServicoJpaRepository servicoJpaRepository) {
+    public ServicoRepositoryImpl(ServicoJpaRepository servicoJpaRepository) {
         this.servicoJpaRepository = servicoJpaRepository;
     }
 

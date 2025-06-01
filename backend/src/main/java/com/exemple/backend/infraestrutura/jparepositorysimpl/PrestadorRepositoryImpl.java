@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class PrestadorJpaRepositoryImpl implements PrestadorRepository {
+public class PrestadorRepositoryImpl implements PrestadorRepository {
 
     private final PrestadorJpaRepository prestadorJpaRepository;
 
-    public PrestadorJpaRepositoryImpl(PrestadorJpaRepository prestadorJpaRepository) {
+    public PrestadorRepositoryImpl(PrestadorJpaRepository prestadorJpaRepository) {
         this.prestadorJpaRepository = prestadorJpaRepository;
     }
 

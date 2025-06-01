@@ -10,14 +10,15 @@ public class PedidoMapper {
     public static PedidoJpa toPedidoJpa(Pedido pedido) {
         notNull(pedido, "Pedido não pode ser nulo");
 
-        return new PedidoJpa(
-                pedido.getId(),
-                pedido.getData(),
-                ServicoMapper.toServicoJpa(pedido.getServico()),
-                PrestadorMapper.toPrestadorJpa(pedido.getPrestador()),
-                ClienteMapper.toClienteJpa(pedido.getCliente()),
-                pedido.getStatus()
-        );
+        PedidoJpa jpa = new PedidoJpa();
+        jpa.setId(pedido.getId());
+        jpa.setData(pedido.getData());
+        jpa.setServico(null);
+        jpa.setPrestador(null);
+        jpa.setCliente(null);
+        jpa.setStatus(pedido.getStatus());
+
+        return jpa;
     }
 
     public static Pedido toPedido(PedidoJpa pedidoJpa) {
@@ -26,9 +27,9 @@ public class PedidoMapper {
         return new Pedido(
                 pedidoJpa.getId(),
                 pedidoJpa.getData(),
-                ServicoMapper.toServico(pedidoJpa.getServico()),
-                PrestadorMapper.toPrestador(pedidoJpa.getPrestador()),
-                ClienteMapper.toCliente(pedidoJpa.getCliente()),
+                null,
+                null,
+                null,
                 pedidoJpa.getStatus()
         );
     }

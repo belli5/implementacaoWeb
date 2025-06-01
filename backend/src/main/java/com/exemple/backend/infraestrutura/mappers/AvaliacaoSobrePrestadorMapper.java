@@ -14,8 +14,8 @@ public class AvaliacaoSobrePrestadorMapper {
         jpa.setId(avaliacao.getId());
         jpa.setComentario(avaliacao.getComentario());
         jpa.setNota(avaliacao.getNota());
-        jpa.setCliente(ClienteMapper.toClienteJpa(avaliacao.getCliente()));
-        jpa.setPrestador(PrestadorMapper.toPrestadorJpa(avaliacao.getPrestador()));
+        jpa.setCliente(null);
+        jpa.setPrestador(null);
         return jpa;
     }
 
@@ -24,10 +24,10 @@ public class AvaliacaoSobrePrestadorMapper {
 
         return new AvaliacaoSobrePrestador(
                 jpa.getId(),
-                ClienteMapper.toCliente(jpa.getCliente()),
+                null,
                 jpa.getComentario(),
                 jpa.getNota(),
-                PrestadorMapper.toPrestador(jpa.getPrestador())
+                null
         );
     }
 }

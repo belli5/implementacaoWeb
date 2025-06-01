@@ -13,11 +13,11 @@ import java.util.Optional;
 import static org.springframework.util.Assert.notNull;
 
 @Repository
-public class OfereceJpaRepositoryImpl implements OfereceRepository {
+public class OfereceRepositoryImpl implements OfereceRepository {
 
     private final OfereceJpaRepository ofereceJpaRepository;
 
-    public OfereceJpaRepositoryImpl(OfereceJpaRepository ofereceJpaRepository) {
+    public OfereceRepositoryImpl(OfereceJpaRepository ofereceJpaRepository) {
         this.ofereceJpaRepository = ofereceJpaRepository;
     }
 

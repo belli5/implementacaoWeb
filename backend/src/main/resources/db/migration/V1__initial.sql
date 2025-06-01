@@ -1,8 +1,3 @@
-/* Lógico_5: */
-CREATE DATABASE SeuServico;
-
-
-
 CREATE TABLE Cliente (
                          id INTEGER PRIMARY KEY,
                          nome VARCHAR,

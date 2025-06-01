@@ -10,11 +10,11 @@ public class FavoritadoMapper {
     public static FavoritadoJpa toFavoritadoJpa(Favoritado favoritado) {
         notNull(favoritado, "Favoritado não pode ser nulo");
 
-        return new FavoritadoJpa(
-                favoritado.getId(),
-                PrestadorMapper.toPrestadorJpa(favoritado.getPrestador()),
-                ClienteMapper.toClienteJpa(favoritado.getCliente())
-        );
+        FavoritadoJpa jpa = new FavoritadoJpa();
+        jpa.setId(favoritado.getId());
+        jpa.setPrestador(null);
+        jpa.setCliente(null);
+        return jpa;
     }
 
     public static Favoritado toFavoritado(FavoritadoJpa favoritadoJpa) {
@@ -22,8 +22,8 @@ public class FavoritadoMapper {
 
         return new Favoritado(
                 favoritadoJpa.getId(),
-                ClienteMapper.toCliente(favoritadoJpa.getCliente()),
-                PrestadorMapper.toPrestador(favoritadoJpa.getPrestador())
+                null,
+                null
         );
     }
 }

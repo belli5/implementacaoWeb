@@ -1,6 +1,8 @@
 package com.exemple.backend.infraestrutura.mappers;
 
 import com.exemple.backend.dominio.models.AvaliacaoSobreCliente;
+import com.exemple.backend.dominio.models.Cliente;
+import com.exemple.backend.dominio.models.Prestador;
 import com.exemple.backend.infraestrutura.jpamodels.AvaliacaoSobreClienteJpa;
 
 import static org.springframework.util.Assert.notNull;
@@ -14,8 +16,8 @@ public class AvaliacaoSobreClienteMapper {
         jpa.setId(avaliacao.getId());
         jpa.setComentario(avaliacao.getComentario());
         jpa.setNota(avaliacao.getNota());
-        jpa.setCliente(ClienteMapper.toClienteJpa(avaliacao.getCliente()));
-        jpa.setPrestador(PrestadorMapper.toPrestadorJpa(avaliacao.getPrestador()));
+        jpa.setCliente(null);     // Evita ciclos
+        jpa.setPrestador(null);   // Evita ciclos
         return jpa;
     }
 
@@ -24,10 +26,10 @@ public class AvaliacaoSobreClienteMapper {
 
         return new AvaliacaoSobreCliente(
                 jpa.getId(),
-                PrestadorMapper.toPrestador(jpa.getPrestador()),
+                new Prestador(jpa.getPrestador().getId(), null, null, null, null, null),
                 jpa.getComentario(),
                 jpa.getNota(),
-                ClienteMapper.toCliente(jpa.getCliente())
+                new Cliente(jpa.getCliente().getId(), null, null, null, null, null)
         );
     }
 }

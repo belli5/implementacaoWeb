@@ -9,16 +9,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static org.springframework.util.Assert.notNull;
 
 @Repository
-public class ClienteJpaRepositoryImpl implements ClienteRepository {
+public class ClienteRepositoryImpl implements ClienteRepository {
 
     private final ClienteJpaRepository clienteJpaRepository;
 
-    public ClienteJpaRepositoryImpl(ClienteJpaRepository clienteJpaRepository) {
+    public ClienteRepositoryImpl(ClienteJpaRepository clienteJpaRepository) {
         this.clienteJpaRepository = clienteJpaRepository;
     }
 

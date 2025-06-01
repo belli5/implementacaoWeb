@@ -13,11 +13,11 @@ import java.util.Optional;
 import static org.springframework.util.Assert.notNull;
 
 @Repository
-public class PedidoJpaRepositoryImpl implements PedidoRepository {
+public class PedidoRepositoryImpl implements PedidoRepository {
 
     private final PedidoJpaRepository pedidoJpaRepository;
 
-    public PedidoJpaRepositoryImpl(PedidoJpaRepository pedidoJpaRepository) {
+    public PedidoRepositoryImpl(PedidoJpaRepository pedidoJpaRepository) {
         this.pedidoJpaRepository = pedidoJpaRepository;
     }
 

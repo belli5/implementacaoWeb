@@ -10,11 +10,12 @@ public class OfereceMapper {
     public static OfereceJpa toOfereceJpa(Oferece oferece) {
         notNull(oferece, "Oferece não pode ser nulo");
 
-        return new OfereceJpa(
-                oferece.getId(),
-                PrestadorMapper.toPrestadorJpa(oferece.getPrestador()),
-                ServicoMapper.toServicoJpa(oferece.getServico())
-        );
+        OfereceJpa jpa = new OfereceJpa();
+        jpa.setId(oferece.getId());
+        jpa.setPrestador(null);
+        jpa.setServico(null);
+
+        return jpa;
     }
 
     public static Oferece toOferece(OfereceJpa ofereceJpa) {
@@ -22,8 +23,8 @@ public class OfereceMapper {
 
         return new Oferece(
                 ofereceJpa.getId(),
-                PrestadorMapper.toPrestador(ofereceJpa.getPrestador()),
-                ServicoMapper.toServico(ofereceJpa.getServico())
+                null,
+                null
         );
     }
 }

@@ -19,15 +19,15 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class FavoritadoJpaRepositoryImpl implements FavoritadoRepository {
+public class FavoritadoRepositoryImpl implements FavoritadoRepository {
 
     private final FavoritadoJpaRepository favoritadoJpaRepository;
     private final PrestadorJpaRepository prestadorJpaRepository;
     private final ClienteJpaRepository clienteJpaRepository;
 
-    public FavoritadoJpaRepositoryImpl(FavoritadoJpaRepository favoritadoJpaRepository,
-                                       PrestadorJpaRepository prestadorJpaRepository,
-                                       ClienteJpaRepository clienteJpaRepository) {
+    public FavoritadoRepositoryImpl(FavoritadoJpaRepository favoritadoJpaRepository,
+                                    PrestadorJpaRepository prestadorJpaRepository,
+                                    ClienteJpaRepository clienteJpaRepository) {
         this.favoritadoJpaRepository = favoritadoJpaRepository;
         this.prestadorJpaRepository = prestadorJpaRepository;
         this.clienteJpaRepository = clienteJpaRepository;
