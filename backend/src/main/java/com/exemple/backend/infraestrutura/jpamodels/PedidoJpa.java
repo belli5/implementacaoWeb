@@ -11,22 +11,22 @@ import java.time.LocalDate;
 public class PedidoJpa implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private int id;
 
     @Column(nullable = false)
     private LocalDate data;
 
     @ManyToOne
-    @JoinColumn(name = "servico_Nome", referencedColumnName = "nome")
+    @JoinColumn(name = "fk_servicos_nome", referencedColumnName = "nome")
     private ServicoJpa servico;
 
     @ManyToOne
-    @JoinColumn(name = "prestador_Id", referencedColumnName = "id")
+    @JoinColumn(name = "fk_prestador_id", referencedColumnName = "id")
     private PrestadorJpa prestador;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_Id", referencedColumnName = "id")
+    @JoinColumn(name = "fk_cliente_id", referencedColumnName = "id")
     private ClienteJpa cliente;
 
     @Column(nullable = false)

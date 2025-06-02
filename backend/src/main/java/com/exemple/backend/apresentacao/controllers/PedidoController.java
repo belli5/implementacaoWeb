@@ -48,10 +48,11 @@ public class PedidoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Pedido> atualizar(@PathVariable int id, @RequestBody Pedido pedido) {
-        pedido.setId(id); // garantir que está atualizando o pedido certo
+        pedido.setId(id);
         Pedido atualizado = pedidoService.atualizar(pedido);
         return ResponseEntity.ok(atualizado);
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable int id) {

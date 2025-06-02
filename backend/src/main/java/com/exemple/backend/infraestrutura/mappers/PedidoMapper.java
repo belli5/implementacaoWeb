@@ -11,7 +11,6 @@ public class PedidoMapper {
         notNull(pedido, "Pedido não pode ser nulo");
 
         PedidoJpa jpa = new PedidoJpa();
-        jpa.setId(pedido.getId());
         jpa.setData(pedido.getData());
         jpa.setServico(ServicoMapper.toServicoJpa(pedido.getServico()));
         jpa.setPrestador(PrestadorMapper.toPrestadorJpa(pedido.getPrestador()));
