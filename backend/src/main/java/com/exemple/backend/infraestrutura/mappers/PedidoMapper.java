@@ -13,9 +13,9 @@ public class PedidoMapper {
         PedidoJpa jpa = new PedidoJpa();
         jpa.setId(pedido.getId());
         jpa.setData(pedido.getData());
-        jpa.setServico(null);
-        jpa.setPrestador(null);
-        jpa.setCliente(null);
+        jpa.setServico(ServicoMapper.toServicoJpa(pedido.getServico()));
+        jpa.setPrestador(PrestadorMapper.toPrestadorJpa(pedido.getPrestador()));
+        jpa.setCliente(ClienteMapper.toClienteJpa(pedido.getCliente()));
         jpa.setStatus(pedido.getStatus());
 
         return jpa;
@@ -27,9 +27,9 @@ public class PedidoMapper {
         return new Pedido(
                 pedidoJpa.getId(),
                 pedidoJpa.getData(),
-                null,
-                null,
-                null,
+                ServicoMapper.toServico(pedidoJpa.getServico()),
+                PrestadorMapper.toPrestador(pedidoJpa.getPrestador()),
+                ClienteMapper.toCliente(pedidoJpa.getCliente()),
                 pedidoJpa.getStatus()
         );
     }

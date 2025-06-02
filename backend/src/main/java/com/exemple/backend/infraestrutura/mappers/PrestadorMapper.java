@@ -2,6 +2,7 @@ package com.exemple.backend.infraestrutura.mappers;
 
 import com.exemple.backend.dominio.models.Prestador;
 import com.exemple.backend.infraestrutura.jpamodels.PrestadorJpa;
+import com.exemple.backend.infraestrutura.mappers.compartilhados.EnderecoMapper;
 
 import static org.springframework.util.Assert.notNull;
 
@@ -28,7 +29,7 @@ public class PrestadorMapper {
                 jpa.getSenha(),
                 jpa.getEmail(),
                 jpa.getTelefone(),
-                null // Endereço omitido para evitar ciclo
+                EnderecoMapper.toEndereco(jpa.getEndereco())
         );
     }
 }

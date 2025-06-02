@@ -46,6 +46,22 @@ public class EnderecoJpa implements Serializable {
         return estado;
     }
 
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
         return "Endereço: rua=" + rua + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado;
