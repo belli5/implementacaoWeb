@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/FavoritadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/FavoritadoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/OfereceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/OfereceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/models/Favoritado.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/models/Favoritado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/FavoritadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/services/FavoritadoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/FavoritadoJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/FavoritadoJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/mappers/FavoritadoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/mappers/FavoritadoMapper.java" afterDir="false" />
     </list>
     <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="" />
     <option name="SHOW_DIALOG" value="false" />
