@@ -1,0 +1,93 @@
+.top-bar {
+  background-color: #fdf6fd;
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-bar h2 {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}
+
+.perfil-container {
+  padding: 1rem;
+  background-color: #fdf6fd;
+}
+
+.card-perfil {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.foto-perfil img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  background-color: #f0f0f0;
+}
+
+.dados {
+  flex: 1;
+}
+
+.dados p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.estrelas {
+  color: #a68ddf;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.star {
+  color: #ddd;
+}
+
+.star.preenchida {
+  color: #a68ddf;
+}
+
+.descricao {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.acoes {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.acoes button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #888;
+  background: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.acoes button:hover {
+  background-color: #f2e7fe;
+}
+
+.favorito {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}

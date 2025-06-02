@@ -1,38 +1,42 @@
 <div class="top-bar">
-  <h2>👤 João Silva</h2>
+  <h2>👤 Meu Perfil</h2>
 </div>
 
 <main class="container">
-  <div class="profile-card">
-    <div class="profile-pic">
-      <img src="eletricista.png" alt="servico">
-    </div>
-
-    <div class="info">
-      <h3>João Silva</h3>
-      <p class="role">Eletricista</p>
-      <p class="stars">
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star empty">★</span>
-        <span class="star empty">★</span>
-        <span class="star empty">★</span>
-      </p>
-      <p class="reviews">Nº de avaliações: 1</p>
-
-      <p class="description">
-        Descrição: O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada.
-      </p>
-
-      <div class="buttons">
-        <!-- <button>Editar Perfil</button> -->
-        <button (click)="toggleAvaliacoes()">Ver Todas as Avaliações</button>
-        <button (click)="contratarServico()">Contratar Serviço</button>
+  @if (!mostrarEdicaoPerfil) {
+    <div class="profile-card">
+      <div class="profile-pic">
+        <img src="eletricista.png" alt="servico">
       </div>
+  
+      <div class="info">
+        <h3>João Silva</h3>
+        <p class="role">Eletricista</p>
+        <p class="stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star empty">★</span>
+          <span class="star empty">★</span>
+          <span class="star empty">★</span>
+        </p>
+  
+        <p class="description">
+          Descrição: O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada.
+        </p>
+  
+        <div class="buttons">
+          <!-- colocar um if para editar perfil aparecer somente quando for prestador -->
+          @if (usuarioPrestador) {
+            <button (click)="toggleEditarPerfil()">Editar Perfil</button>
+          }
+          <button (click)="toggleAvaliacoes()">Ver Todas as Avaliações</button>
+          <button (click)="contratarServico()">Contratar Serviço</button>
+        </div>
+      </div>
+  
+      <div class="favorite-icon" (click)="addFavoritos()">🤍</div>
     </div>
-
-    <div class="favorite-icon" (click)="addFavoritos()">🤍</div>
-  </div>
+  }
 
   @if (mostrarAvaliacoes) {
     <div class="avaliacoes">
@@ -46,4 +50,37 @@
       }
     </div>
   }
+
+  @if (mostrarEdicaoPerfil) {
+    <main class="container-edicao">
+      <div class="card-edicao">
+        <div class="imagem-perfil">
+          <img src="eletricista.png" alt="Foto do prestador" />
+        </div>
+
+        <div class="formulario">
+          <mat-form-field appearance="outline" color="accent">
+            <label>Nome</label>
+            <input matInput (ngModel)="nome" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" color="accent">
+            <label>Ocupação</label>
+            <input matInput (ngModel)="ocupacao" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" color="accent">
+            <label>Descrição</label>
+            <textarea matInput rows="4" (ngModel)="descricao"></textarea>
+          </mat-form-field>
+
+          <div class="acoes">
+            <button mat-raised-button style="background-color: #a68ddf;" (click)="salvar()">Salvar Alterações</button>
+            <button mat-raised-button style="background-color: #a68ddf; margin-left: 15px;" (click)="cancelar()">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  }
+
 </main>
