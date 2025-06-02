@@ -37,7 +37,7 @@ CREATE TABLE servico (
     descricao VARCHAR
 );
 
-CREATE TABLE avaliacaosobreprestador (
+CREATE TABLE avaliacao_sobre_prestador (
     id SERIAL PRIMARY KEY,
     fk_cliente_id INTEGER,
     comentario VARCHAR,
@@ -45,7 +45,7 @@ CREATE TABLE avaliacaosobreprestador (
     fk_prestador_id INTEGER
 );
 
-CREATE TABLE avaliacaosobrecliente (
+CREATE TABLE avaliacao_sobre_cliente (
     id SERIAL PRIMARY KEY,
     fk_prestador_id INTEGER,
     comentario VARCHAR,
