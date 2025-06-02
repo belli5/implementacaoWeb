@@ -55,7 +55,17 @@ public class PrestadorJpa implements Serializable {
         this.endereco = endereco;
     }
 
-    public int getId() {
+    public PrestadorJpa(Integer id, String nome, String senha, String email, String telefone, EnderecoJpa endereco){
+        this.id = id;
+        this.nome = nome;
+        this.senha = senha;
+        this.email = email;
+        this.telefone = telefone;
+        this.endereco = endereco;
+    }
+
+
+    public Integer getId() {
         return id;
     }
 
