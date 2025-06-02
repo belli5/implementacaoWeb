@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="" />
@@ -50,7 +52,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="alteracoes" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,10 +87,14 @@
     "Application.src.main.java.org.example.Main.executor": "Run",
     "JUnit.AvaliacaoClienteTest.executor": "Run",
     "JUnit.AvaliacaoServiceTest.executor": "Run",
+    "JUnit.ClienteControllerTest.executor": "Run",
+    "JUnit.ClienteServiceTest.executor": "Run",
     "JUnit.CucumberTest.executor": "Run",
+    "JUnit.FavoritadoServiceTest.executor": "Run",
     "JUnit.FavoritosServiceTest.executor": "Run",
     "JUnit.HistoricoServicosTest.executor": "Run",
     "JUnit.ReagendarServicoTest.executor": "Run",
+    "JUnit.ServicoJpaRepositoryTest.executor": "Run",
     "JUnit.VisualizarAvaliacoesPrestadorTest.executor": "Run",
     "JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos.executor": "Run",
     "Maven.bdd [clean].executor": "Run",
@@ -123,7 +129,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/gits/seuServico/implementacaoWeb",
+    "last_opened_file_path": "C:/Users/clara/implementacaoWeb/backend/src/test/java/com/exemple/backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -143,11 +149,11 @@
       <recent name="com.exemple.implementacaoweb2.avaliacao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/domain1/src/main/java/org/example/model/avaliacao" />
-      <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/usuarios" />
-      <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/servicos" />
-      <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/pedidos" />
-      <recent name="$PROJECT_DIR$/persistence/src/main/java/org/example/presistence/repository/avaliacao" />
+      <recent name="C:\Users\clara\implementacaoWeb\backend\src\test\java\com\exemple\backend" />
+      <recent name="C:\Users\clara\implementacaoWeb\backend\src\test\java\com\exemple\backend\dominio\repositorys" />
+      <recent name="C:\Users\clara\implementacaoWeb\backend\src\test\java\com\exemple\backend\dominio\services" />
+      <recent name="C:\Users\clara\implementacaoWeb\backend\src\test\java\com\exemple\backend\dominio\models" />
+      <recent name="C:\Users\clara\implementacaoWeb\backend\src\test\java\com\exemple\backend\apresentacao\controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dominio-prestacaoServicos/src/test/java/com/exemple/implementacaoweb2/resources/features" />
@@ -166,32 +172,47 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos">
-    <configuration name="CucumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dominio-prestacaoServicos" />
+  <component name="RunManager" selected="JUnit.ServicoJpaRepositoryTest">
+    <configuration name="ClienteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.exemple.implementacaoweb2.runner.*" />
+          <option name="PATTERN" value="com.exemple.backend.apresentacao.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.implementacaoweb2.runner" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.implementacaoweb2.runner.CucumberTest" />
+      <option name="PACKAGE_NAME" value="com.exemple.backend.apresentacao.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.apresentacao.controllers.ClienteControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FavoritosServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="seuservico" />
+    <configuration name="ClienteServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.group.seuservico.tests.*" />
+          <option name="PATTERN" value="com.exemple.backend.dominio.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.group.seuservico.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.group.seuservico.tests.FavoritosServiceTest" />
+      <option name="PACKAGE_NAME" value="com.exemple.backend.dominio.services" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.dominio.services.ClienteServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FavoritadoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exemple.backend.dominio.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exemple.backend.dominio.services" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.dominio.services.FavoritadoServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,31 +233,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReagendarServicoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dominio-prestacaoServicos" />
+    <configuration name="ServicoJpaRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.exemple.implementacaoweb2.steps.*" />
+          <option name="PATTERN" value="com.exemple.backend.infraestrutura.jparepositorys.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.implementacaoweb2" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.implementacaoweb2.ReagendarServicoTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VisualizarAvaliacoesPrestadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dominio-prestacaoServicos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.exemple.implementacaoweb2.steps.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.implementacaoweb2" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.implementacaoweb2.VisualizarAvaliacoesPrestadorTest" />
+      <option name="PACKAGE_NAME" value="com.exemple.backend.infraestrutura.jparepositorys" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jparepositorys.ServicoJpaRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -293,11 +299,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ServicoJpaRepositoryTest" />
+        <item itemvalue="JUnit.FavoritadoServiceTest" />
+        <item itemvalue="JUnit.ClienteServiceTest" />
+        <item itemvalue="JUnit.ClienteControllerTest" />
         <item itemvalue="JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos" />
-        <item itemvalue="JUnit.CucumberTest" />
-        <item itemvalue="JUnit.ReagendarServicoTest" />
-        <item itemvalue="JUnit.VisualizarAvaliacoesPrestadorTest" />
-        <item itemvalue="JUnit.FavoritosServiceTest" />
       </list>
     </recent_temporary>
   </component>

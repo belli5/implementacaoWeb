@@ -16,15 +16,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apresentacao-back" target="1.8" />
-      <module name="dominio-prestacaoServicos" target="1.8" />
-      <module name="infraestrutura" target="1.8" />
+      <module name="dominio-prestacaoServicos" target="17" />
+      <module name="infraestrutura" target="17" />
       <module name="presentation" target="17" />
       <module name="seuservico" target="17" />
     </bytecodeTargetLevel>
