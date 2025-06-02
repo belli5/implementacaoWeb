@@ -21,7 +21,6 @@ public class ClienteMapper {
         jpa.setEmail(cliente.getEmail());
         jpa.setTelefone(cliente.getTelefone());
 
-        // Somente setamos EnderecoJpa se o JSON vier com endereco != null
         if (cliente.getEndereco() != null) {
             jpa.setEndereco(EnderecoMapper.toEnderecoJpa(cliente.getEndereco()));
         }

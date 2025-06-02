@@ -1,6 +1,7 @@
 package com.exemple.backend.infraestrutura.mappers;
 
 import com.exemple.backend.dominio.models.Prestador;
+
 import com.exemple.backend.infraestrutura.jpamodels.PrestadorJpa;
 import com.exemple.backend.infraestrutura.mappers.compartilhados.EnderecoMapper;
 
@@ -12,12 +13,19 @@ public class PrestadorMapper {
         notNull(prestador, "Prestador não pode ser nulo");
 
         PrestadorJpa jpa = new PrestadorJpa();
-        jpa.setId(prestador.getId());
+        if (prestador.getId() != null) {
+            jpa.setId(prestador.getId());
+        }
+
         jpa.setNome(prestador.getNome());
         jpa.setSenha(prestador.getSenha());
         jpa.setEmail(prestador.getEmail());
         jpa.setTelefone(prestador.getTelefone());
+    if (prestador.getEndereco() != null) {
+        jpa.setEndereco(EnderecoMapper.toEnderecoJpa(prestador.getEndereco()));
+    }
         return jpa;
+
     }
 
     public static Prestador toPrestador(PrestadorJpa jpa) {

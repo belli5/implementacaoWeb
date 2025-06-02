@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping('/clienteAvaliacao') // Precisa ajeitar esse map ainda
+@RequestMapping("/clienteAvaliacao") // Precisa ajeitar esse map ainda
 public class AvaliacaoSobreClienteController {
     private final AvaliacaoSobreClienteService avaliacaoSobreClienteService;
 
@@ -40,7 +40,7 @@ public class AvaliacaoSobreClienteController {
 
      */
 
-    @GetMapping('/{clienteId}') // PRECISA AJEITAR O GET MAP ou post map
+    @GetMapping("/{clienteId}") // PRECISA AJEITAR O GET MAP ou post map
     public ResponseEntity<List<AvaliacaoSobreCliente>> getAvaliacoesPorCliente(@PathVariable int clienteId){
         List<AvaliacaoSobreCliente> avaliacoes = avaliacaoSobreClienteService.contarAvaliacoesPorCliente(clienteId);
         if (avaliacoes.isEmpty()) {

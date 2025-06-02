@@ -12,21 +12,21 @@ public class PrestadorJpa implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @Column(nullable = false)
+    @Column
     private String nome;
 
-    @Column(nullable = false)
+    @Column
     private String senha;
 
-    @Column(nullable = false)
+    @Column
     private String email;
 
-    @Column(nullable = false)
+    @Column
     private String telefone;
 
-    @Embedded(nullable = false)
+    @Embedded
     private EnderecoJpa endereco;
 
     @OneToMany(mappedBy = "prestador", cascade = CascadeType.REMOVE, orphanRemoval = true)

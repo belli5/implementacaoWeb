@@ -7,6 +7,7 @@ import java.util.Optional;
 import com.exemple.backend.dominio.repositorys.AvaliacaoSobreClienteRepository;
 import com.exemple.backend.dominio.models.AvaliacaoSobreCliente;
 
+@Service
 public class AvaliacaoSobreClienteService {
 
     private final AvaliacaoSobreClienteRepository avaliacaoSobreClienteRepository;
