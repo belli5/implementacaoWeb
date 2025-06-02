@@ -12,18 +12,29 @@ public class FavoritadoMapper {
 
         FavoritadoJpa jpa = new FavoritadoJpa();
         jpa.setId(favoritado.getId());
-        jpa.setPrestador(null);
-        jpa.setCliente(null);
+        if (favoritado.getPrestador() != null) {
+            jpa.setPrestador(PrestadorMapper.toPrestadorJpa(favoritado.getPrestador()));
+        } else {
+            jpa.setPrestador(null);
+        }
+        if (favoritado.getCliente() != null) {
+            jpa.setCliente(ClienteMapper.toClienteJpa(favoritado.getCliente()));
+        } else {
+            jpa.setCliente(null);
+        }
         return jpa;
     }
 
+
     public static Favoritado toFavoritado(FavoritadoJpa favoritadoJpa) {
-        notNull(favoritadoJpa, "FavoritadoJpa não pode ser nulo");
+        notNull(favoritadoJpa, "Favoritado não pode ser nulo");
 
         return new Favoritado(
                 favoritadoJpa.getId(),
-                null,
-                null
+                favoritadoJpa.getCliente() != null ? ClienteMapper.toCliente(favoritadoJpa.getCliente()) : null,
+                favoritadoJpa.getPrestador() != null ? PrestadorMapper.toPrestador(favoritadoJpa.getPrestador()) : null
         );
     }
+
+
 }

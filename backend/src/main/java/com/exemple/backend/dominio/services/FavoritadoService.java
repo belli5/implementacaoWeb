@@ -42,4 +42,5 @@ public class FavoritadoService {
     public void desfavoritar(int id) {
         favoritadoRepository.delete(id);
     }
+
 }

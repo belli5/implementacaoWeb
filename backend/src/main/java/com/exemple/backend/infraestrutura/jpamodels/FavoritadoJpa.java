@@ -31,6 +31,11 @@ public class FavoritadoJpa implements Serializable {
         this.cliente = cliente;
     }
 
+    public FavoritadoJpa(PrestadorJpa prestador, ClienteJpa cliente) {
+        this.prestador = prestador;
+        this.cliente = cliente;
+    }
+
     public int getId() {
         return id;
     }

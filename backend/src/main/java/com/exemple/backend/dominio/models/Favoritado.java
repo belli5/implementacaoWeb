@@ -20,6 +20,14 @@ public class Favoritado implements Serializable {
         this.prestador = prestador;
     }
 
+    public Favoritado(Cliente cliente, Prestador prestador) {
+        notNull(cliente, "Cliente não pode ser nulo");
+        notNull(prestador, "Prestador não pode ser nulo");
+
+        this.cliente = cliente;
+        this.prestador = prestador;
+    }
+
     public int getId() {
         return id;
     }
