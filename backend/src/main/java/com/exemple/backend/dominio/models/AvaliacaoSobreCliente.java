@@ -25,10 +25,8 @@ public class AvaliacaoSobreCliente implements Serializable {
         this.cliente = cliente;
     }
 
-    // Getters e setters
 
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
