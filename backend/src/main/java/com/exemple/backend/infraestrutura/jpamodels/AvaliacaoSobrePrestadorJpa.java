@@ -37,6 +37,12 @@ public class AvaliacaoSobrePrestadorJpa implements Serializable {
         this.nota = nota;
         this.prestador = prestador;
     }
+    public AvaliacaoSobrePrestadorJpa(ClienteJpa cliente, String comentario, int nota, PrestadorJpa prestador) {
+        this.cliente = cliente;
+        this.comentario = comentario;
+        this.nota = nota;
+        this.prestador = prestador;
+    }
 
     public int getId() {
         return id;

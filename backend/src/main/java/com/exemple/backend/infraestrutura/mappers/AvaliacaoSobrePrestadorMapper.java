@@ -11,23 +11,29 @@ public class AvaliacaoSobrePrestadorMapper {
         notNull(avaliacao, "AvaliacaoSobrePrestador não pode ser nula");
 
         AvaliacaoSobrePrestadorJpa jpa = new AvaliacaoSobrePrestadorJpa();
-        jpa.setId(avaliacao.getId());
+
+        // Só seta o id se não for nulo (ou remova esta linha para criação)
+        if (avaliacao.getId() != null) {
+            jpa.setId(avaliacao.getId());
+        }
+
         jpa.setComentario(avaliacao.getComentario());
         jpa.setNota(avaliacao.getNota());
-        jpa.setCliente(null);
-        jpa.setPrestador(null);
+        jpa.setCliente(ClienteMapper.toClienteJpa(avaliacao.getCliente()));
+        jpa.setPrestador(PrestadorMapper.toPrestadorJpa(avaliacao.getPrestador()));
         return jpa;
     }
+
 
     public static AvaliacaoSobrePrestador toAvaliacaoSobrePrestador(AvaliacaoSobrePrestadorJpa jpa) {
         notNull(jpa, "AvaliacaoSobrePrestadorJpa não pode ser nula");
 
         return new AvaliacaoSobrePrestador(
                 jpa.getId(),
-                null,
+                ClienteMapper.toCliente(jpa.getCliente()),
                 jpa.getComentario(),
                 jpa.getNota(),
-                null
+                PrestadorMapper.toPrestador(jpa.getPrestador())
         );
     }
 }

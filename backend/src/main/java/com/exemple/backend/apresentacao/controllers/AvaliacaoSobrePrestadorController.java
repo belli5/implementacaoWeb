@@ -28,20 +28,23 @@ public class AvaliacaoSobrePrestadorController {
     public ResponseEntity<AvaliacaoSobrePrestador> criarAvaliacaoSobrePrestador(@RequestBody AvaliacaoSobrePrestador avaliacaoSobrePrestador) {
 
         Optional<Prestador> prestador = prestadorService.findById(avaliacaoSobrePrestador.getPrestador().getId());
-        if(prestador.isEmpty()){
+        if (prestador.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-
         Optional<Cliente> cliente = clienteService.findById(avaliacaoSobrePrestador.getCliente().getId());
-        if(cliente.isEmpty()){
+        if (cliente.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-
-        AvaliacaoSobrePrestador novaAvaliacaoSobrePrestador = new AvaliacaoSobrePrestador(avaliacaoSobrePrestador.getId(),cliente.get(), avaliacaoSobrePrestador.getComentario(), avaliacaoSobrePrestador.getNota(), prestador.get());
-
+        AvaliacaoSobrePrestador novaAvaliacaoSobrePrestador = new AvaliacaoSobrePrestador(
+                cliente.get(),
+                avaliacaoSobrePrestador.getComentario(),
+                avaliacaoSobrePrestador.getNota(),
+                prestador.get()
+        );
         AvaliacaoSobrePrestador salvoAvaliacaoSobrePrestador = avaliacaoSobrePrestadorService.save(novaAvaliacaoSobrePrestador);
         return ResponseEntity.ok(salvoAvaliacaoSobrePrestador);
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<AvaliacaoSobrePrestador> encontrarAvaliacaoSobrePrestador(@PathVariable int id){
@@ -55,8 +58,8 @@ public class AvaliacaoSobrePrestadorController {
         return ResponseEntity.ok(avaliacoes);
     }
 
-    @GetMapping("/avaliacoes_por_prestador")
-    public ResponseEntity<List<AvaliacaoSobrePrestador>> listarAvaliacoesPorPrestador(Integer prestador_id){
+    @GetMapping("/avaliacoes_por_prestador/{prestador_id}")
+    public ResponseEntity<List<AvaliacaoSobrePrestador>> listarAvaliacoesPorPrestador(@PathVariable int prestador_id){
 
         Optional<Prestador> prestador = prestadorService.findById(prestador_id);
         if(prestador.isEmpty()){

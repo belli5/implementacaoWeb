@@ -25,6 +25,17 @@ public class AvaliacaoSobrePrestador implements Serializable {
         this.nota = nota;
         this.prestador = prestador;
     }
+    public AvaliacaoSobrePrestador(Cliente cliente, String comentario, Integer nota, Prestador prestador) {
+        notNull(cliente, "Cliente não pode ser nulo");
+        notNull(comentario, "Comentário não pode ser nulo");
+        notNull(nota, "Nota não pode ser nula");
+        notNull(prestador, "Prestador não pode ser nulo");
+
+        this.cliente = cliente;
+        this.comentario = comentario;
+        this.nota = nota;
+        this.prestador = prestador;
+    }
 
     public Integer getId() {
         return id;
