@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Favoritado")
+@Table(name = "favoritado")
 public class FavoritadoJpa implements Serializable {
     private static final long serialVersionUID = 1L;
 

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "Servico")
+@Table(name = "servico")
 public class ServicoJpa implements Serializable {
 
     @Id

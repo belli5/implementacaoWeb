@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Oferece")
+@Table(name = "oferece")
 public class OfereceJpa implements Serializable {
 
     @Id
