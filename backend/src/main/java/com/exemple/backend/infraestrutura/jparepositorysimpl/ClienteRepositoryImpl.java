@@ -1,4 +1,5 @@
 package com.exemple.backend.infraestrutura.jparepositorysimpl;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.exemple.backend.dominio.models.Cliente;
 import com.exemple.backend.dominio.repositorys.ClienteRepository;
@@ -17,9 +18,13 @@ public class ClienteRepositoryImpl implements ClienteRepository {
 
     private final ClienteJpaRepository clienteJpaRepository;
 
-    public ClienteRepositoryImpl(ClienteJpaRepository clienteJpaRepository) {
+    private final PasswordEncoder passwordEncoder;
+
+    public ClienteRepositoryImpl(ClienteJpaRepository clienteJpaRepository, PasswordEncoder passwordEncoder) {
         this.clienteJpaRepository = clienteJpaRepository;
+        this.passwordEncoder = passwordEncoder;
     }
+
 
     @Override
     public Optional<Cliente> findById(int id) {
@@ -39,6 +44,8 @@ public class ClienteRepositoryImpl implements ClienteRepository {
     public Cliente save(Cliente cliente) {
         notNull(cliente, "Cliente não deve ser nulo");
 
+        cliente.setSenha(passwordEncoder.encode(cliente.getSenha()));
+
         ClienteJpa entity = ClienteMapper.toClienteJpa(cliente);
         ClienteJpa saved = clienteJpaRepository.save(entity);
         return ClienteMapper.toCliente(saved);
@@ -46,7 +53,6 @@ public class ClienteRepositoryImpl implements ClienteRepository {
 
     @Override
     public Cliente update(Cliente cliente) {
-        // Mesmo processo do save, pois o JPA faz o merge quando o ID já existe
         ClienteJpa entity = ClienteMapper.toClienteJpa(cliente);
         ClienteJpa updated = clienteJpaRepository.save(entity);
         return ClienteMapper.toCliente(updated);
