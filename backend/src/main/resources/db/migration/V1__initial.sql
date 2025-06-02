@@ -23,13 +23,14 @@ CREATE TABLE Prestador (
 );
 
 CREATE TABLE Pedido (
-                        id INTEGER PRIMARY KEY,
-                        data DATE,
-                        fk_Servicos_nome VARCHAR,
-                        fk_Prestador_id INTEGER,
-                        fk_Cliente_id INTEGER,
-                        status VARCHAR
+    id SERIAL PRIMARY KEY,
+    data DATE,
+    fk_Servicos_nome VARCHAR,
+    fk_Prestador_id INTEGER,
+    fk_Cliente_id INTEGER,
+    status VARCHAR
 );
+
 
 CREATE TABLE Servico (
                          nome VARCHAR PRIMARY KEY,
