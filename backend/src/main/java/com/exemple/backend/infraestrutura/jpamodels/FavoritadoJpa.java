@@ -14,11 +14,11 @@ public class FavoritadoJpa implements Serializable {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "prestador_Id", referencedColumnName = "id")
+    @JoinColumn(name = "prestador_id", referencedColumnName = "id")
     private PrestadorJpa prestador;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_Id", referencedColumnName = "id")
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     private ClienteJpa cliente;
 
     public FavoritadoJpa(){

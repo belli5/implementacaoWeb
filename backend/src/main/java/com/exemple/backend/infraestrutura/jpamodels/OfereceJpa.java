@@ -13,11 +13,11 @@ public class OfereceJpa implements Serializable {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "prestador_Id", referencedColumnName = "id")
+    @JoinColumn(name = "prestador_id", referencedColumnName = "id")
     private PrestadorJpa prestador;
 
     @ManyToOne
-    @JoinColumn(name = "servico_Nome", referencedColumnName = "nome")
+    @JoinColumn(name = "servico_nome", referencedColumnName = "nome")
     private ServicoJpa servico;
 
     public OfereceJpa(){

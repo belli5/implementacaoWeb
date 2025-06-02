@@ -39,30 +39,30 @@ CREATE TABLE servico (
 
 CREATE TABLE avaliacao_sobre_prestador (
     id SERIAL PRIMARY KEY,
-    fk_cliente_id INTEGER,
+    cliente_id INTEGER,
     comentario VARCHAR,
     nota INTEGER,
-    fk_prestador_id INTEGER
+    prestador_id INTEGER
 );
 
 CREATE TABLE avaliacao_sobre_cliente (
     id SERIAL PRIMARY KEY,
-    fk_prestador_id INTEGER,
+    id_prestador INTEGER,
     comentario VARCHAR,
     nota INTEGER,
-    fk_cliente_id INTEGER
+    id_cliente INTEGER
 );
 
 CREATE TABLE oferece (
     id SERIAL PRIMARY KEY,
-    fk_prestador_id INTEGER,
-    fk_servicos_nome VARCHAR
+    prestador_id INTEGER,
+    servicos_nome VARCHAR
 );
 
 CREATE TABLE favoritado (
     id SERIAL PRIMARY KEY,
-    fk_prestador_id INTEGER,
-    fk_cliente_id INTEGER
+    prestador_id INTEGER,
+    cliente_id INTEGER
 );
 
 -- Constraints

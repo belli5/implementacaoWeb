@@ -13,7 +13,7 @@ public class AvaliacaoSobrePrestadorJpa implements Serializable {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_Id", referencedColumnName = "id")
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     private ClienteJpa cliente;
 
     @Column(nullable = false)
