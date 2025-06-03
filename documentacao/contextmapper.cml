@@ -6,7 +6,6 @@ Domain PrestacaoServicos {
 ContextMap {
     contains Usuarios_e_Pedidos
     contains Servicos_e_Avaliacao
-
     Usuarios_e_Pedidos Shared-Kernel Servicos_e_Avaliacao
 }
 
@@ -17,115 +16,159 @@ BoundedContext Usuarios_e_Pedidos implements Usuarios_e_Pedidos {
             -int id
             String nome
             String email
+            String senha
             String telefone
             Endereco endereco
-            List<int> prestadoresFavoritos
         }
     }
-
+    
     Aggregate Prestador {
         Entity Prestador {
             aggregateRoot
             -int id
             String nome
-            String tipoServico
             String email
+            String senha
             String telefone
             Endereco endereco
         }
     }
-
+    
+    Aggregate Pedido {
+        Entity Pedido {
+            aggregateRoot
+            -int id
+            int prestadorId
+            int servicoId
+            LocalDate data
+            int clienteId
+            String status
+        }
+    }
+    
+    Aggregate Favoritado {
+        Entity Favoritado {
+            aggregateRoot
+            -int id
+            int clienteId
+            int prestadorId
+        }
+    }
+    
     ValueObject Endereco {
         String rua
         String bairro
         String cidade
         String estado
     }
-
+    
     Repository ClienteRepository {
-        +save(cliente : Cliente) : void
-        +findAll() : List<Cliente>
-        +delete(cliente : Cliente) : void
+        +findById(id: int): Optional<Cliente>
+        +findAll(): List<Cliente>
+        +save(cliente: Cliente): Cliente
+        +update(cliente: Cliente): Cliente
+        +delete(id: int): void
     }
-
+    
     Repository PrestadorRepository {
-        +save(prestador : Prestador) : void
-        +findByName(name : String) : List<int>
-        +findById(id : int) : Prestador
-        +findAll() : List<Prestador>
-        +delete(prestador : Prestador) : void
+        +findById(id: int): Optional<Prestador>
+        +findAll(): List<Prestador>
+        +save(prestador: Prestador): Prestador
+        +update(prestador: Prestador): Prestador
+        +delete(id: int): void
     }
-
-    Aggregate Pedido {
-        Entity Pedido {
-            aggregateRoot
-            -int id
-            int servicoId
-            int prestadorId
-            int clienteId
-            date data
-            StatusPedido status
-        }
-
-        ValueObject StatusPedido {
-            Enum StatusPedido {
-                PENDENTE,
-                CONCLUIDO,
-                CANCELADO
-            }
-        }
+    
+    Repository PedidoRepository {
+        +findById(id: int): Optional<Pedido>
+        +findAll(): List<Pedido>
+        +findByPrestadorId(prestador_Id: int): List<Pedido>
+        +findByClienteId(cliente_Id: int): List<Pedido>
+        +save(pedido: Pedido): Pedido
+        +update(pedido: Pedido): Pedido
+        +delete(Id: int): void
     }
-
-    Repository PedidosRepository {
-        +save(pedido : Pedido) : void
-        +findByClientName(nome : String) : List<int>
-        +findByPrestadorName(nome: String) : List<int>
-        +findById(id : int) : Pedido
-        +deleteById(id : int) : void
+    
+    Repository FavoritadoRepository {
+        +findById(id: int): Optional<Favoritado>
+        +findAll(): List<Favoritado>
+        +findClientesQueFavoritaramPrestadorByPrestadorId(prestadorId: int): List<Cliente>
+        +findPrestadoresFavoritadosByClienteId(clienteId: int): List<Prestador>
+        +save(favoritado: Favoritado): Favoritado
+        +delete(id: int): void
     }
 }
 
 BoundedContext Servicos_e_Avaliacao implements Servicos_e_Avaliacao {
-    Aggregate PrestacaoServico {
-        Entity PrestacaoServico {
+    Aggregate Servico {
+        Entity Servico {
             aggregateRoot
-            -int id
-            String descricao
-            float valor
-            String bairro
+            String nome
             String categoria
-            int prestadorId
+            String descricao
         }
     }
-
-    Repository ServicosRepository {
-        +save(servico : PrestacaoServico) : void
-        +findByPrestadorName(nome: String) : List<PrestacaoServico>
-        +findById(id : int) : PrestacaoServico
-        +deleteById(id : int) : void
-    }
-
-    Aggregate Avaliacao {
-        Entity Avaliacao {
+    
+    Aggregate AvaliacaoSobreCliente {
+        Entity AvaliacaoSobreCliente {
             aggregateRoot
             -int id
             int prestadorId
-            int clienteId
-            float nota
             String comentario
-            TipoAvaliacao tipoAvaliacao
-        }
-
-        ValueObject TipoAvaliacao {
-            Enum TipoAvaliacao {
-                CLIENTE_AVALIA_PRESTADOR,
-                PRESTADOR_AVALIA_CLIENTE
-            }
+            int nota
+            int clienteId
         }
     }
-
-    Repository AvaliacaoRepository {
-        +save(avaliacao : Avaliacao) : void
-        +deleteById(id : int) : void
+    
+    Aggregate AvaliacaoSobrePrestador {
+        Entity AvaliacaoSobrePrestador {
+            aggregateRoot
+            -int id
+            int clienteId
+            String comentario
+            int nota
+            int prestadorId
+        }
+    }
+    
+    Aggregate Oferece {
+        Entity Oferece {
+            aggregateRoot
+            -int id
+            int prestadorId
+            int servicoId
+        }
+    }
+    
+    Repository ServicoRepository {
+        +findByNome(nome: String): Optional<Servico>
+        +findByCategoria(categoria: String): List<Servico>
+        +findAll(): List<Servico>
+        +save(servico: Servico): Servico
+        +deleteByNome(nome: String): void
+    }
+    
+    Repository AvaliacaoSobreClienteRepository {
+        +findById(id: int): Optional<AvaliacaoSobreCliente>
+        +findAll(): List<AvaliacaoSobreCliente>
+        +findByClienteId(cliente_Id: int): List<AvaliacaoSobreCliente>
+        +save(avaliacaoSobreCliente: AvaliacaoSobreCliente): AvaliacaoSobreCliente
+        +delete(id: int): void
+    }
+    
+    Repository AvaliacaoSobrePrestadorRepository {
+        +findById(id: int): Optional<AvaliacaoSobrePrestador>
+        +findAll(): List<AvaliacaoSobrePrestador>
+        +findByPrestadorId(prestador_Id: int): List<AvaliacaoSobrePrestador>
+        +save(avaliacaoSobrePrestador: AvaliacaoSobrePrestador): AvaliacaoSobrePrestador
+        +delete(id: int): void
+    }
+    
+    Repository OfereceRepository {
+        +findById(id: int): Optional<Oferece>
+        +findAll(): List<Oferece>
+        +findByPrestadorId(prestador_Id: int): List<Oferece>
+        +findByServicoNome(servico_Nome: String): List<Oferece>
+        +save(oferece: Oferece): Oferece
+        +delete(id: int): void
     }
 }
