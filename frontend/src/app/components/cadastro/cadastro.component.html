@@ -3,28 +3,40 @@
     <h1>Bem Vindo(a) ao <span>ContrateJá!</span></h1>
     <h2>Criar Conta</h2>
 
-    <form class="form">
+    <form class="form" (ngSubmit)="onSubmit()">
       <div class="linha-dupla">
         <div class="campo">
           <label for="nome">Nome</label>
-          <input style="width: 215px;" id="nome" type="text" (ngModel)="nome" name="nome" />
+          <input style="width: 215px;" id="nome" type="text" [(ngModel)]="nome" name="nome" />
         </div>
         <div class="campo">
           <label for="sobrenome">Sobrenome</label>
-          <input style="width: 215px;" id="sobrenome" type="text" (ngModel)="sobrenome" name="sobrenome" />
+          <input style="width: 215px;" id="sobrenome" type="text" [(ngModel)]="sobrenome" name="sobrenome" />
         </div>
       </div>
 
       <label for="email">Email*</label>
-      <input id="email" type="email" (ngModel)="email" name="email" required />
-
-      <label for="endereco">Endereço*</label>
-      <input id="endereco" type="text" (ngModel)="endereco" name="endereco" required />
+      <input id="email" type="email" [(ngModel)]="email" name="email" required />
 
       <label for="senha">Senha*</label>
-      <input id="senha" type="password" (ngModel)="senha" name="senha" required />
+      <input id="senha" type="password" [(ngModel)]="senha" name="senha" required />
 
-      <button (click)="onSubmit()" type="submit">Concluir</button>
+      <label for="telefone">Telefone*</label>
+      <input id="telefone" type="text" [(ngModel)]="telefone" name="telefone" required />
+
+      <label for="endereco">Rua*</label>
+      <input id="endereco" type="text" [(ngModel)]="endereco" name="endereco" required />
+
+      <label for="bairro">Bairro*</label>
+      <input id="bairro" type="text" [(ngModel)]="bairro" name="bairro" required />
+
+      <label for="cidade">Cidade*</label>
+      <input id="cidade" type="text" [(ngModel)]="cidade" name="cidade" required />
+
+      <label for="estado">Estado*</label>
+      <input id="estado" type="text" [(ngModel)]="estado" name="estado" required />
+
+      <button type="submit">Concluir</button>
     </form>
 
     <p class="login">
