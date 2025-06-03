@@ -56,6 +56,12 @@ public class OfereceController {
         return ResponseEntity.ok(prestadores);
     }
 
+    @GetMapping
+    public ResponseEntity<List<Oferece>> listarTodos() {
+        return ResponseEntity.ok(ofereceService.listarTodos());
+    }
+
+
     @PostMapping()
     public ResponseEntity<Oferece> criar(@RequestBody Oferece oferece) {
 

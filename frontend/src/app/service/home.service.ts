@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class HomeService {
 
-  private baseApiUrl = 'http://localhost:8080';
-  private apiUrl = `${this.baseApiUrl}/api/prestador`
+  private baseApiUrl = environment.baseApiUrl || 'http://localhost:8080';
+  private ofereceUrl = `${this.baseApiUrl}/oferece`;
 
   constructor(private http: HttpClient) { }
 
-  getPrestadores(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  getOferecimentos(): Observable<any[]> {
+    return this.http.get<any[]>(this.ofereceUrl);
   }
 }
