@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, RouterModule } from '@angular/router';
 import { PopupAvaliacaoComponent } from '../shared/popup-avaliacao/popup-avaliacao.component';
+import { HomeService } from '../../service/home.service';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,9 @@ import { PopupAvaliacaoComponent } from '../shared/popup-avaliacao/popup-avaliac
 export class HomeComponent {
 
   categoriaSelecionada: string | null = null;
+  prestadores: any[] = [];
 
-  constructor(private router: Router, private dialog: MatDialog) {}
+  constructor(private router: Router, private dialog: MatDialog, private homeService: HomeService) {}
 
   categorias = [
     { imagem: 'marceneiro', servico: 'Marceneiro' },
@@ -31,6 +33,10 @@ export class HomeComponent {
     { nome: 'Lúcia Rocha', profissao: 'Encanador', avatar: 'L',  servico: 'encanador' },
     { nome: 'Alberto Junior', profissao: 'Pedreiro', avatar: 'A',  servico: 'pedreiro' },
   ];
+
+  ngOnInit(): void {
+    this.findAllPrestadores();
+  }
 
   get profissionaisFiltrados() {
     if (!this.categoriaSelecionada) return this.profissionais;
@@ -64,4 +70,11 @@ export class HomeComponent {
     });
   }
 
+  findAllPrestadores(){
+    this.homeService.getPrestadores().subscribe((data) => {
+      this.prestadores = data;
+      console.log(this.prestadores);
+    })
+  }
+  
 }
