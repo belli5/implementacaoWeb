@@ -1,122 +1,122 @@
 CREATE TABLE cliente (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR,
-    senha VARCHAR,
-    email VARCHAR,
-    telefone VARCHAR,
-    rua VARCHAR,
-    bairro VARCHAR,
-    cidade VARCHAR,
-    estado VARCHAR
+                         id SERIAL PRIMARY KEY,
+                         nome VARCHAR,
+                         senha VARCHAR,
+                         email VARCHAR,
+                         telefone VARCHAR,
+                         rua VARCHAR,
+                         bairro VARCHAR,
+                         cidade VARCHAR,
+                         estado VARCHAR
 );
 
 CREATE TABLE prestador (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR,
-    senha VARCHAR,
-    email VARCHAR,
-    telefone VARCHAR,
-    rua VARCHAR,
-    bairro VARCHAR,
-    cidade VARCHAR,
-    estado VARCHAR
+                           id SERIAL PRIMARY KEY,
+                           nome VARCHAR,
+                           senha VARCHAR,
+                           email VARCHAR,
+                           telefone VARCHAR,
+                           rua VARCHAR,
+                           bairro VARCHAR,
+                           cidade VARCHAR,
+                           estado VARCHAR
 );
 
 CREATE TABLE pedido (
-    id SERIAL PRIMARY KEY,
-    data DATE,
-    fk_servicos_nome VARCHAR,
-    fk_prestador_id INTEGER,
-    fk_cliente_id INTEGER,
-    status VARCHAR
+                        id SERIAL PRIMARY KEY,
+                        data DATE,
+                        fk_servicos_nome VARCHAR,
+                        fk_prestador_id INTEGER,
+                        fk_cliente_id INTEGER,
+                        status VARCHAR
 );
 
 CREATE TABLE servico (
-    nome VARCHAR PRIMARY KEY,
-    categoria VARCHAR,
-    descricao VARCHAR
+                         nome VARCHAR PRIMARY KEY,
+                         categoria VARCHAR,
+                         descricao VARCHAR
 );
 
 CREATE TABLE avaliacao_sobre_prestador (
-    id SERIAL PRIMARY KEY,
-    cliente_id INTEGER,
-    comentario VARCHAR,
-    nota INTEGER,
-    prestador_id INTEGER
+                                           id SERIAL PRIMARY KEY,
+                                           cliente_id INTEGER,
+                                           comentario VARCHAR,
+                                           nota INTEGER,
+                                           prestador_id INTEGER
 );
 
 CREATE TABLE avaliacao_sobre_cliente (
-    id SERIAL PRIMARY KEY,
-    id_prestador INTEGER,
-    comentario VARCHAR,
-    nota INTEGER,
-    id_cliente INTEGER
+                                         id SERIAL PRIMARY KEY,
+                                         id_prestador INTEGER,
+                                         comentario VARCHAR,
+                                         nota INTEGER,
+                                         id_cliente INTEGER
 );
 
 CREATE TABLE oferece (
-    id SERIAL PRIMARY KEY,
-    prestador_id INTEGER,
-    servicos_nome VARCHAR
+                         id SERIAL PRIMARY KEY,
+                         fk_servicos_nome VARCHAR,
+                         fk_prestador_id INTEGER
 );
 
 CREATE TABLE favoritado (
-    id SERIAL PRIMARY KEY,
-    prestador_id INTEGER,
-    cliente_id INTEGER
+                            id SERIAL PRIMARY KEY,
+                            prestador_id INTEGER,
+                            cliente_id INTEGER
 );
 
 -- Constraints
 ALTER TABLE pedido ADD CONSTRAINT fk_pedido_servico
     FOREIGN KEY (fk_servicos_nome)
-    REFERENCES servico (nome)
-    ON DELETE CASCADE;
+        REFERENCES servico (nome)
+        ON DELETE CASCADE;
 
 ALTER TABLE pedido ADD CONSTRAINT fk_pedido_prestador
     FOREIGN KEY (fk_prestador_id)
-    REFERENCES prestador (id)
-    ON DELETE CASCADE;
+        REFERENCES prestador (id)
+        ON DELETE CASCADE;
 
 ALTER TABLE pedido ADD CONSTRAINT fk_pedido_cliente
     FOREIGN KEY (fk_cliente_id)
-    REFERENCES cliente (id)
-    ON DELETE CASCADE;
+        REFERENCES cliente (id)
+        ON DELETE CASCADE;
 
-ALTER TABLE avaliacaosobreprestador ADD CONSTRAINT fk_avaliacaoprestador_prestador
-    FOREIGN KEY (fk_prestador_id)
-    REFERENCES prestador (id)
-    ON DELETE SET NULL;
+ALTER TABLE avaliacao_sobre_prestador ADD CONSTRAINT fk_avaliacaoprestador_prestador
+    FOREIGN KEY (prestador_id)
+        REFERENCES prestador (id)
+        ON DELETE SET NULL;
 
-ALTER TABLE avaliacaosobreprestador ADD CONSTRAINT fk_avaliacaoprestador_cliente
-    FOREIGN KEY (fk_cliente_id)
-    REFERENCES cliente (id)
-    ON DELETE SET NULL;
+ALTER TABLE avaliacao_sobre_prestador ADD CONSTRAINT fk_avaliacaoprestador_cliente
+    FOREIGN KEY (cliente_id)
+        REFERENCES cliente (id)
+        ON DELETE SET NULL;
 
-ALTER TABLE avaliacaosobrecliente ADD CONSTRAINT fk_avaliacaocliente_prestador
-    FOREIGN KEY (fk_prestador_id)
-    REFERENCES prestador (id)
-    ON DELETE SET NULL;
+ALTER TABLE avaliacao_sobre_cliente ADD CONSTRAINT fk_avaliacaocliente_prestador
+    FOREIGN KEY (id_prestador)
+        REFERENCES prestador (id)
+        ON DELETE SET NULL;
 
-ALTER TABLE avaliacaosobrecliente ADD CONSTRAINT fk_avaliacaocliente_cliente
-    FOREIGN KEY (fk_cliente_id)
-    REFERENCES cliente (id)
-    ON DELETE SET NULL;
+ALTER TABLE avaliacao_sobre_cliente ADD CONSTRAINT fk_avaliacaocliente_cliente
+    FOREIGN KEY (id_cliente)
+        REFERENCES cliente (id)
+        ON DELETE SET NULL;
 
 ALTER TABLE oferece ADD CONSTRAINT fk_oferece_servico
     FOREIGN KEY (fk_servicos_nome)
-    REFERENCES servico (nome)
-    ON DELETE RESTRICT;
+        REFERENCES servico (nome)
+        ON DELETE RESTRICT;
 
 ALTER TABLE oferece ADD CONSTRAINT fk_oferece_prestador
     FOREIGN KEY (fk_prestador_id)
-    REFERENCES prestador (id)
-    ON DELETE SET NULL;
+        REFERENCES prestador (id)
+        ON DELETE SET NULL;
 
 ALTER TABLE favoritado ADD CONSTRAINT fk_favoritado_cliente
-    FOREIGN KEY (fk_cliente_id)
-    REFERENCES cliente (id)
-    ON DELETE SET NULL;
+    FOREIGN KEY (cliente_id)
+        REFERENCES cliente (id)
+        ON DELETE SET NULL;
 
 ALTER TABLE favoritado ADD CONSTRAINT fk_favoritado_prestador
-    FOREIGN KEY (fk_prestador_id)
-    REFERENCES prestador (id)
-    ON DELETE SET NULL;
+    FOREIGN KEY (prestador_id)
+        REFERENCES prestador (id)
+        ON DELETE SET NULL;

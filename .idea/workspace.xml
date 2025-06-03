@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="Implementando os testes /2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobrePrestadorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobrePrestadorControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ClienteControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/FavoritadoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/FavoritadoControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/PrestadorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/PrestadorControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ServicoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ServicoControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/OfereceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/OfereceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/ClienteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/ClienteServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/OfereceServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/OfereceServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PrestadorJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PrestadorJpaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobreClienteJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobreClienteJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/OfereceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/OfereceJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__initial.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__initial.sql" afterDir="false" />
     </list>
     <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,12 +64,12 @@
     &quot;assignee&quot;: &quot;Victorgalves&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/belli5/implementacaoWeb.git&quot;,
-    &quot;accountId&quot;: &quot;9e4e439a-7e83-495d-bbe7-c3664524972e&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/belli5/implementacaoWeb.git",
+    "accountId": "814cdfc9-5c28-48c5-a7bc-d51520cb9c42"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -91,97 +82,97 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.src.main.java.org.example.Main.executor": "Run",
-    "JUnit.AvaliacaoClienteTest.executor": "Run",
-    "JUnit.AvaliacaoServiceTest.executor": "Run",
-    "JUnit.AvaliacaoSobreClienteJpaRepositoryTest.executor": "Run",
-    "JUnit.AvaliacaoSobreClienteJpaTest.executor": "Run",
-    "JUnit.AvaliacaoSobreClienteTest.executor": "Run",
-    "JUnit.AvaliacaoSobrePrestadorControllerTest.executor": "Run",
-    "JUnit.AvaliacaoSobrePrestadorJpaRepositoryTest.executor": "Run",
-    "JUnit.AvaliacaoSobrePrestadorJpaTest.executor": "Run",
-    "JUnit.AvaliacaoSobrePrestadorServiceTest.executor": "Run",
-    "JUnit.AvaliacaoSobrePrestadorTest.executor": "Run",
-    "JUnit.ClienteControllerTest.executor": "Run",
-    "JUnit.ClienteJpaTest.executor": "Run",
-    "JUnit.ClienteServiceTest.executor": "Run",
-    "JUnit.ClienteTest.executor": "Run",
-    "JUnit.CucumberTest.executor": "Run",
-    "JUnit.EnderecoTest.executor": "Run",
-    "JUnit.FavoritadoControllerTest.executor": "Run",
-    "JUnit.FavoritadoJpaTest.executor": "Run",
-    "JUnit.FavoritadoServiceTest.executor": "Run",
-    "JUnit.FavoritadoTest.executor": "Run",
-    "JUnit.FavoritosServiceTest.executor": "Run",
-    "JUnit.HistoricoServicosTest.executor": "Run",
-    "JUnit.OfereceJpaTest.executor": "Run",
-    "JUnit.OfereceServiceTest.executor": "Run",
-    "JUnit.OfereceTest.executor": "Run",
-    "JUnit.PedidoJpaTest.executor": "Run",
-    "JUnit.PedidoServiceTest.executor": "Run",
-    "JUnit.PedidoTest.executor": "Run",
-    "JUnit.PrestadorControllerTest.executor": "Run",
-    "JUnit.PrestadorJpaTest.executor": "Run",
-    "JUnit.PrestadorServiceTest.executor": "Run",
-    "JUnit.PrestadorTest.executor": "Run",
-    "JUnit.ReagendarServicoTest.executor": "Run",
-    "JUnit.ServicoControllerTest.executor": "Run",
-    "JUnit.ServicoJpaRepositoryTest.executor": "Run",
-    "JUnit.ServicoJpaTest.executor": "Run",
-    "JUnit.ServicoServiceTest.executor": "Run",
-    "JUnit.ServicoTest.executor": "Run",
-    "JUnit.VisualizarAvaliacoesPrestadorTest.executor": "Run",
-    "JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos.executor": "Run",
-    "Maven.bdd [clean].executor": "Run",
-    "Maven.bdd [compile].executor": "Run",
-    "Maven.bdd [deploy].executor": "Run",
-    "Maven.bdd [install].executor": "Run",
-    "Maven.bdd [package].executor": "Run",
-    "Maven.bdd [site].executor": "Run",
-    "Maven.bdd [test].executor": "Run",
-    "Maven.bdd [validate].executor": "Run",
-    "Maven.bdd [verify].executor": "Run",
-    "Maven.dominio-prestacaoServicos [-Dtest=NOT_RESOLVED...].executor": "Run",
-    "Maven.persistence [clean].executor": "Run",
-    "Maven.persistence [compile].executor": "Run",
-    "Maven.persistence [deploy].executor": "Run",
-    "Maven.persistence [install].executor": "Run",
-    "Maven.persistence [package].executor": "Run",
-    "Maven.persistence [site].executor": "Run",
-    "Maven.persistence [test].executor": "Run",
-    "Maven.persistence [validate].executor": "Run",
-    "Maven.persistence [verify].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BackendApplication.executor": "Run",
-    "Spring Boot.ImplementacaoWeb2Application.executor": "Run",
-    "git-widget-placeholder": "develop",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/clara/implementacaoWeb/backend/src/test/java/com/exemple/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "ts.external.directory.path": "/home/guilherme/implementacaoWeb/frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.src.main.java.org.example.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoClienteTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobreClienteJpaRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobreClienteJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobreClienteTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobrePrestadorControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobrePrestadorJpaRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobrePrestadorJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobrePrestadorServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobrePrestadorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClienteControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClienteJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClienteServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClienteTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CucumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EnderecoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FavoritadoControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FavoritadoJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FavoritadoServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FavoritadoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FavoritosServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HistoricoServicosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfereceJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfereceServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfereceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PedidoJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PedidoServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PedidoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PrestadorControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PrestadorJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PrestadorServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PrestadorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReagendarServicoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServicoControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServicoJpaRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServicoJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServicoServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServicoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VisualizarAvaliacoesPrestadorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.bdd [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.dominio-prestacaoServicos [-Dtest=NOT_RESOLVED...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.persistence [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ImplementacaoWeb2Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/clara/implementacaoWeb/backend/src/test/java/com/exemple/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/guilherme/implementacaoWeb/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.exemple.implementacaoweb2.avaliacao" />
@@ -210,7 +201,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AvaliacaoSobreClienteJpaRepositoryTest">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="AvaliacaoSobreClienteJpaRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -330,6 +321,14 @@
         <item itemvalue="JUnit.PedidoJpaTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
