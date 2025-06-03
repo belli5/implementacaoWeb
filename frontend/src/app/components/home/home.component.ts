@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router, RouterModule } from '@angular/router';
 import { PopupAvaliacaoComponent } from '../shared/popup-avaliacao/popup-avaliacao.component';
 import { HomeService } from '../../service/home.service';
+import { AvaliacaoClienteService } from '../../service/avaliacao_cliente.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent {
   categoriaSelecionada: string | null = null;
   prestadores: any[] = [];
 
-  constructor(private router: Router, private dialog: MatDialog, private homeService: HomeService) {}
+  constructor(private router: Router, private dialog: MatDialog, private homeService: HomeService, private avaliar: AvaliacaoClienteService) {}
 
   categorias = [
     { imagem: 'marceneiro', servico: 'Marceneiro' },
@@ -29,9 +30,9 @@ export class HomeComponent {
   profissionais = [
     { nome: 'João Silva', profissao: 'Eletricista', avatar: 'J', servico: 'eletricista' },
     { nome: 'Maria Santos', profissao: 'Encanador', avatar: 'M', servico: 'encanador' },
-    { nome: 'Carlos Pinto', profissao: 'Faz Tudo', avatar: 'C', servico: 'fazTudo' },
-    { nome: 'Lúcia Rocha', profissao: 'Encanador', avatar: 'L',  servico: 'encanador' },
-    { nome: 'Alberto Junior', profissao: 'Pedreiro', avatar: 'A',  servico: 'pedreiro' },
+    // { nome: 'Carlos Pinto', profissao: 'Faz Tudo', avatar: 'C', servico: 'fazTudo' },
+    // { nome: 'Lúcia Rocha', profissao: 'Encanador', avatar: 'L',  servico: 'encanador' },
+    // { nome: 'Alberto Junior', profissao: 'Pedreiro', avatar: 'A',  servico: 'pedreiro' },
   ];
 
   ngOnInit(): void {
@@ -58,7 +59,10 @@ export class HomeComponent {
   finalizarServico() {
     const dialogRef = this.dialog.open(PopupAvaliacaoComponent, {
       width: '500px',
-      data: { nome: 'João Silva' } // ou o nome do prestador dinâmico
+      data: { 
+        nome: 'João Silva',
+        prestadores: this.prestadores 
+      } // ou o nome do prestador dinâmico
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -66,6 +70,13 @@ export class HomeComponent {
         console.log(`Avaliação: ${result.nota} estrelas`);
         console.log(`Comentário: ${result.comentario}`);
         // Enviar para backend
+        this.avaliar.criarAvaliacao(
+          1, 
+          1, 
+          result.comentario, 
+          result.nota).subscribe((data: any) => {
+          console.log('Avaliação salva com sucesso:', data);
+        });
       }
     });
   }
@@ -76,5 +87,5 @@ export class HomeComponent {
       console.log(this.prestadores);
     })
   }
-  
+
 }

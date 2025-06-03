@@ -40,9 +40,9 @@
 
   @if (mostrarAvaliacoes) {
     <div class="avaliacoes">
-      @for ( avaliacao of listaAvaliacoes; track $index) {
+      @for (avaliacao of avaliacoes; track $index) {
         <div class="avaliacao">
-          <p><strong>{{ avaliacao.cliente }}</strong></p>
+          <p><strong>{{ avaliacao.cliente.nome }}</strong></p>
           <p>Nota: {{ avaliacao.nota }} ★</p>
           <p>{{ avaliacao.comentario }}</p>
           <hr />
@@ -50,6 +50,7 @@
       }
     </div>
   }
+
 
   @if (mostrarEdicaoPerfil) {
     <main class="container-edicao">

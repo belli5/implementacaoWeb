@@ -1,23 +1,39 @@
-<h2>Serviço concluído!</h2>
-<p>Avalie o trabalhador que realizou o serviço.</p>
+<div class="popup">
+  <h2>Serviço concluído!</h2>
+  <p>Avalie o trabalhador que realizou o serviço.</p>
 
-<div class="avatar">
-  <span>{{ data.nome[0] }}</span>
-</div>
-<strong class="nome">{{ data.nome }}</strong>
+  <div class="avatar">
+    <span>{{ data.nome[0] }}</span>
+  </div>
+  <strong class="nome">{{ data.nome }}</strong>
 
-<div class="estrelas">
-  @for (i of [1, 2, 3, 4, 5]; track i) {
-    <span
-      class="estrela"
-      [class.selecionada]="avaliacao >= i"
-      (click)="selecionarEstrela(i)">
-      ★
-    </span>
-  }
-</div>
+  <form (ngSubmit)="enviarAvaliacao()">
+    <div class="estrelas">
+      @for (i of [1, 2, 3, 4, 5]; track i) {
+        <span
+          class="estrela"
+          [class.selecionada]="avaliacao >= i"
+          (click)="selecionarEstrela(i)">
+          ★
+        </span>
+      }
+    </div>
 
-<div class="botoes">
-  <button mat-button (click)="fechar()">Fechar</button>
-  <button mat-raised-button color="primary" (click)="enviarAvaliacao()">Avaliar</button>
+    <div class="campo-comentario">
+      <mat-form-field class="campo-comentario">
+        <mat-label>Comentário</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="comentario"
+          name="comentario"
+          placeholder="Escreva um comentário sobre o serviço...">
+        </textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="botoes">
+      <button mat-button type="button" color="warn" (click)="fechar()">Fechar</button>
+      <button mat-raised-button color="primary" type="submit">Avaliar</button>
+    </div>
+  </form>
 </div>

@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { AvaliacaoClienteService } from '../../service/avaliacao_cliente.service';
 
 @Component({
   selector: 'app-perfil-prestador',
@@ -19,23 +20,16 @@ export class PerfilPrestadorComponent {
   ocupacao = 'Eletricista';
   descricao = 'O Lorem Ipsum é um texto modelo da indústria tipográfica...';
 
-  listaAvaliacoes = [
-    {
-      cliente: 'Maria Souza',
-      nota: 5,
-      comentario: 'Excelente profissional!'
-    },
-    {
-      cliente: 'Carlos Lima',
-      nota: 4,
-      comentario: 'Bom serviço, mas chegou com atraso.'
-    }
-  ];
+  avaliacoes: Avaliacao[] = [];
+  usuarioPrestador = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private avaliacaoService: AvaliacaoClienteService,) {}
+
+  ngOnInit(){
+    this.todasAvaliacoes();
+  }
 
   // função pra identificar later
-  usuarioPrestador = true;
 
   toggleAvaliacoes() {
     this.mostrarAvaliacoes = !this.mostrarAvaliacoes;
@@ -63,4 +57,24 @@ export class PerfilPrestadorComponent {
   cancelar() {
     this.toggleEditarPerfil();
   }
+
+  todasAvaliacoes(){
+    this.avaliacaoService.listarPorPrestador(1).subscribe((avaliacao: any) => {
+      this.avaliacoes = avaliacao;
+      console.log(this.avaliacoes);
+    })
+  }
+}
+
+interface Avaliacao {
+  nota: number;
+  comentario: string;
+  cliente: {
+    id: number;
+    nome: string;
+    email?: string;
+    telefone?: string;
+    senha?: string;
+  };
+  prestador?: any;
 }
