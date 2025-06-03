@@ -34,7 +34,7 @@ public class PrestadorController {
         return ResponseEntity.ok(salvo);
     }
 
-    @PutMapping("/{id}/update")
+    @PutMapping("/{id}")
     public ResponseEntity<Prestador> update(@PathVariable int id, @RequestBody Prestador prestador) {
         Optional<Prestador> existente = prestadorService.findById(id);
         if (existente.isPresent()) {
