@@ -30,6 +30,11 @@ public class OfereceJpa implements Serializable {
         this.servico = servico;
     }
 
+    public OfereceJpa(PrestadorJpa prestador, ServicoJpa servico) {
+        this.prestador = prestador;
+        this.servico = servico;
+    }
+
     public int getId() {
         return id;
     }

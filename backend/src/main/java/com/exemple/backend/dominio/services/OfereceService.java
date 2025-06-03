@@ -1,6 +1,8 @@
 package com.exemple.backend.dominio.services;
 
 import com.exemple.backend.dominio.models.Oferece;
+import com.exemple.backend.dominio.models.Prestador;
+import com.exemple.backend.dominio.models.Servico;
 import com.exemple.backend.dominio.repositorys.OfereceRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,11 +26,11 @@ public class OfereceService {
         return ofereceRepository.findById(id);
     }
 
-    public List<Oferece> buscarPorPrestadorId(int prestadorId) {
+    public List<Servico> buscarPorPrestadorId(int prestadorId) {
         return ofereceRepository.findByPrestadorId(prestadorId);
     }
 
-    public List<Oferece> buscarPorServicoNome(String servicoNome) {
+    public List<Prestador> buscarPorServicoNome(String servicoNome) {
         return ofereceRepository.findByServicoNome(servicoNome);
     }
 

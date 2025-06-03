@@ -14,6 +14,15 @@ public class Oferece {
         notNull(prestador, "Prestador não pode ser nulo");
         notNull(servico, "Serviço não pode ser nulo");
 
+        this.id = id;
+        this.prestador = prestador;
+        this.servico = servico;
+    }
+
+    public Oferece(Prestador prestador, Servico servico) {
+        notNull(prestador, "Prestador não pode ser nulo");
+        notNull(servico, "Serviço não pode ser nulo");
+
         this.prestador = prestador;
         this.servico = servico;
     }
