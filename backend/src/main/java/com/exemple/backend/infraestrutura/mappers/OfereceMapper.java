@@ -12,8 +12,17 @@ public class OfereceMapper {
 
         OfereceJpa jpa = new OfereceJpa();
         jpa.setId(oferece.getId());
-        jpa.setPrestador(null);
-        jpa.setServico(null);
+
+        if(oferece.getPrestador() != null){
+            jpa.setPrestador(PrestadorMapper.toPrestadorJpa(oferece.getPrestador()));
+        } else {
+            jpa.setPrestador(null);
+        }
+        if(oferece.getServico() != null){
+            jpa.setServico(ServicoMapper.toServicoJpa(oferece.getServico()));
+        } else {
+            jpa.setServico(null);
+        }
 
         return jpa;
     }
@@ -23,8 +32,8 @@ public class OfereceMapper {
 
         return new Oferece(
                 ofereceJpa.getId(),
-                null,
-                null
+                ofereceJpa.getPrestador() != null ? PrestadorMapper.toPrestador(ofereceJpa.getPrestador()) : null,
+                ofereceJpa.getServico() != null ? ServicoMapper.toServico(ofereceJpa.getServico()) : null
         );
     }
 }
