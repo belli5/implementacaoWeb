@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, RouterModule } from '@angular/router';
 import { PopupAvaliacaoComponent } from '../shared/popup-avaliacao/popup-avaliacao.component';
@@ -11,36 +11,34 @@ import { HomeService } from '../../service/home.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   categoriaSelecionada: string | null = null;
-  prestadores: any[] = [];
-
-  constructor(private router: Router, private dialog: MatDialog, private homeService: HomeService) {}
+  prestadoresComServicos: any[] = [];
 
   categorias = [
-    { imagem: 'marceneiro', servico: 'Marceneiro' },
-    { imagem: 'eletricista', servico: 'Eletricista' },
-    { imagem: 'fazTudo', servico: 'Faz Tudo' },
-    { imagem: 'encanador', servico: 'Encanador' },
-    { imagem: 'pedreiro', servico: 'Pedreiro' },
+    { imagem: 'cabelo', servico: 'Cabelos' },
+    { imagem: 'uva', servico: 'Frutas' }
+    // Adicione mais conforme sua base de dados
   ];
 
-  profissionais = [
-    { nome: 'João Silva', profissao: 'Eletricista', avatar: 'J', servico: 'eletricista' },
-    { nome: 'Maria Santos', profissao: 'Encanador', avatar: 'M', servico: 'encanador' },
-    { nome: 'Carlos Pinto', profissao: 'Faz Tudo', avatar: 'C', servico: 'fazTudo' },
-    { nome: 'Lúcia Rocha', profissao: 'Encanador', avatar: 'L',  servico: 'encanador' },
-    { nome: 'Alberto Junior', profissao: 'Pedreiro', avatar: 'A',  servico: 'pedreiro' },
-  ];
+  constructor(
+    private router: Router,
+    private dialog: MatDialog,
+    private homeService: HomeService
+  ) {}
 
   ngOnInit(): void {
-    this.findAllPrestadores();
+    this.homeService.getOferecimentos().subscribe(data => {
+      this.prestadoresComServicos = data;
+    });
   }
 
   get profissionaisFiltrados() {
-    if (!this.categoriaSelecionada) return this.profissionais;
-    return this.profissionais.filter(p => p.servico === this.categoriaSelecionada);
+    if (!this.categoriaSelecionada) return this.prestadoresComServicos;
+    return this.prestadoresComServicos.filter(o =>
+      o.servico.categoria.toLowerCase() === this.categoriaSelecionada?.toLowerCase()
+    );
   }
 
   selecionarCategoria(categoria: string) {
@@ -58,23 +56,14 @@ export class HomeComponent {
   finalizarServico() {
     const dialogRef = this.dialog.open(PopupAvaliacaoComponent, {
       width: '500px',
-      data: { nome: 'João Silva' } // ou o nome do prestador dinâmico
+      data: { nome: 'João Silva' }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log(`Avaliação: ${result.nota} estrelas`);
         console.log(`Comentário: ${result.comentario}`);
-        // Enviar para backend
       }
     });
   }
-
-  findAllPrestadores(){
-    this.homeService.getPrestadores().subscribe((data) => {
-      this.prestadores = data;
-      console.log(this.prestadores);
-    })
-  }
-  
 }
