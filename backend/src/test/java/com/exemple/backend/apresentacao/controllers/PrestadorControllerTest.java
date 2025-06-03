@@ -1,9 +1,13 @@
+// Salve este arquivo como:
+// src/test/java/com/exemple/backend/apresentacao/controllers/PrestadorControllerTest.java
+
 package com.exemple.backend.apresentacao.controllers;
 
 import com.exemple.backend.dominio.models.Prestador;
 import com.exemple.backend.dominio.models.compartilhados.Endereco;
 import com.exemple.backend.dominio.services.PrestadorService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,6 +17,9 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.MediaType;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
@@ -23,8 +30,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -41,7 +47,8 @@ class PrestadorControllerTest {
     private ObjectMapper objectMapper;
 
     private Prestador prestador1;
-    private Endereco endereco;
+    private Prestador prestador2;
+    private Endereco enderecoComum;
 
     @TestConfiguration
     static class PrestadorControllerTestConfig {
@@ -50,89 +57,141 @@ class PrestadorControllerTest {
         public PrestadorService prestadorService() {
             return Mockito.mock(PrestadorService.class);
         }
+
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+            http
+                    .csrf(AbstractHttpConfigurer::disable)
+                    .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
+            return http.build();
+        }
     }
 
     @BeforeEach
     void setUp() {
-        endereco = new Endereco("Rua Prest Ctrl", "Bairro PCtrl", "Cidade PCtrl", "PC");
-        prestador1 = new Prestador(1, "Prestador Ctrl Um", "spc1", "pc1@email.com", "111c", endereco);
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.findAndRegisterModules();
         Mockito.reset(prestadorServiceMock);
+
+        enderecoComum = new Endereco("Rua Prest Teste", "Bairro PT", "Cidade PT", "PT");
+        // Usando Integer.valueOf() para IDs para corresponder ao tipo de campo no modelo
+        prestador1 = new Prestador(Integer.valueOf(1), "Prestador Um Teste", "senhaP1", "p1teste@email.com", "111222", enderecoComum);
+        prestador2 = new Prestador(Integer.valueOf(2), "Prestador Dois Teste", "senhaP2", "p2teste@email.com", "333444", enderecoComum);
     }
 
     @Test
-    void deveEncontrarPrestadorPorId() throws Exception {
+    void deveEncontrarPrestadorPorIdComSucesso() throws Exception {
         when(prestadorServiceMock.findById(1)).thenReturn(Optional.of(prestador1));
-        mockMvc.perform(get("/prestador/1"))
+
+        mockMvc.perform(get("/api/prestador/1") // URL CORRIGIDA
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.nome", is(prestador1.getNome())));
+        verify(prestadorServiceMock, times(1)).findById(1);
     }
 
     @Test
-    void deveRetornarNotFoundParaPrestadorInexistente() throws Exception {
+    void deveRetornarNotFoundParaPrestadorPorIdInexistente() throws Exception {
         when(prestadorServiceMock.findById(99)).thenReturn(Optional.empty());
-        mockMvc.perform(get("/prestador/99"))
+
+        mockMvc.perform(get("/api/prestador/99") // URL CORRIGIDA
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
+        verify(prestadorServiceMock, times(1)).findById(99);
     }
 
     @Test
     void deveListarTodosOsPrestadores() throws Exception {
-        Prestador prestador2 = new Prestador(2, "Prestador Ctrl Dois", "spc2", "pc2@email.com", "222c", endereco);
-        List<Prestador> lista = Arrays.asList(prestador1, prestador2);
-        when(prestadorServiceMock.findAll()).thenReturn(lista);
+        List<Prestador> listaPrestadores = Arrays.asList(prestador1, prestador2);
+        when(prestadorServiceMock.findAll()).thenReturn(listaPrestadores);
 
-        mockMvc.perform(get("/prestador"))
+        mockMvc.perform(get("/api/prestador") // URL CORRIGIDA
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].id", is(prestador1.getId())));
+                .andExpect(jsonPath("$[0].id", is(prestador1.getId())))
+                .andExpect(jsonPath("$[1].id", is(prestador2.getId())));
+        verify(prestadorServiceMock, times(1)).findAll();
     }
 
     @Test
-    void deveSalvarNovoPrestador() throws Exception {
-        when(prestadorServiceMock.save(any(Prestador.class))).thenReturn(prestador1);
-        mockMvc.perform(post("/prestador")
+    void deveSalvarNovoPrestadorComSucesso() throws Exception {
+        Prestador prestadorInput = new Prestador(Integer.valueOf(0), "Novo Prestador", "senhaNova", "novo@prest.com", "555666", enderecoComum);
+        Prestador prestadorSalvo = new Prestador(Integer.valueOf(3), prestadorInput.getNome(), prestadorInput.getSenha(), prestadorInput.getEmail(), prestadorInput.getTelefone(), prestadorInput.getEndereco());
+
+        when(prestadorServiceMock.save(any(Prestador.class))).thenReturn(prestadorSalvo);
+
+        mockMvc.perform(post("/api/prestador") // URL CORRIGIDA
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(prestador1)))
+                        .content(objectMapper.writeValueAsString(prestadorInput)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", is(prestador1.getId())));
+                .andExpect(jsonPath("$.id", is(3)))
+                .andExpect(jsonPath("$.nome", is("Novo Prestador")));
+
+        verify(prestadorServiceMock, times(1)).save(argThat(p ->
+                p.getNome().equals("Novo Prestador") && p.getId() != null && p.getId() == 0
+        ));
     }
 
     @Test
-    void deveAtualizarPrestadorExistente() throws Exception {
-        Prestador prestadorAtualizado = new Prestador(1, "Nome Atualizado", "novaSenha", "novo@email.com", "333c", endereco);
-        when(prestadorServiceMock.findById(1)).thenReturn(Optional.of(prestador1)); // Simula que existe
-        when(prestadorServiceMock.update(any(Prestador.class))).thenReturn(prestadorAtualizado);
+    void deveAtualizarPrestadorExistenteComSucesso() throws Exception {
+        int prestadorId = 1;
+        Prestador prestadorComNovosDados = new Prestador(prestadorId, "Prestador Atualizado", "novaSenhaP", "p_att@email.com", "777888", enderecoComum);
 
-        mockMvc.perform(put("/prestador/1/update")
+        when(prestadorServiceMock.findById(prestadorId)).thenReturn(Optional.of(prestador1));
+        when(prestadorServiceMock.update(any(Prestador.class))).thenReturn(prestadorComNovosDados);
+
+        mockMvc.perform(put("/api/prestador/" + prestadorId + "/update") // URL CORRIGIDA
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(prestadorAtualizado)))
+                        .content(objectMapper.writeValueAsString(prestadorComNovosDados)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.nome", is("Nome Atualizado")));
+                .andExpect(jsonPath("$.id", is(prestadorId)))
+                .andExpect(jsonPath("$.nome", is("Prestador Atualizado")));
+
+        verify(prestadorServiceMock, times(1)).findById(prestadorId);
+        verify(prestadorServiceMock, times(1)).update(argThat(p ->
+                p.getId().equals(prestadorId) && p.getNome().equals("Prestador Atualizado")
+        ));
     }
 
     @Test
     void deveRetornarNotFoundAoAtualizarPrestadorInexistente() throws Exception {
-        Prestador prestadorInfoUpdate = new Prestador(99, "Nome Atualizado", "novaSenha", "novo@email.com", "333c", endereco);
-        when(prestadorServiceMock.findById(99)).thenReturn(Optional.empty()); // Simula que NÃO existe
+        int idInexistente = 99;
+        Prestador prestadorInfoUpdate = new Prestador(idInexistente, "Nome Inexistente", "senha", "inex@email.com", "000", enderecoComum);
+        when(prestadorServiceMock.findById(idInexistente)).thenReturn(Optional.empty());
 
-        mockMvc.perform(put("/prestador/99/update")
+        mockMvc.perform(put("/api/prestador/" + idInexistente + "/update") // URL CORRIGIDA
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(prestadorInfoUpdate)))
                 .andExpect(status().isNotFound());
+
+        verify(prestadorServiceMock, times(1)).findById(idInexistente);
+        verify(prestadorServiceMock, never()).update(any(Prestador.class));
     }
 
     @Test
-    void deveDeletarPrestadorExistente() throws Exception {
-        when(prestadorServiceMock.findById(1)).thenReturn(Optional.of(prestador1));
-        doNothing().when(prestadorServiceMock).delete(1);
-        mockMvc.perform(delete("/prestador/1"))
+    void deveDeletarPrestadorExistenteComSucesso() throws Exception {
+        int prestadorId = 1;
+        when(prestadorServiceMock.findById(prestadorId)).thenReturn(Optional.of(prestador1));
+        doNothing().when(prestadorServiceMock).delete(prestadorId);
+
+        mockMvc.perform(delete("/api/prestador/" + prestadorId)) // URL CORRIGIDA
                 .andExpect(status().isNoContent());
+
+        verify(prestadorServiceMock, times(1)).findById(prestadorId);
+        verify(prestadorServiceMock, times(1)).delete(prestadorId);
     }
 
     @Test
     void deveRetornarNotFoundAoDeletarPrestadorInexistente() throws Exception {
-        when(prestadorServiceMock.findById(99)).thenReturn(Optional.empty());
-        mockMvc.perform(delete("/prestador/99"))
+        int idInexistente = 99;
+        when(prestadorServiceMock.findById(idInexistente)).thenReturn(Optional.empty());
+
+        mockMvc.perform(delete("/api/prestador/" + idInexistente)) // URL CORRIGIDA
                 .andExpect(status().isNotFound());
+
+        verify(prestadorServiceMock, times(1)).findById(idInexistente);
+        verify(prestadorServiceMock, never()).delete(anyInt());
     }
 }

@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="">
+    <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="Implementando os testes /2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobrePrestadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobrePrestadorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/models/AvaliacaoSobrePrestador.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/dominio/models/AvaliacaoSobrePrestador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/AvaliacaoSobrePrestadorJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/AvaliacaoSobrePrestadorJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/mappers/AvaliacaoSobrePrestadorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/mappers/AvaliacaoSobrePrestadorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__initial.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__initial.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobrePrestadorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobrePrestadorControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ClienteControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/FavoritadoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/FavoritadoControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/PrestadorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/PrestadorControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ServicoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ServicoControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/OfereceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/OfereceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/ClienteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/ClienteServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/OfereceServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/OfereceServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PrestadorJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PrestadorJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobreClienteJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobreClienteJpaRepositoryTest.java" afterDir="false" />
     </list>
     <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,69 +91,97 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.example.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AvaliacaoClienteTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AvaliacaoServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClienteServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CucumberTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FavoritadoServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FavoritosServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HistoricoServicosTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ReagendarServicoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServicoJpaRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VisualizarAvaliacoesPrestadorTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.bdd [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.dominio-prestacaoServicos [-Dtest=NOT_RESOLVED...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.persistence [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BackendApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ImplementacaoWeb2Application.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/clara/implementacaoWeb/backend/src/test/java/com/exemple/backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/guilherme/implementacaoWeb/frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.src.main.java.org.example.Main.executor": "Run",
+    "JUnit.AvaliacaoClienteTest.executor": "Run",
+    "JUnit.AvaliacaoServiceTest.executor": "Run",
+    "JUnit.AvaliacaoSobreClienteJpaRepositoryTest.executor": "Run",
+    "JUnit.AvaliacaoSobreClienteJpaTest.executor": "Run",
+    "JUnit.AvaliacaoSobreClienteTest.executor": "Run",
+    "JUnit.AvaliacaoSobrePrestadorControllerTest.executor": "Run",
+    "JUnit.AvaliacaoSobrePrestadorJpaRepositoryTest.executor": "Run",
+    "JUnit.AvaliacaoSobrePrestadorJpaTest.executor": "Run",
+    "JUnit.AvaliacaoSobrePrestadorServiceTest.executor": "Run",
+    "JUnit.AvaliacaoSobrePrestadorTest.executor": "Run",
+    "JUnit.ClienteControllerTest.executor": "Run",
+    "JUnit.ClienteJpaTest.executor": "Run",
+    "JUnit.ClienteServiceTest.executor": "Run",
+    "JUnit.ClienteTest.executor": "Run",
+    "JUnit.CucumberTest.executor": "Run",
+    "JUnit.EnderecoTest.executor": "Run",
+    "JUnit.FavoritadoControllerTest.executor": "Run",
+    "JUnit.FavoritadoJpaTest.executor": "Run",
+    "JUnit.FavoritadoServiceTest.executor": "Run",
+    "JUnit.FavoritadoTest.executor": "Run",
+    "JUnit.FavoritosServiceTest.executor": "Run",
+    "JUnit.HistoricoServicosTest.executor": "Run",
+    "JUnit.OfereceJpaTest.executor": "Run",
+    "JUnit.OfereceServiceTest.executor": "Run",
+    "JUnit.OfereceTest.executor": "Run",
+    "JUnit.PedidoJpaTest.executor": "Run",
+    "JUnit.PedidoServiceTest.executor": "Run",
+    "JUnit.PedidoTest.executor": "Run",
+    "JUnit.PrestadorControllerTest.executor": "Run",
+    "JUnit.PrestadorJpaTest.executor": "Run",
+    "JUnit.PrestadorServiceTest.executor": "Run",
+    "JUnit.PrestadorTest.executor": "Run",
+    "JUnit.ReagendarServicoTest.executor": "Run",
+    "JUnit.ServicoControllerTest.executor": "Run",
+    "JUnit.ServicoJpaRepositoryTest.executor": "Run",
+    "JUnit.ServicoJpaTest.executor": "Run",
+    "JUnit.ServicoServiceTest.executor": "Run",
+    "JUnit.ServicoTest.executor": "Run",
+    "JUnit.VisualizarAvaliacoesPrestadorTest.executor": "Run",
+    "JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos.executor": "Run",
+    "Maven.bdd [clean].executor": "Run",
+    "Maven.bdd [compile].executor": "Run",
+    "Maven.bdd [deploy].executor": "Run",
+    "Maven.bdd [install].executor": "Run",
+    "Maven.bdd [package].executor": "Run",
+    "Maven.bdd [site].executor": "Run",
+    "Maven.bdd [test].executor": "Run",
+    "Maven.bdd [validate].executor": "Run",
+    "Maven.bdd [verify].executor": "Run",
+    "Maven.dominio-prestacaoServicos [-Dtest=NOT_RESOLVED...].executor": "Run",
+    "Maven.persistence [clean].executor": "Run",
+    "Maven.persistence [compile].executor": "Run",
+    "Maven.persistence [deploy].executor": "Run",
+    "Maven.persistence [install].executor": "Run",
+    "Maven.persistence [package].executor": "Run",
+    "Maven.persistence [site].executor": "Run",
+    "Maven.persistence [test].executor": "Run",
+    "Maven.persistence [validate].executor": "Run",
+    "Maven.persistence [verify].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BackendApplication.executor": "Run",
+    "Spring Boot.ImplementacaoWeb2Application.executor": "Run",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/clara/implementacaoWeb/backend/src/test/java/com/exemple/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "ts.external.directory.path": "/home/guilherme/implementacaoWeb/frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.exemple.implementacaoweb2.avaliacao" />
@@ -175,68 +210,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClienteControllerTest">
-    <configuration name="ClienteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.exemple.backend.apresentacao.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.backend.apresentacao.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.apresentacao.controllers.ClienteControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.exemple.backend.dominio.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.backend.dominio.services" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.dominio.services.ClienteServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FavoritadoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.exemple.backend.dominio.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.backend.dominio.services" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.dominio.services.FavoritadoServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FavoritosServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dominio-prestacaoServicos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.exemple.implementacaoweb2.steps.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.implementacaoweb2" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.implementacaoweb2.FavoritosServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServicoJpaRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AvaliacaoSobreClienteJpaRepositoryTest">
+    <configuration name="AvaliacaoSobreClienteJpaRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -245,22 +220,68 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.exemple.backend.infraestrutura.jparepositorys" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jparepositorys.ServicoJpaRepositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jparepositorys.AvaliacaoSobreClienteJpaRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.exemple.implementacaoweb2 in dominio-prestacaoServicos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dominio-prestacaoServicos" />
+    <configuration name="AvaliacaoSobrePrestadorJpaRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.exemple.implementacaoweb2.steps.*" />
+          <option name="PATTERN" value="com.exemple.backend.infraestrutura.jparepositorys.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.implementacaoweb2" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="com.exemple.backend.infraestrutura.jparepositorys" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jparepositorys.AvaliacaoSobrePrestadorJpaRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PedidoJpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exemple.backend.infraestrutura.jpamodels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exemple.backend.infraestrutura.jpamodels" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jpamodels.PedidoJpaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrestadorJpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exemple.backend.infraestrutura.jpamodels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exemple.backend.infraestrutura.jpamodels" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jpamodels.PrestadorJpaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicoJpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exemple.backend.infraestrutura.jpamodels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exemple.backend.infraestrutura.jpamodels" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jpamodels.ServicoJpaTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -302,11 +323,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ServicoJpaRepositoryTest" />
-        <item itemvalue="JUnit.FavoritadoServiceTest" />
-        <item itemvalue="JUnit.ClienteServiceTest" />
-        <item itemvalue="JUnit.ClienteControllerTest" />
-        <item itemvalue="JUnit.com.exemple.implementacaoweb2 in dominio-prestacaoServicos" />
+        <item itemvalue="JUnit.AvaliacaoSobreClienteJpaRepositoryTest" />
+        <item itemvalue="JUnit.AvaliacaoSobrePrestadorJpaRepositoryTest" />
+        <item itemvalue="JUnit.ServicoJpaTest" />
+        <item itemvalue="JUnit.PrestadorJpaTest" />
+        <item itemvalue="JUnit.PedidoJpaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -331,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745288606993</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implementando os testes /2">
+      <option name="closed" value="true" />
+      <created>1748908185240</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748908185240</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +379,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ajustando erros do merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajustando erros do merge" />
+    <MESSAGE value="Implementando os testes /2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementando os testes /2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -36,7 +36,7 @@ public class PedidoJpa implements Serializable {
 
     }
 
-    public PedidoJpa(int id, LocalDate data, ServicoJpa servico, PrestadorJpa prestador, ClienteJpa cliente, String status) {
+    public PedidoJpa(Integer id, LocalDate data, ServicoJpa servico, PrestadorJpa prestador, ClienteJpa cliente, String status) {
         this.id = id;
         this.data = data;
         this.servico = servico;
@@ -45,11 +45,11 @@ public class PedidoJpa implements Serializable {
         this.status = status;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

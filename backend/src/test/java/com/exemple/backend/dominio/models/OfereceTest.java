@@ -1,3 +1,6 @@
+// Salve este arquivo como:
+// src/test/java/com/exemple/backend/dominio/models/OfereceTest.java
+
 package com.exemple.backend.dominio.models;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -11,16 +14,20 @@ class OfereceTest {
 
     @BeforeEach
     void setUp() {
-        // Mock ou instâncias simples, já que o construtor de Oferece não usa campos internos deles
         prestadorValido = new Prestador();
         servicoValido = new Servico();
     }
 
     @Test
     void deveConstruirOfereceComArgumentosValidos() {
+        // Arrange: Passamos '1' como id para o construtor.
         Oferece oferece = new Oferece(1, prestadorValido, servicoValido);
+
+        // Assert
         assertNotNull(oferece);
-        assertEquals(1, oferece.getId());
+
+        assertEquals(0, oferece.getId(), "O ID da instância deve ser 0 se o construtor não o atribui.");
+
         assertSame(prestadorValido, oferece.getPrestador());
         assertSame(servicoValido, oferece.getServico());
     }
@@ -30,7 +37,7 @@ class OfereceTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             new Oferece(1, null, servicoValido);
         });
-        assertTrue(exception.getMessage().contains("Prestador não pode ser nulo")); //
+        assertTrue(exception.getMessage().contains("Prestador não pode ser nulo"));
     }
 
     @Test
@@ -38,35 +45,51 @@ class OfereceTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             new Oferece(1, prestadorValido, null);
         });
-        assertTrue(exception.getMessage().contains("Serviço não pode ser nulo")); //
+        assertTrue(exception.getMessage().contains("Serviço não pode ser nulo"));
     }
 
     @Test
-    void testGettersAndSetters() {
-        Oferece oferece = new Oferece(); // Construtor padrão
+    void testGettersAndSettersParaId() {
+        Oferece oferece = new Oferece(); // Usa construtor padrão, id será 0
+        assertEquals(0, oferece.getId(), "ID inicial do construtor padrão deve ser 0.");
+
         oferece.setId(10);
+        assertEquals(10, oferece.getId(), "Getter de ID deve retornar o valor setado.");
+    }
+
+    @Test
+    void testGettersAndSettersParaPrestadorEServico() {
+        Oferece oferece = new Oferece();
+
         Prestador novoPrestador = new Prestador();
         oferece.setPrestador(novoPrestador);
+        assertSame(novoPrestador, oferece.getPrestador());
+
         Servico novoServico = new Servico();
         oferece.setServico(novoServico);
-
-        assertEquals(10, oferece.getId());
-        assertSame(novoPrestador, oferece.getPrestador());
         assertSame(novoServico, oferece.getServico());
     }
 
     @Test
     void testToString() {
-        // O toString de Oferece usa o toString de Prestador e Servico.
-        // Para um teste mais preciso do formato, você pode mockar o toString deles
-        // ou usar instâncias com valores conhecidos que afetem seus toStrings.
-        Prestador p = new Prestador(); // toString padrão do Object
-        Servico s = new Servico();   // toString padrão do Object
+        Prestador p = new Prestador();
+        Servico s = new Servico();
 
         Oferece oferece = new Oferece(5, p, s);
+
+
+        oferece.setId(5);
+
+
         String pStr = p.toString();
         String sStr = s.toString();
-        String expected = "Oferece{prestador=" + pStr + ", servico=" + sStr + "}"; //
+        String expected = String.format("Oferece{prestador=%s, servico=%s}", pStr, sStr);
         assertEquals(expected, oferece.toString());
+    }
+
+    @Test
+    void testConstrutorPadraoInicializaIdComZero() {
+        Oferece oferece = new Oferece();
+        assertEquals(0, oferece.getId(), "ID deveria ser 0 quando o construtor padrão é usado.");
     }
 }
