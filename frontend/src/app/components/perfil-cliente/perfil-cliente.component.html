@@ -8,26 +8,64 @@
       <img src="belli.png" alt="Foto do cliente" />
     </div>
 
-    <div class="dados">
-      <p><strong>Nome:</strong> Gabriel Belliato</p>
+    @if (!mostrarEdicao) {
+      <div class="dados">
+        <p><strong>Nome:</strong> {{ cliente.nome }}</p>
+        <p><strong>Email:</strong> {{ cliente.email }}</p>
+        <p><strong>Telefone:</strong> {{ cliente.telefone }}</p>
 
-      <div class="estrelas">
-        <span class="star preenchida">★</span>
-        <span class="star preenchida">★</span>
-        <span class="star preenchida">★</span>
-        <span class="star preenchida">★</span>
-        <span class="star">★</span>
+        <div class="estrelas">
+          <span class="star preenchida">★</span>
+          <span class="star preenchida">★</span>
+          <span class="star preenchida">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+
+        <p class="descricao">
+          <strong>Descrição:</strong> O Lorem Ipsum é um texto modelo da indústria tipográfica...
+        </p>
+
+        <div class="acoes">
+          <button (click)="abrirHistorico()">Visualizar Histórico de Serviços</button>
+        </div>
+        <div class="acoes">
+          <button (click)="editarPerfil()">Editar Perfil</button>
+        </div>
       </div>
+    }
 
-      <p class="descricao">
-        <strong>Descrição:</strong> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão...
-      </p>
+    @if (mostrarEdicao) {
+      <div class="dados">
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput (ngModel)="cliente.nome">
+        </mat-form-field>
 
-      <div class="acoes">
-        <button (click)="abrirHistorico()">Visualizar Histórico de Serviços</button>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput (ngModel)="cliente.email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Telefone</mat-label>
+          <input matInput (ngModel)="cliente.telefone">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Senha</mat-label>
+          <input matInput (ngModel)="cliente.senha" type="password">
+        </mat-form-field>
+
+        <div class="acoes">
+          <button mat-raised-button color="primary" (click)="salvarEdicao()">Salvar</button>
+          <button mat-button (click)="cancelarEdicao()">Cancelar</button>
+        </div>
       </div>
-    </div>
+    }
 
     <div class="favorito">🤍</div>
   </div>
 </main>
+
+
