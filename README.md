@@ -65,7 +65,9 @@ Para isso, precisamos ter os seguintes softwares instalados:
 
 - Angular( execute npm install -g @angular/cli para instalar globalmente)
 
-- PostgresSQL 
+- PostgresSQL
+  
+- Branch: develop
 
 ####  Execução do backend:
 	
