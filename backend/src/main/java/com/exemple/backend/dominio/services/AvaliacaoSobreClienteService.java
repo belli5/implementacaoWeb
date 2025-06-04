@@ -3,6 +3,7 @@ package com.exemple.backend.dominio.services;
 import com.exemple.backend.dominio.models.AvaliacaoSobreCliente;
 import com.exemple.backend.dominio.repositorys.AvaliacaoSobreClienteRepository;
 import org.springframework.stereotype.Service;
+import com.exemple.backend.dominio.iterator.AvaliacaoSobreClienteIterator;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,6 +35,11 @@ public class AvaliacaoSobreClienteService{
 
     public void delete(int id) {
         avaliacaoSobreClienteRepository.delete(id);
+    }
+
+    public AvaliacaoSobreClienteIterator getIteratorPorNotaMinima(int notaMinima) {
+        List<AvaliacaoSobreCliente> todas = avaliacaoSobreClienteRepository.findAll();
+        return new AvaliacaoSobreClienteIterator(todas, notaMinima);
     }
 
 }

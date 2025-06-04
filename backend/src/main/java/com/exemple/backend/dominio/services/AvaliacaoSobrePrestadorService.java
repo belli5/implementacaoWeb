@@ -5,7 +5,9 @@ import com.exemple.backend.dominio.models.AvaliacaoSobrePrestador;
 import com.exemple.backend.dominio.repositorys.AvaliacaoSobreClienteRepository;
 import com.exemple.backend.dominio.repositorys.AvaliacaoSobrePrestadorRepository;
 import org.springframework.stereotype.Service;
+import com.exemple.backend.dominio.iterator.AvaliacaoSobrePrestadorIterator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,5 +37,16 @@ public class AvaliacaoSobrePrestadorService {
 
     public List<AvaliacaoSobrePrestador> findAll(){
         return avaliacaoSobrePrestadorRepository.findAll();
+    }
+
+    public List<AvaliacaoSobrePrestador> buscarAvaliacoesComNotaAlta(int notaMinima) {
+        List<AvaliacaoSobrePrestador> todas = avaliacaoSobrePrestadorRepository.findAll();
+        AvaliacaoSobrePrestadorIterator iterator = new AvaliacaoSobrePrestadorIterator(todas, notaMinima);
+
+        List<AvaliacaoSobrePrestador> resultado = new ArrayList<>();
+        while (iterator.hasNext()) {
+            resultado.add(iterator.next());
+        }
+        return resultado;
     }
 }
