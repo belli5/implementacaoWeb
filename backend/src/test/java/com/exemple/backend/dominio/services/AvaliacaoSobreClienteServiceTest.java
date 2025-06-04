@@ -1,81 +1,110 @@
-//package com.exemple.backend.dominio.services;
-//
-//import com.exemple.backend.dominio.models.AvaliacaoSobreCliente;
-//import com.exemple.backend.dominio.models.Cliente;
-//import com.exemple.backend.dominio.models.Prestador;
-//import com.exemple.backend.dominio.models.compartilhados.Endereco;
-//import com.exemple.backend.dominio.repositorys.AvaliacaoSobreClienteRepository;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
-//import org.junit.jupiter.api.extension.ExtendWith;
-//import org.mockito.InjectMocks;
-//import org.mockito.Mock;
-//import org.mockito.junit.jupiter.MockitoExtension;
-//
-//import java.util.Arrays;
-//import java.util.List;
-//import java.util.Optional;
-//
-//import static org.junit.jupiter.api.Assertions.*;
-//import static org.mockito.ArgumentMatchers.any;
-//import static org.mockito.ArgumentMatchers.anyInt;
-//import static org.mockito.Mockito.*;
-//
-//@ExtendWith(MockitoExtension.class)
-//class AvaliacaoSobreClienteServiceTest {
-//
-//    @Mock
-//    private AvaliacaoSobreClienteRepository repositoryMock;
-//
-//    @InjectMocks
-//    private AvaliacaoSobreClienteService service; // A classe não está anotada com @Service
-//
-//    private AvaliacaoSobreCliente avaliacao1;
-//    private Cliente cliente;
-//    private Prestador prestador;
-//    private Endereco endereco;
-//
-//    @BeforeEach
-//    void setUp() {
-//        endereco = new Endereco("Rua Aval", "Bairro Aval", "Cidade Aval", "AV");
-//        cliente = new Cliente(1, "Cliente Aval", "s", "c@aval.com", "t", endereco);
-//        prestador = new Prestador(1, "Prestador Aval", "s", "p@aval.com", "t", endereco);
-//        avaliacao1 = new AvaliacaoSobreCliente(1, prestador, "Muito bom cliente!", 5, cliente);
-//    }
-//
-////    @Test
-////    void deveContarAvaliacoesPorCliente() {
-////        List<AvaliacaoSobreCliente> lista = Arrays.asList(avaliacao1);
-////        when(repositoryMock.findByClienteId(1)).thenReturn(lista);
-////
-////        List<AvaliacaoSobreCliente> resultado = service.contarAvaliacoesPorCliente(1);
-////        assertNotNull(resultado);
-////        assertEquals(1, resultado.size());
-////        verify(repositoryMock, times(1)).findByClienteId(1);
-////    }
-//
-//    @Test
-//    void deveBuscarAvaliacaoPorIdExistente() {
-//        when(repositoryMock.findById(1)).thenReturn(Optional.of(avaliacao1));
-//        Optional<AvaliacaoSobreCliente> resultado = service.buscarPorId(1);
-//        assertTrue(resultado.isPresent());
-//        assertEquals(avaliacao1.getComentario(), resultado.get().getComentario());
-//        verify(repositoryMock, times(1)).findById(1);
-//    }
-//
-//    @Test
-//    void deveSalvarAvaliacaoComSucesso() {
-//        when(repositoryMock.save(any(AvaliacaoSobreCliente.class))).thenReturn(avaliacao1);
-//        AvaliacaoSobreCliente salvo = service.salvarAvaliacao(avaliacao1);
-//        assertNotNull(salvo);
-//        assertEquals(avaliacao1.getNota(), salvo.getNota());
-//        verify(repositoryMock, times(1)).save(avaliacao1);
-//    }
-//
-//    @Test
-//    void deveDeletarAvaliacaoComSucesso() {
-//        doNothing().when(repositoryMock).delete(1);
-//        service.deletarAvaliacao(1);
-//        verify(repositoryMock, times(1)).delete(1);
-//    }
-//}
+package com.exemple.backend.dominio.services;
+
+import com.exemple.backend.dominio.models.AvaliacaoSobreCliente;
+import com.exemple.backend.dominio.models.Cliente;
+import com.exemple.backend.dominio.models.Prestador;
+import com.exemple.backend.dominio.models.compartilhados.Endereco;
+import com.exemple.backend.dominio.repositorys.AvaliacaoSobreClienteRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.*;
+
+@ExtendWith(MockitoExtension.class)
+class AvaliacaoSobreClienteServiceTest {
+
+    @Mock
+    private AvaliacaoSobreClienteRepository avaliacaoSobreClienteRepositoryMock;
+
+    @InjectMocks
+    private AvaliacaoSobreClienteService avaliacaoSobreClienteService;
+
+    private AvaliacaoSobreCliente avaliacao1;
+    private Cliente cliente1;
+    private Prestador prestador1;
+
+    @BeforeEach
+    void setUp() {
+        Endereco endereco = new Endereco("Rua Teste", "Bairro Teste", "Cidade Teste", "TS");
+        cliente1 = new Cliente(1, "Cliente Teste", "senhaC", "cliente@email.com", "111111111", endereco);
+        prestador1 = new Prestador(1, "Prestador Teste", "senhaP", "prestador@email.com", "222222222", endereco);
+        avaliacao1 = new AvaliacaoSobreCliente(1, prestador1, "Comentário teste", 5, cliente1);
+    }
+
+    @Test
+    void deveEncontrarAvaliacaoPorIdExistente() {
+        when(avaliacaoSobreClienteRepositoryMock.findById(1)).thenReturn(Optional.of(avaliacao1));
+
+        Optional<AvaliacaoSobreCliente> resultado = avaliacaoSobreClienteService.findById(1);
+
+        assertTrue(resultado.isPresent());
+        assertEquals(avaliacao1.getId(), resultado.get().getId());
+        verify(avaliacaoSobreClienteRepositoryMock, times(1)).findById(1);
+    }
+
+    @Test
+    void naoDeveEncontrarAvaliacaoPorIdInexistente() {
+        when(avaliacaoSobreClienteRepositoryMock.findById(anyInt())).thenReturn(Optional.empty());
+
+        Optional<AvaliacaoSobreCliente> resultado = avaliacaoSobreClienteService.findById(99);
+
+        assertFalse(resultado.isPresent());
+        verify(avaliacaoSobreClienteRepositoryMock, times(1)).findById(99);
+    }
+
+    @Test
+    void deveEncontrarTodasAsAvaliacoes() {
+        List<AvaliacaoSobreCliente> lista = Arrays.asList(avaliacao1, new AvaliacaoSobreCliente(2, prestador1, "Outro comentário", 4, cliente1));
+        when(avaliacaoSobreClienteRepositoryMock.findAll()).thenReturn(lista);
+
+        List<AvaliacaoSobreCliente> resultado = avaliacaoSobreClienteService.findAll();
+
+        assertNotNull(resultado);
+        assertEquals(2, resultado.size());
+        verify(avaliacaoSobreClienteRepositoryMock, times(1)).findAll();
+    }
+
+    @Test
+    void deveEncontrarAvaliacoesPorClienteId() {
+        List<AvaliacaoSobreCliente> lista = Arrays.asList(avaliacao1);
+        when(avaliacaoSobreClienteRepositoryMock.findByClienteId(1)).thenReturn(lista);
+
+        List<AvaliacaoSobreCliente> resultado = avaliacaoSobreClienteService.findByClienteId(1);
+
+        assertNotNull(resultado);
+        assertEquals(1, resultado.size());
+        assertEquals(avaliacao1.getId(), resultado.get(0).getId());
+        verify(avaliacaoSobreClienteRepositoryMock, times(1)).findByClienteId(1);
+    }
+
+    @Test
+    void deveSalvarAvaliacaoComSucesso() {
+        when(avaliacaoSobreClienteRepositoryMock.save(any(AvaliacaoSobreCliente.class))).thenReturn(avaliacao1);
+
+        AvaliacaoSobreCliente salvo = avaliacaoSobreClienteService.save(avaliacao1);
+
+        assertNotNull(salvo);
+        assertEquals(avaliacao1.getId(), salvo.getId());
+        verify(avaliacaoSobreClienteRepositoryMock, times(1)).save(avaliacao1);
+    }
+
+    @Test
+    void deveDeletarAvaliacaoComSucesso() {
+        doNothing().when(avaliacaoSobreClienteRepositoryMock).delete(1);
+
+        avaliacaoSobreClienteService.delete(1);
+
+        verify(avaliacaoSobreClienteRepositoryMock, times(1)).delete(1);
+    }
+}

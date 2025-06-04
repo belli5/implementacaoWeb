@@ -3,9 +3,11 @@ package com.exemple.backend.infraestrutura.mappers;
 import com.exemple.backend.dominio.models.AvaliacaoSobreCliente;
 import com.exemple.backend.dominio.models.Cliente;
 import com.exemple.backend.dominio.models.Prestador;
+import com.exemple.backend.dominio.models.compartilhados.Endereco; // Import necessário
 import com.exemple.backend.infraestrutura.jpamodels.AvaliacaoSobreClienteJpa;
 import com.exemple.backend.infraestrutura.jpamodels.ClienteJpa;
 import com.exemple.backend.infraestrutura.jpamodels.PrestadorJpa;
+import com.exemple.backend.infraestrutura.jpamodels.compartilhados.EnderecoJpa; // Import necessário
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,21 +17,30 @@ class AvaliacaoSobreClienteMapperTest {
     @Test
     void deveMapearAvaliacaoSobreClienteDominioParaJpa() {
         // Arrange
-        // Construtor de AvaliacaoSobreCliente (domínio) requer Prestador, Comentario, Cliente não nulos.
-        Prestador prestadorDominio = new Prestador();
-        Cliente clienteDominio = new Cliente();
+        // Construtor de AvaliacaoSobreCliente (domínio) requer Prestador e Cliente não nulos.
+        // Para o teste, instanciaremos Cliente e Prestador de domínio com IDs para maior clareza no JPA.
+        Endereco enderecoDominio = new Endereco("Rua Dom", "Bairro Dom", "Cidade Dom", "DM");
+        Prestador prestadorDominio = new Prestador(10, "Prestador Domínio", "psenha", "pdom@email.com", "ptel", enderecoDominio);
+        Cliente clienteDominio = new Cliente(20, "Cliente Domínio", "csenha", "cdom@email.com", "ctel", enderecoDominio);
         AvaliacaoSobreCliente dominio = new AvaliacaoSobreCliente(1, prestadorDominio, "Cliente exemplar!", 5, clienteDominio);
 
         // Act
         AvaliacaoSobreClienteJpa jpa = AvaliacaoSobreClienteMapper.toAvaliacaoSobreClienteJpa(dominio);
 
         // Assert
-        assertNotNull(jpa);
-        assertEquals(1, jpa.getId());
-        assertEquals("Cliente exemplar!", jpa.getComentario());
-        assertEquals(5, jpa.getNota());
-        assertNull(jpa.getCliente(), "Mapper toAvaliacaoSobreClienteJpa seta ClienteJpa como null."); //
-        assertNull(jpa.getPrestador(), "Mapper toAvaliacaoSobreClienteJpa seta PrestadorJpa como null."); //
+        assertNotNull(jpa, "O objeto JPA não deveria ser nulo.");
+        assertEquals(1, jpa.getId(), "O ID da avaliação não foi mapeado corretamente.");
+        assertEquals("Cliente exemplar!", jpa.getComentario(), "O comentário não foi mapeado corretamente.");
+        assertEquals(5, jpa.getNota(), "A nota não foi mapeada corretamente.");
+
+        assertNotNull(jpa.getCliente(), "ClienteJpa não deveria ser nulo após o mapeamento.");
+        assertEquals(clienteDominio.getId(), jpa.getCliente().getId(), "ID do ClienteJpa não corresponde ao ID do domínio.");
+        assertEquals(clienteDominio.getNome(), jpa.getCliente().getNome(), "Nome do ClienteJpa não corresponde.");
+
+
+        assertNotNull(jpa.getPrestador(), "PrestadorJpa não deveria ser nulo após o mapeamento.");
+        assertEquals(prestadorDominio.getId(), jpa.getPrestador().getId(), "ID do PrestadorJpa não corresponde ao ID do domínio.");
+        assertEquals(prestadorDominio.getNome(), jpa.getPrestador().getNome(), "Nome do PrestadorJpa não corresponde.");
     }
 
     @Test
@@ -41,59 +52,95 @@ class AvaliacaoSobreClienteMapperTest {
         jpa.setNota(4);
 
         // Para o mapper toAvaliacaoSobreCliente, PrestadorJpa e ClienteJpa no objeto 'jpa'
-        // NÃO PODEM ser nulos, pois ele tenta acessar jpa.getPrestador().getId() e jpa.getCliente().getId().
+        // NÃO PODEM ser nulos e DEVEM ter os campos esperados pelos construtores de domínio.
+        EnderecoJpa enderecoJpaComum = new EnderecoJpa("Rua Jpa", "Bairro Jpa", "Cidade Jpa", "JP");
+
         PrestadorJpa prestadorJpaMock = new PrestadorJpa();
-        prestadorJpaMock.setId(101); // ID que será usado pelo mapper
+        prestadorJpaMock.setId(101);
+        prestadorJpaMock.setNome("Prestador Mock JPA");
+        prestadorJpaMock.setSenha("senhaPJpa");
+        prestadorJpaMock.setEmail("pjpa@mock.com");
+        prestadorJpaMock.setTelefone("111222333");
+        prestadorJpaMock.setEndereco(enderecoJpaComum);
         jpa.setPrestador(prestadorJpaMock);
 
         ClienteJpa clienteJpaMock = new ClienteJpa();
-        clienteJpaMock.setId(202); // ID que será usado pelo mapper
+        clienteJpaMock.setId(202);
+        clienteJpaMock.setNome("Cliente Mock JPA");
+        clienteJpaMock.setSenha("senhaCJpa");
+        clienteJpaMock.setEmail("cjpa@mock.com");
+        clienteJpaMock.setTelefone("444555666");
+        clienteJpaMock.setEndereco(enderecoJpaComum);
         jpa.setCliente(clienteJpaMock);
 
         // Act
         AvaliacaoSobreCliente dominio = AvaliacaoSobreClienteMapper.toAvaliacaoSobreCliente(jpa);
 
         // Assert
-        assertNotNull(dominio);
-        assertEquals(2, dominio.getId());
-        assertEquals("Comunicação fácil.", dominio.getComentario());
-        assertEquals(4, dominio.getNota());
+        assertNotNull(dominio, "O objeto de domínio não deveria ser nulo.");
+        assertEquals(2, dominio.getId(), "ID da avaliação no domínio não corresponde.");
+        assertEquals("Comunicação fácil.", dominio.getComentario(), "Comentário no domínio não corresponde.");
+        assertEquals(4, dominio.getNota(), "Nota no domínio não corresponde.");
 
         assertNotNull(dominio.getCliente(), "Cliente no domínio não deveria ser nulo.");
-        assertEquals(202, dominio.getCliente().getId(), "ID do Cliente não corresponde.");
-        // Outros campos do Cliente (nome, etc.) serão nulos porque o mapper cria `new Cliente(id, null, null...)`
+        assertEquals(202, dominio.getCliente().getId(), "ID do Cliente no domínio não corresponde.");
+        assertEquals("Cliente Mock JPA", dominio.getCliente().getNome(), "Nome do Cliente no domínio não corresponde.");
 
         assertNotNull(dominio.getPrestador(), "Prestador no domínio não deveria ser nulo.");
-        assertEquals(101, dominio.getPrestador().getId(), "ID do Prestador não corresponde.");
-        // Outros campos do Prestador (nome, etc.) serão nulos
+        assertEquals(101, dominio.getPrestador().getId(), "ID do Prestador no domínio não corresponde.");
+        assertEquals("Prestador Mock JPA", dominio.getPrestador().getNome(), "Nome do Prestador no domínio não corresponde.");
     }
 
     @Test
-    void deveLancarNullPointerExceptionAoMapearJpaParaDominioComPrestadorJpaNulo() {
+    void deveLancarExcecaoAoMapearJpaParaDominioComPrestadorJpaNulo() {
         AvaliacaoSobreClienteJpa jpa = new AvaliacaoSobreClienteJpa();
         jpa.setId(3);
-        jpa.setComentario("Teste");
+        jpa.setComentario("Teste com prestador nulo");
         jpa.setNota(3);
         jpa.setPrestador(null); // Prestador Jpa é nulo
-        jpa.setCliente(new ClienteJpa()); // Cliente Jpa não nulo para isolar o problema
 
-        assertThrows(NullPointerException.class, () -> {
+        // Cliente Jpa válido para isolar o problema no Prestador
+        ClienteJpa clienteJpaValido = new ClienteJpa();
+        clienteJpaValido.setId(202);
+        clienteJpaValido.setNome("Cliente Valido");
+        clienteJpaValido.setSenha("senhaCValido");
+        clienteJpaValido.setEmail("cvalido@mock.com");
+        clienteJpaValido.setTelefone("777888999");
+        clienteJpaValido.setEndereco(new EnderecoJpa("Rua CV", "Bairro CV", "Cidade CV", "CV"));
+        jpa.setCliente(clienteJpaValido);
+
+        // A exceção virá de PrestadorMapper.toPrestador, que não aceita jpa nulo.
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             AvaliacaoSobreClienteMapper.toAvaliacaoSobreCliente(jpa);
-        }, "Deveria lançar NPE se PrestadorJpa for nulo, pois o mapper tenta jpa.getPrestador().getId()");
+        });
+        assertEquals("PrestadorJpa não pode ser nulo", exception.getMessage(),
+                "Mensagem de exceção não corresponde ao esperado para PrestadorJpa nulo.");
     }
 
     @Test
-    void deveLancarNullPointerExceptionAoMapearJpaParaDominioComClienteJpaNulo() {
+    void deveLancarExcecaoAoMapearJpaParaDominioComClienteJpaNulo() {
         AvaliacaoSobreClienteJpa jpa = new AvaliacaoSobreClienteJpa();
         jpa.setId(4);
-        jpa.setComentario("Teste");
+        jpa.setComentario("Teste com cliente nulo");
         jpa.setNota(3);
-        jpa.setPrestador(new PrestadorJpa()); // Prestador Jpa não nulo
         jpa.setCliente(null); // Cliente Jpa é nulo
 
-        assertThrows(NullPointerException.class, () -> {
+        // Prestador Jpa válido para isolar o problema no Cliente
+        PrestadorJpa prestadorJpaValido = new PrestadorJpa();
+        prestadorJpaValido.setId(101);
+        prestadorJpaValido.setNome("Prestador Valido");
+        prestadorJpaValido.setSenha("senhaPValido");
+        prestadorJpaValido.setEmail("pvalido@mock.com");
+        prestadorJpaValido.setTelefone("000111222");
+        prestadorJpaValido.setEndereco(new EnderecoJpa("Rua PV", "Bairro PV", "Cidade PV", "PV"));
+        jpa.setPrestador(prestadorJpaValido);
+
+        // A exceção virá de ClienteMapper.toCliente, que não aceita jpa nulo.
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             AvaliacaoSobreClienteMapper.toAvaliacaoSobreCliente(jpa);
-        }, "Deveria lançar NPE se ClienteJpa for nulo, pois o mapper tenta jpa.getCliente().getId()");
+        });
+        assertEquals("ClienteJpa não pode ser nulo", exception.getMessage(),
+                "Mensagem de exceção não corresponde ao esperado para ClienteJpa nulo.");
     }
 
     @Test

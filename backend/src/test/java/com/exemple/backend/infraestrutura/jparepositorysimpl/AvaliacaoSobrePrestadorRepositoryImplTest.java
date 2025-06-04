@@ -24,7 +24,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
-@Import({AvaliacaoSobrePrestadorRepositoryImpl.class, ClienteJpaRepository.class, PrestadorJpaRepository.class})
+@Import(AvaliacaoSobrePrestadorRepositoryImpl.class)
 class AvaliacaoSobrePrestadorRepositoryImplTest {
 
     @Autowired
@@ -34,14 +34,11 @@ class AvaliacaoSobrePrestadorRepositoryImplTest {
     private AvaliacaoSobrePrestadorRepositoryImpl avaliacaoRepositoryImpl;
 
     @Autowired
-    private AvaliacaoSobrePrestadorJpaRepository avaliacaoJpaRepository; // Para limpar
-
-    // Repositórios para persistir ClienteJpa e PrestadorJpa
+    private AvaliacaoSobrePrestadorJpaRepository avaliacaoJpaRepository;
     @Autowired
     private ClienteJpaRepository clienteJpaRepository;
     @Autowired
     private PrestadorJpaRepository prestadorJpaRepository;
-
 
     private Cliente clienteDominio;
     private Prestador prestadorDominio;
@@ -55,67 +52,85 @@ class AvaliacaoSobrePrestadorRepositoryImplTest {
         avaliacaoJpaRepository.deleteAll();
         clienteJpaRepository.deleteAll();
         prestadorJpaRepository.deleteAll();
+        entityManager.flush();
+        entityManager.clear();
 
-        Endereco endereco = new Endereco("Rua AvalP Impl", "BAPI", "CAPI", "API");
+        Endereco enderecoModeloDominio = new Endereco("Rua AvalP Impl Setup", "Bairro APS", "Cidade APS", "APS");
+        EnderecoJpa enderecoModeloJpa = new EnderecoJpa(enderecoModeloDominio.getRua(), enderecoModeloDominio.getBairro(), enderecoModeloDominio.getCidade(), enderecoModeloDominio.getEstado());
 
-        // Persistir ClienteJpa e PrestadorJpa
-        EnderecoJpa endJpa = new EnderecoJpa(endereco.getRua(), endereco.getBairro(), endereco.getCidade(), endereco.getEstado());
-        ClienteJpa cJpa = new ClienteJpa("Cli AvalP Impl", "sCAPI", "capi@e.com", "tcapi", endJpa);
+        ClienteJpa cJpa = new ClienteJpa();
+        cJpa.setNome("Cliente Para AvalP Teste");
+        cJpa.setSenha("senhaClienteAPS");
+        cJpa.setEmail("cliente.avalP.teste@example.com");
+        cJpa.setTelefone("333333333");
+        cJpa.setEndereco(enderecoModeloJpa);
         clienteJpaPersistido = entityManager.persistFlushFind(cJpa);
 
-        PrestadorJpa pJpa = new PrestadorJpa("Pre AvalP Impl", "sPAPI", "papi@e.com", "tpapi", endJpa);
+        PrestadorJpa pJpa = new PrestadorJpa();
+        pJpa.setNome("Prestador Para AvalP Teste");
+        pJpa.setSenha("senhaPrestadorAPS");
+        pJpa.setEmail("prestador.avalP.teste@example.com");
+        pJpa.setTelefone("444444444");
+        pJpa.setEndereco(enderecoModeloJpa);
         prestadorJpaPersistido = entityManager.persistFlushFind(pJpa);
 
-        // Criar objetos de domínio com IDs corretos
-        clienteDominio = new Cliente(clienteJpaPersistido.getId(), cJpa.getNome(), cJpa.getSenha(), cJpa.getEmail(), cJpa.getTelefone(), endereco);
-        prestadorDominio = new Prestador(prestadorJpaPersistido.getId(), pJpa.getNome(), pJpa.getSenha(), pJpa.getEmail(), pJpa.getTelefone(), endereco);
+        clienteDominio = new Cliente(
+                clienteJpaPersistido.getId(),
+                clienteJpaPersistido.getNome(),
+                clienteJpaPersistido.getSenha(),
+                clienteJpaPersistido.getEmail(),
+                clienteJpaPersistido.getTelefone(),
+                enderecoModeloDominio
+        );
+        prestadorDominio = new Prestador(
+                prestadorJpaPersistido.getId(),
+                prestadorJpaPersistido.getNome(),
+                prestadorJpaPersistido.getSenha(),
+                prestadorJpaPersistido.getEmail(),
+                prestadorJpaPersistido.getTelefone(),
+                enderecoModeloDominio
+        );
 
-        // O ID da avaliação é gerado, então pode ser null ou 0 no objeto de domínio
-        avaliacaoDominioParaSalvar = new AvaliacaoSobrePrestador(null, clienteDominio, "Comentário Impl", 5, prestadorDominio);
+        // CORREÇÃO AQUI: Use o construtor que não exige ID
+        avaliacaoDominioParaSalvar = new AvaliacaoSobrePrestador(
+                clienteDominio,
+                "Comentário inicial sobre prestador para salvar.",
+                5, // Nota
+                prestadorDominio
+        );
     }
 
     @Test
-    void deveSalvarAvaliacaoERetornarComId() {
-        // A implementação AvaliacaoSobrePrestadorRepositoryImpl.save faz o seguinte:
-        // 1. Mapeia AvaliacaoSobrePrestador (domínio) para AvaliacaoSobrePrestadorJpa.
-        //    O AvaliacaoSobrePrestadorMapper.toAvaliacaoSobrePrestadorJpa seta cliente e prestador como null no Jpa.
-        // 2. Salva o AvaliacaoSobrePrestadorJpa. Isso significa que as FKs para cliente e prestador serão nulas no banco.
-        //    Isso está alinhado com o schema V1__initial.sql que permite FKs nulas para AvaliacaoSobrePrestador (ON DELETE SET NULL).
-        // 3. Mapeia o Jpa salvo de volta para o domínio.
-        //    O AvaliacaoSobrePrestadorMapper.toAvaliacaoSobrePrestador retorna cliente e prestador como null no domínio.
-
+    void deveSalvarAvaliacaoERetornarComDadosCorretos() {
         AvaliacaoSobrePrestador salvo = avaliacaoRepositoryImpl.save(avaliacaoDominioParaSalvar);
 
-        assertNotNull(salvo);
-        assertNotNull(salvo.getId());
-        assertEquals(avaliacaoDominioParaSalvar.getComentario(), salvo.getComentario());
-        assertEquals(avaliacaoDominioParaSalvar.getNota(), salvo.getNota());
+        assertNotNull(salvo, "A avaliação salva não deveria ser nula.");
+        assertNotNull(salvo.getId(), "O ID da avaliação salva não deveria ser nulo após a persistência.");
+        assertTrue(salvo.getId() > 0, "O ID da avaliação salva deveria ser maior que zero após a persistência.");
+        assertEquals(avaliacaoDominioParaSalvar.getComentario(), salvo.getComentario(), "Comentário não corresponde.");
+        assertEquals(avaliacaoDominioParaSalvar.getNota(), salvo.getNota(), "Nota não corresponde.");
 
-        // Devido ao comportamento do mapper, cliente e prestador no objeto de domínio retornado serão null
-        assertNull(salvo.getCliente());
-        assertNull(salvo.getPrestador());
+        assertNotNull(salvo.getCliente(), "Cliente dentro da avaliação salva não deveria ser nulo.");
+        assertEquals(clienteDominio.getId(), salvo.getCliente().getId(), "ID do cliente na avaliação não corresponde.");
 
-        // Verifica o que foi realmente salvo no banco
+        assertNotNull(salvo.getPrestador(), "Prestador dentro da avaliação salva não deveria ser nulo.");
+        assertEquals(prestadorDominio.getId(), salvo.getPrestador().getId(), "ID do prestador na avaliação não corresponde.");
+
         Optional<AvaliacaoSobrePrestadorJpa> persistidoOpt = avaliacaoJpaRepository.findById(salvo.getId());
-        assertTrue(persistidoOpt.isPresent());
-        AvaliacaoSobrePrestadorJpa persistido = persistidoOpt.get();
-        assertEquals(avaliacaoDominioParaSalvar.getComentario(), persistido.getComentario());
-        assertEquals(avaliacaoDominioParaSalvar.getNota(), persistido.getNota());
-        // As FKs no banco serão nulas devido ao mapeamento
-        assertNull(persistido.getCliente());
-        assertNull(persistido.getPrestador());
+        assertTrue(persistidoOpt.isPresent(), "A avaliação não foi encontrada no banco após salvar.");
+        AvaliacaoSobrePrestadorJpa persistidoJpa = persistidoOpt.get();
+        assertEquals(avaliacaoDominioParaSalvar.getComentario(), persistidoJpa.getComentario());
+        assertEquals(avaliacaoDominioParaSalvar.getNota(), persistidoJpa.getNota());
+        assertNotNull(persistidoJpa.getCliente(), "FK do cliente na entidade JPA não deveria ser nula.");
+        assertEquals(clienteDominio.getId(), persistidoJpa.getCliente().getId(), "FK ID do cliente na entidade JPA não corresponde.");
+        assertNotNull(persistidoJpa.getPrestador(), "FK do prestador na entidade JPA não deveria ser nula.");
+        assertEquals(prestadorDominio.getId(), persistidoJpa.getPrestador().getId(), "FK ID do prestador na entidade JPA não corresponde.");
     }
 
-    // Para testar findById, findAll, findByPrestadorId, precisamos persistir AvaliacaoSobrePrestadorJpa
-    // com ClienteJpa e PrestadorJpa associados (se quisermos testar o filtro por eles no banco).
-    // No entanto, o AvaliacaoSobrePrestadorRepositoryImpl.findByPrestadorId usa o
-    // avaliacaoSobrePrestadorJpaRepository.findByPrestadorId, que filtra pelo ID do prestador no banco.
-    // E o mapper, ao converter de volta para o domínio, anulará as referências a cliente e prestador.
-
-    private AvaliacaoSobrePrestadorJpa persistAvaliacaoCompleta(ClienteJpa c, PrestadorJpa p, String comentario, int nota) {
+    private AvaliacaoSobrePrestadorJpa persistAvaliacaoJpaCompleta(ClienteJpa c, PrestadorJpa p, String comentario, int nota) {
         AvaliacaoSobrePrestadorJpa aval = new AvaliacaoSobrePrestadorJpa();
-        aval.setCliente(c); // Associando para que a busca no banco funcione
-        aval.setPrestador(p); // Associando para que a busca no banco funcione
+        aval.setCliente(c);
+        aval.setPrestador(p);
         aval.setComentario(comentario);
         aval.setNota(nota);
         return entityManager.persistFlushFind(aval);
@@ -123,51 +138,74 @@ class AvaliacaoSobrePrestadorRepositoryImplTest {
 
     @Test
     void deveEncontrarAvaliacaoPorId() {
-        AvaliacaoSobrePrestadorJpa avalJpa = persistAvaliacaoCompleta(clienteJpaPersistido, prestadorJpaPersistido, "Teste FindById", 4);
-
+        AvaliacaoSobrePrestadorJpa avalJpa = persistAvaliacaoJpaCompleta(clienteJpaPersistido, prestadorJpaPersistido, "Teste Encontrar Por ID AP", 4);
         Optional<AvaliacaoSobrePrestador> encontrado = avaliacaoRepositoryImpl.findById(avalJpa.getId());
 
-        assertTrue(encontrado.isPresent());
-        assertEquals(avalJpa.getId(), encontrado.get().getId());
-        assertEquals("Teste FindById", encontrado.get().getComentario());
-        assertEquals(4, encontrado.get().getNota());
-        assertNull(encontrado.get().getCliente()); // Devido ao mapper
-        assertNull(encontrado.get().getPrestador());// Devido ao mapper
+        assertTrue(encontrado.isPresent(), "Avaliação deveria ser encontrada pelo ID.");
+        AvaliacaoSobrePrestador avalDominio = encontrado.get();
+        assertEquals(avalJpa.getId(), avalDominio.getId());
+        assertEquals("Teste Encontrar Por ID AP", avalDominio.getComentario());
+        assertEquals(4, avalDominio.getNota());
+
+        assertNotNull(avalDominio.getCliente());
+        assertEquals(clienteJpaPersistido.getId(), avalDominio.getCliente().getId());
+        assertNotNull(avalDominio.getPrestador());
+        assertEquals(prestadorJpaPersistido.getId(), avalDominio.getPrestador().getId());
     }
 
     @Test
-    void deveEncontrarAvaliacoesPorPrestadorId() {
-        // Avaliação 1 para prestadorJpaPersistido
-        persistAvaliacaoCompleta(clienteJpaPersistido, prestadorJpaPersistido, "Comentário P1-C1", 5);
-        // Avaliação 2 para prestadorJpaPersistido por outro cliente
-        ClienteJpa outroClienteJpa = new ClienteJpa("Outro Cli", "s", "oc@e.com", "t", new EnderecoJpa());
+    void deveRetornarOptionalVazioSeIdNaoExistirAP() {
+        Optional<AvaliacaoSobrePrestador> encontrado = avaliacaoRepositoryImpl.findById(88888);
+        assertFalse(encontrado.isPresent(), "Não deveria encontrar avaliação para ID inexistente.");
+    }
+
+    @Test
+    void deveEncontrarAvaliacoesPorPrestadorIdCorretamente() {
+        persistAvaliacaoJpaCompleta(clienteJpaPersistido, prestadorJpaPersistido, "Comentário P1-C1 AP", 5);
+
+        ClienteJpa outroClienteJpa = new ClienteJpa("Outro Cliente AP", "sOCAP", "ocap@test.com", "telOCAP", new EnderecoJpa("Rua OCAP","Bairro OCAP","Cidade OCAP","OCAP"));
         outroClienteJpa = entityManager.persistFlushFind(outroClienteJpa);
-        persistAvaliacaoCompleta(outroClienteJpa, prestadorJpaPersistido, "Comentário P1-C2", 4);
+        persistAvaliacaoJpaCompleta(outroClienteJpa, prestadorJpaPersistido, "Comentário P1-C2 AP", 4);
 
-        // Avaliação para outro prestador
-        PrestadorJpa outroPrestadorJpa = new PrestadorJpa("Outro Pre", "s", "op@e.com", "t", new EnderecoJpa());
+        PrestadorJpa outroPrestadorJpa = new PrestadorJpa("Outro Prestador AP", "sOPAP", "opap@test.com", "telOPAP", new EnderecoJpa("Rua OPAP","Bairro OPAP","Cidade OPAP","OPAP"));
         outroPrestadorJpa = entityManager.persistFlushFind(outroPrestadorJpa);
-        persistAvaliacaoCompleta(clienteJpaPersistido, outroPrestadorJpa, "Comentário P2-C1", 3);
-
+        persistAvaliacaoJpaCompleta(clienteJpaPersistido, outroPrestadorJpa, "Comentário P2-C1 AP", 3);
 
         List<AvaliacaoSobrePrestador> encontradas = avaliacaoRepositoryImpl.findByPrestadorId(prestadorJpaPersistido.getId());
-
-        assertNotNull(encontradas);
-        assertEquals(2, encontradas.size());
-        // Todos os objetos AvaliacaoSobrePrestador na lista terão cliente e prestador nulos devido ao mapper
-        assertTrue(encontradas.stream().allMatch(a -> a.getCliente() == null && a.getPrestador() == null));
-        // Podemos verificar os comentários para distinguir, se necessário
-        assertTrue(encontradas.stream().anyMatch(a -> "Comentário P1-C1".equals(a.getComentario())));
-        assertTrue(encontradas.stream().anyMatch(a -> "Comentário P1-C2".equals(a.getComentario())));
+        assertNotNull(encontradas, "Lista de avaliações não deveria ser nula.");
+        assertEquals(2, encontradas.size(), "Deveria encontrar 2 avaliações para o prestador especificado.");
+        for(AvaliacaoSobrePrestador aval : encontradas) {
+            assertNotNull(aval.getPrestador());
+            assertEquals(prestadorJpaPersistido.getId(), aval.getPrestador().getId(), "ID do prestador não corresponde ao esperado.");
+            assertNotNull(aval.getCliente());
+        }
     }
 
     @Test
-    void deveDeletarAvaliacao() {
-        AvaliacaoSobrePrestadorJpa avalJpa = persistAvaliacaoCompleta(clienteJpaPersistido, prestadorJpaPersistido, "Para Deletar", 2);
+    void deveDeletarAvaliacaoPorIdAP() {
+        AvaliacaoSobrePrestadorJpa avalJpa = persistAvaliacaoJpaCompleta(clienteJpaPersistido, prestadorJpaPersistido, "Avaliação Para Deletar AP", 2);
         int idParaDeletar = avalJpa.getId();
 
-        assertTrue(avaliacaoJpaRepository.existsById(idParaDeletar));
+        assertTrue(avaliacaoJpaRepository.existsById(idParaDeletar), "Avaliação deveria existir antes de deletar.");
         avaliacaoRepositoryImpl.delete(idParaDeletar);
-        assertFalse(avaliacaoJpaRepository.existsById(idParaDeletar));
+        entityManager.flush();
+        entityManager.clear();
+
+        assertFalse(avaliacaoJpaRepository.existsById(idParaDeletar), "Avaliação não deveria existir após deletar.");
+    }
+
+    @Test
+    void deveListarTodasAsAvaliacoesAP() {
+        persistAvaliacaoJpaCompleta(clienteJpaPersistido, prestadorJpaPersistido, "Comentário Todas AP 1", 5);
+
+        PrestadorJpa outroPrestadorJpa = new PrestadorJpa("Outro Prestador Todas AP", "sOPTAP", "optap@test.com", "telOPTAP", new EnderecoJpa("Rua OPTAP","Bairro OPTAP","Cidade OPTAP","OPTAP"));
+        outroPrestadorJpa = entityManager.persistFlushFind(outroPrestadorJpa);
+        ClienteJpa outroClienteJpa = new ClienteJpa("Outro Cliente Todas AP", "sOCTAP", "octap@test.com", "telOCTAP", new EnderecoJpa("Rua OCTAP","Bairro OCTAP","Cidade OCTAP","OCTAP"));
+        outroClienteJpa = entityManager.persistFlushFind(outroClienteJpa);
+        persistAvaliacaoJpaCompleta(outroClienteJpa, outroPrestadorJpa, "Comentário Todas AP 2", 4);
+
+        List<AvaliacaoSobrePrestador> todas = avaliacaoRepositoryImpl.findAll();
+        assertNotNull(todas, "A lista de todas as avaliações não deveria ser nula.");
+        assertEquals(2, todas.size(), "Deveria haver 2 avaliações no total.");
     }
 }

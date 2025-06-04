@@ -16,7 +16,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Import; // Certifique-se que esta importação está presente
+import org.springframework.dao.DataIntegrityViolationException; // Para outros testes, se necessário
 
 import java.util.List;
 import java.util.Optional;
@@ -24,10 +25,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
-@Import({FavoritadoRepositoryImpl.class, ClienteJpaRepository.class, PrestadorJpaRepository.class})
-// Precisa importar ClienteJpaRepository e PrestadorJpaRepository para que o FavoritadoRepositoryImpl possa injetá-los.
-// Alternativamente, poderia mocká-los se não quisesse testar a busca real deles dentro do save.
-// Mas como estamos com @DataJpaTest, testar a interação real é mais apropriado.
+@Import(FavoritadoRepositoryImpl.class)
 class FavoritadoRepositoryImplTest {
 
     @Autowired
@@ -37,9 +35,8 @@ class FavoritadoRepositoryImplTest {
     private FavoritadoRepositoryImpl favoritadoRepositoryImpl;
 
     @Autowired
-    private FavoritadoJpaRepository favoritadoJpaRepository; // Para limpar
+    private FavoritadoJpaRepository favoritadoJpaRepository;
 
-    // Repositórios injetados no FavoritadoRepositoryImpl
     @Autowired
     private ClienteJpaRepository clienteJpaRepository;
     @Autowired
@@ -56,21 +53,30 @@ class FavoritadoRepositoryImplTest {
     @BeforeEach
     void setUp() {
         favoritadoJpaRepository.deleteAll();
-        clienteJpaRepository.deleteAll(); // Limpar dependências também
+        clienteJpaRepository.deleteAll();
         prestadorJpaRepository.deleteAll();
-
+        entityManager.flush();
+        entityManager.clear();
 
         Endereco endereco = new Endereco("Rua FavImpl", "BFI", "CFI", "FI");
-
-        // Persistir ClienteJpa e PrestadorJpa para que o save do FavoritadoRepositoryImpl os encontre
         EnderecoJpa endJpa = new EnderecoJpa(endereco.getRua(), endereco.getBairro(), endereco.getCidade(), endereco.getEstado());
-        ClienteJpa cJpa = new ClienteJpa("Cli FavImpl", "sCFI", "cfi@e.com", "tcfi", endJpa);
+
+        ClienteJpa cJpa = new ClienteJpa();
+        cJpa.setNome("Cli FavImpl");
+        cJpa.setSenha("sCFI");
+        cJpa.setEmail("cfi@e.com");
+        cJpa.setTelefone("tcfi");
+        cJpa.setEndereco(endJpa);
         clienteJpaPersistido = entityManager.persistFlushFind(cJpa);
 
-        PrestadorJpa pJpa = new PrestadorJpa("Pre FavImpl", "sPFI", "pfi@e.com", "tpfi", endJpa);
+        PrestadorJpa pJpa = new PrestadorJpa();
+        pJpa.setNome("Pre FavImpl");
+        pJpa.setSenha("sPFI");
+        pJpa.setEmail("pfi@e.com");
+        pJpa.setTelefone("tpfi");
+        pJpa.setEndereco(endJpa);
         prestadorJpaPersistido = entityManager.persistFlushFind(pJpa);
 
-        // Criar objetos de domínio com IDs corretos
         clienteDominio = new Cliente(clienteJpaPersistido.getId(), cJpa.getNome(), cJpa.getSenha(), cJpa.getEmail(), cJpa.getTelefone(), endereco);
         prestadorDominio = new Prestador(prestadorJpaPersistido.getId(), pJpa.getNome(), pJpa.getSenha(), pJpa.getEmail(), pJpa.getTelefone(), endereco);
 
@@ -82,12 +88,15 @@ class FavoritadoRepositoryImplTest {
         Favoritado salvo = favoritadoRepositoryImpl.save(favoritadoDominioParaSalvar);
 
         assertNotNull(salvo);
-        assertTrue(salvo.getId() > 0);
-        // O FavoritadoMapper.toFavoritado retorna cliente e prestador como null
-        assertNull(salvo.getCliente());
-        assertNull(salvo.getPrestador());
+        assertTrue(salvo.getId() > 0, "ID do Favoritado salvo deveria ser maior que zero.");
 
-        // Verifica se o FavoritadoJpa foi salvo com as FKs corretas
+        // AJUSTE: Esperar que Cliente e Prestador NÃO sejam nulos, e verificar seus IDs
+        assertNotNull(salvo.getCliente(), "Cliente no Favoritado de domínio retornado NÃO deveria ser nulo.");
+        assertEquals(clienteDominio.getId(), salvo.getCliente().getId(), "ID do Cliente no Favoritado de domínio não corresponde.");
+
+        assertNotNull(salvo.getPrestador(), "Prestador no Favoritado de domínio retornado NÃO deveria ser nulo.");
+        assertEquals(prestadorDominio.getId(), salvo.getPrestador().getId(), "ID do Prestador no Favoritado de domínio não corresponde.");
+
         Optional<FavoritadoJpa> persistidoOpt = favoritadoJpaRepository.findById(salvo.getId());
         assertTrue(persistidoOpt.isPresent());
         FavoritadoJpa persistido = persistidoOpt.get();
@@ -99,16 +108,44 @@ class FavoritadoRepositoryImplTest {
 
     @Test
     void deveLancarExcecaoAoSalvarFavoritadoComClienteInexistente() {
-        Cliente clienteInexistente = new Cliente(999, "Inexistente", "s", "i@e.com", "t", new Endereco("R","B","C","E"));
+        Cliente clienteInexistente = new Cliente();
+        clienteInexistente.setId(99999); // ID que não existe
+        clienteInexistente.setNome("Cliente Fantasma");
+        // Preencha outros campos obrigatórios do Cliente se o construtor ou setters validarem
+        clienteInexistente.setEmail("fantasma@example.com");
+        clienteInexistente.setSenha("senhafantasma");
+        clienteInexistente.setTelefone("00000");
+        clienteInexistente.setEndereco(new Endereco("Rua Nula", "Bairro Nulo", "Cidade Nula", "NN"));
+
         Favoritado favComCliInexistente = new Favoritado(0, clienteInexistente, prestadorDominio);
 
+        // A exceção depende da implementação de FavoritadoRepositoryImpl.save()
+        // Geralmente, ao não encontrar uma FK, pode lançar DataIntegrityViolationException no flush,
+        // ou uma exceção customizada antes disso. O seu log indica IllegalArgumentException.
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             favoritadoRepositoryImpl.save(favComCliInexistente);
         });
-        assertEquals("Cliente não encontrado", exception.getMessage());
+        // AJUSTE: Corrigir a mensagem da exceção esperada
+        assertEquals("Cliente não encontrado", exception.getMessage(), "A mensagem de exceção para cliente não encontrado não corresponde.");
     }
 
-    // Testes para findById, findAll, findClientesQueFavoritaramPrestadorByPrestadorId,
-    // findPrestadoresFavoritadosByClienteId e delete seguiriam padrões similares,
-    // lembrando que os mappers podem retornar objetos de domínio com sub-entidades nulas.
+    // TODO: Implementar testes para findById, findAll, findClientesQueFavoritaramPrestadorByPrestadorId,
+    // findPrestadoresFavoritadosByClienteId e delete, ajustando as asserções conforme o comportamento real dos mappers.
+    // Exemplo para findById:
+    @Test
+    void deveEncontrarFavoritadoPorId() {
+        FavoritadoJpa favJpa = new FavoritadoJpa();
+        favJpa.setCliente(clienteJpaPersistido);
+        favJpa.setPrestador(prestadorJpaPersistido);
+        favJpa = entityManager.persistFlushFind(favJpa);
+
+        Optional<Favoritado> encontradoOpt = favoritadoRepositoryImpl.findById(favJpa.getId());
+        assertTrue(encontradoOpt.isPresent());
+        Favoritado encontrado = encontradoOpt.get();
+        assertEquals(favJpa.getId(), encontrado.getId());
+        assertNotNull(encontrado.getCliente());
+        assertEquals(clienteJpaPersistido.getId(), encontrado.getCliente().getId());
+        assertNotNull(encontrado.getPrestador());
+        assertEquals(prestadorJpaPersistido.getId(), encontrado.getPrestador().getId());
+    }
 }

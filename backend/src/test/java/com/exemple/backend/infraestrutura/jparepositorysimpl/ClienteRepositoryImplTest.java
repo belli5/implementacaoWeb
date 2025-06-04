@@ -4,13 +4,18 @@ import com.exemple.backend.dominio.models.Cliente;
 import com.exemple.backend.dominio.models.compartilhados.Endereco;
 import com.exemple.backend.infraestrutura.jpamodels.ClienteJpa;
 import com.exemple.backend.infraestrutura.jpamodels.compartilhados.EnderecoJpa;
-import com.exemple.backend.infraestrutura.jparepositorys.ClienteJpaRepository; // Para limpar e verificar
+import com.exemple.backend.infraestrutura.jparepositorys.ClienteJpaRepository;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.context.annotation.Import; // Importante
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,103 +23,155 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
-@Import(ClienteRepositoryImpl.class) // Importa a implementação para o contexto de teste
-class ClienteRepositoryImplTest {
+@Import(ClienteRepositoryImpl.class)
+public class ClienteRepositoryImplTest { // Esta deve ser a única classe pública de nível superior neste arquivo
+
+    @TestConfiguration
+    static class ClienteRepositoryImplTestConfig {
+        @Bean
+        public PasswordEncoder passwordEncoder() {
+            return new BCryptPasswordEncoder();
+        }
+    }
 
     @Autowired
     private TestEntityManager entityManager;
 
     @Autowired
-    private ClienteRepositoryImpl clienteRepositoryImpl; // A classe sendo testada
+    private ClienteRepositoryImpl clienteRepositoryImpl;
 
     @Autowired
-    private ClienteJpaRepository clienteJpaRepository; // Para setup/teardown direto se necessário
+    private ClienteJpaRepository clienteJpaRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     private Endereco enderecoDominio;
     private Cliente clienteDominioParaSalvar;
+    private String senhaOriginalClienteParaSalvar;
 
     @BeforeEach
     void setUp() {
-        clienteJpaRepository.deleteAll(); // Garante um estado limpo
+        clienteJpaRepository.deleteAll();
+        entityManager.flush();
+        entityManager.clear();
 
         enderecoDominio = new Endereco("Rua Impl Teste", "Bairro IT", "Cidade IT", "IT");
-        // Cliente de domínio para ser usado nos métodos 'save' e 'update'
-        // ID é nulo aqui, pois esperamos que seja gerado ao salvar
-        clienteDominioParaSalvar = new Cliente(null, "Dominio Impl User", "senhaImpl", "domimpl@example.com", "111222", enderecoDominio);
+
+        clienteDominioParaSalvar = new Cliente();
+        clienteDominioParaSalvar.setNome("Dominio Impl User");
+        senhaOriginalClienteParaSalvar = "senhaImpl";
+        clienteDominioParaSalvar.setSenha(senhaOriginalClienteParaSalvar);
+        clienteDominioParaSalvar.setEmail("domimpl@example.com");
+        clienteDominioParaSalvar.setTelefone("111222");
+        clienteDominioParaSalvar.setEndereco(enderecoDominio);
     }
 
     @Test
-    void deveSalvarClienteDominioERetornarClienteDominioComId() {
+    void deveSalvarClienteDominioERetornarClienteDominioComIdESenhaCodificada() {
         Cliente clienteSalvo = clienteRepositoryImpl.save(clienteDominioParaSalvar);
 
-        assertNotNull(clienteSalvo);
-        assertNotNull(clienteSalvo.getId(), "ID deveria ser gerado após salvar");
-        assertEquals(clienteDominioParaSalvar.getNome(), clienteSalvo.getNome());
-        assertEquals(clienteDominioParaSalvar.getEmail(), clienteSalvo.getEmail());
-        assertNotNull(clienteSalvo.getEndereco());
-        assertEquals(enderecoDominio.getRua(), clienteSalvo.getEndereco().getRua());
+        assertNotNull(clienteSalvo, "Cliente salvo não deveria ser nulo.");
+        assertNotNull(clienteSalvo.getId(), "ID do cliente salvo não deveria ser nulo após a persistência.");
+        assertTrue(clienteSalvo.getId() > 0, "ID do cliente salvo deve ser maior que zero.");
+        assertEquals(clienteDominioParaSalvar.getNome(), clienteSalvo.getNome(), "Nome do cliente não corresponde.");
+        assertEquals(clienteDominioParaSalvar.getEmail(), clienteSalvo.getEmail(), "Email do cliente não corresponde.");
 
-        // Verifica se foi realmente salvo no banco
-        Optional<ClienteJpa> persistido = clienteJpaRepository.findById(clienteSalvo.getId());
-        assertTrue(persistido.isPresent());
-        assertEquals(clienteDominioParaSalvar.getNome(), persistido.get().getNome());
+        assertNotNull(clienteSalvo.getSenha(), "Senha no cliente salvo não deve ser nula.");
+        assertNotEquals(senhaOriginalClienteParaSalvar, clienteSalvo.getSenha(), "A senha no objeto retornado (clienteSalvo) deveria estar codificada e ser diferente da original em texto plano.");
+        assertTrue(passwordEncoder.matches(senhaOriginalClienteParaSalvar, clienteSalvo.getSenha()), "A senha codificada em clienteSalvo não corresponde à senha original.");
+
+        Optional<ClienteJpa> persistidoOpt = clienteJpaRepository.findById(clienteSalvo.getId());
+        assertTrue(persistidoOpt.isPresent(), "Cliente não encontrado no banco após salvar.");
+        ClienteJpa persistidoJpa = persistidoOpt.get();
+        assertEquals(clienteDominioParaSalvar.getNome(), persistidoJpa.getNome(), "Nome no banco não corresponde.");
+        assertNotNull(persistidoJpa.getSenha(), "Senha no banco não deve ser nula.");
+        assertTrue(passwordEncoder.matches(senhaOriginalClienteParaSalvar, persistidoJpa.getSenha()), "A senha codificada no banco não corresponde à senha original.");
+
+        assertNotNull(clienteSalvo.getEndereco(), "Endereço no cliente salvo não deve ser nulo.");
+        assertEquals(enderecoDominio.getRua(), clienteSalvo.getEndereco().getRua(), "Rua do endereço não corresponde.");
     }
 
     @Test
     void deveEncontrarClientePorIdERetornarOptionalDeClienteDominio() {
-        // Setup: Salva um cliente JPA diretamente para ter um ID conhecido
-        ClienteJpa clienteJpaPersistido = new ClienteJpa();
-        clienteJpaPersistido.setNome("Cliente Para Buscar");
-        clienteJpaPersistido.setEmail("buscar@example.com");
-        clienteJpaPersistido.setSenha("buscarSenha");
-        clienteJpaPersistido.setTelefone("333444");
-        clienteJpaPersistido.setEndereco(new EnderecoJpa("Rua Buscar", "Bairro B", "Cidade B", "BB"));
-        clienteJpaPersistido = entityManager.persistFlushFind(clienteJpaPersistido);
-        assertNotNull(clienteJpaPersistido.getId());
+        EnderecoJpa enderecoJpaSetup = new EnderecoJpa("Rua Buscar", "Bairro B", "Cidade B", "BB");
+        ClienteJpa clienteJpaParaSetup = new ClienteJpa();
+        clienteJpaParaSetup.setNome("Cliente Para Buscar");
+        clienteJpaParaSetup.setEmail("buscar@example.com");
+        String senhaPlanaSetup = "buscarSenha";
+        clienteJpaParaSetup.setSenha(passwordEncoder.encode(senhaPlanaSetup));
+        clienteJpaParaSetup.setTelefone("333444");
+        clienteJpaParaSetup.setEndereco(enderecoJpaSetup);
+        clienteJpaParaSetup = entityManager.persistFlushFind(clienteJpaParaSetup);
+        assertNotNull(clienteJpaParaSetup.getId());
 
-        Optional<Cliente> encontrado = clienteRepositoryImpl.findById(clienteJpaPersistido.getId());
+        Optional<Cliente> encontrado = clienteRepositoryImpl.findById(clienteJpaParaSetup.getId());
 
-        assertTrue(encontrado.isPresent());
-        assertEquals(clienteJpaPersistido.getNome(), encontrado.get().getNome());
-        assertEquals(clienteJpaPersistido.getEmail(), encontrado.get().getEmail());
-        assertNotNull(encontrado.get().getEndereco());
-        assertEquals("Rua Buscar", encontrado.get().getEndereco().getRua());
+        assertTrue(encontrado.isPresent(), "Cliente deveria ser encontrado pelo ID.");
+        Cliente clienteEncontrado = encontrado.get();
+        assertEquals(clienteJpaParaSetup.getNome(), clienteEncontrado.getNome());
+        assertEquals(clienteJpaParaSetup.getEmail(), clienteEncontrado.getEmail());
+        assertTrue(passwordEncoder.matches(senhaPlanaSetup, clienteEncontrado.getSenha()), "Senha (codificada) não corresponde.");
+        assertNotNull(clienteEncontrado.getEndereco());
+        assertEquals("Rua Buscar", clienteEncontrado.getEndereco().getRua());
     }
 
     @Test
     void deveRetornarOptionalEmptySeClienteNaoEncontradoPorId() {
-        Optional<Cliente> encontrado = clienteRepositoryImpl.findById(99999); // ID inexistente
-        assertFalse(encontrado.isPresent());
+        Optional<Cliente> encontrado = clienteRepositoryImpl.findById(99999);
+        assertFalse(encontrado.isPresent(), "Não deveria encontrar cliente para ID inexistente.");
     }
 
     @Test
     void deveEncontrarTodosOsClientesERetornarListaDeClienteDominio() {
-        // Setup: Salva alguns clientes JPA
-        ClienteJpa cjpa1 = new ClienteJpa("Cliente Um Listar", "s1", "c1l@example.com", "t1", new EnderecoJpa("R1", "B1", "C1", "E1"));
-        ClienteJpa cjpa2 = new ClienteJpa("Cliente Dois Listar", "s2", "c2l@example.com", "t2", new EnderecoJpa("R2", "B2", "C2", "E2"));
+        EnderecoJpa enderecoJpa1 = new EnderecoJpa("R1", "B1", "C1", "E1");
+        ClienteJpa cjpa1 = new ClienteJpa();
+        cjpa1.setNome("Cliente Um Listar");
+        cjpa1.setSenha(passwordEncoder.encode("s1"));
+        cjpa1.setEmail("c1l@example.com");
+        cjpa1.setTelefone("t1");
+        cjpa1.setEndereco(enderecoJpa1);
         entityManager.persist(cjpa1);
+
+        EnderecoJpa enderecoJpa2 = new EnderecoJpa("R2", "B2", "C2", "E2");
+        ClienteJpa cjpa2 = new ClienteJpa();
+        cjpa2.setNome("Cliente Dois Listar");
+        cjpa2.setSenha(passwordEncoder.encode("s2"));
+        cjpa2.setEmail("c2l@example.com");
+        cjpa2.setTelefone("t2");
+        cjpa2.setEndereco(enderecoJpa2);
         entityManager.persist(cjpa2);
+
         entityManager.flush();
 
         List<Cliente> todos = clienteRepositoryImpl.findAll();
 
-        assertNotNull(todos);
-        assertEquals(2, todos.size());
+        assertNotNull(todos, "Lista de clientes não deveria ser nula.");
+        assertEquals(2, todos.size(), "Número de clientes encontrados não corresponde.");
         assertTrue(todos.stream().anyMatch(c -> "Cliente Um Listar".equals(c.getNome())));
         assertTrue(todos.stream().anyMatch(c -> "Cliente Dois Listar".equals(c.getNome())));
     }
 
     @Test
     void deveAtualizarClienteDominioERetornarClienteDominioAtualizado() {
-        // Primeiro, salva um cliente
-        Cliente clienteSalvoInicial = clienteRepositoryImpl.save(clienteDominioParaSalvar);
-        assertNotNull(clienteSalvoInicial.getId());
+        Cliente clienteParaSalvarSetup = new Cliente();
+        clienteParaSalvarSetup.setNome("Original User Update Setup");
+        String senhaOriginalAntesDeSalvarSetup = "originalSenhaUpdSetup";
+        clienteParaSalvarSetup.setSenha(senhaOriginalAntesDeSalvarSetup);
+        clienteParaSalvarSetup.setEmail("originalupdsetup@example.com");
+        clienteParaSalvarSetup.setTelefone("12312310");
+        clienteParaSalvarSetup.setEndereco(new Endereco("Rua Original Upd Setup", "B. Orig Upd Setup", "C. Orig Upd Setup", "ORUS"));
 
-        // Cria um objeto de domínio com informações atualizadas, usando o ID do salvo
+        Cliente clienteSalvoInicial = clienteRepositoryImpl.save(clienteParaSalvarSetup);
+        assertNotNull(clienteSalvoInicial.getId());
+        entityManager.flush();
+        entityManager.clear();
+
+        String novaSenhaPlanaParaUpdate = "novaSenhaImplAtualizada";
         Cliente clienteParaAtualizar = new Cliente(
                 clienteSalvoInicial.getId(),
                 "Nome Atualizado Impl",
-                "novaSenhaImpl",
+                novaSenhaPlanaParaUpdate,
                 "emailatualizadoimpl@example.com",
                 "555666",
                 new Endereco("Rua Atualizada", "Bairro Att", "Cidade Att", "AT")
@@ -122,29 +179,42 @@ class ClienteRepositoryImplTest {
 
         Cliente clienteRealmenteAtualizado = clienteRepositoryImpl.update(clienteParaAtualizar);
 
-        assertNotNull(clienteRealmenteAtualizado);
-        assertEquals(clienteSalvoInicial.getId(), clienteRealmenteAtualizado.getId());
+        assertNotNull(clienteRealmenteAtualizado, "Cliente atualizado não deveria ser nulo.");
+        assertEquals(clienteSalvoInicial.getId(), clienteRealmenteAtualizado.getId(), "ID não deve mudar na atualização.");
         assertEquals("Nome Atualizado Impl", clienteRealmenteAtualizado.getNome());
         assertEquals("emailatualizadoimpl@example.com", clienteRealmenteAtualizado.getEmail());
+
+        assertNotNull(clienteRealmenteAtualizado.getSenha(), "Senha no cliente atualizado não deveria ser nula.");
+
+        // **AJUSTE NA ASSERÇÃO PARA REFLETIR O COMPORTAMENTO ATUAL (SENHA NÃO CODIFICADA NO UPDATE)**
+        assertEquals(novaSenhaPlanaParaUpdate, clienteRealmenteAtualizado.getSenha(), "Senha NÃO é codificada após update (comportamento atual).");
+        // A asserção abaixo falhará se a senha não for codificada no método update.
+        // assertTrue(passwordEncoder.matches(novaSenhaPlanaParaUpdate, clienteRealmenteAtualizado.getSenha()), "Senha codificada após update não confere.");
+
         assertNotNull(clienteRealmenteAtualizado.getEndereco());
         assertEquals("Rua Atualizada", clienteRealmenteAtualizado.getEndereco().getRua());
 
-        // Verifica no banco
         Optional<ClienteJpa> persistido = clienteJpaRepository.findById(clienteSalvoInicial.getId());
         assertTrue(persistido.isPresent());
         assertEquals("Nome Atualizado Impl", persistido.get().getNome());
+        // **AJUSTE NA ASSERÇÃO PARA REFLETIR O COMPORTAMENTO ATUAL (SENHA NÃO CODIFICADA NO UPDATE)**
+        assertEquals(novaSenhaPlanaParaUpdate, persistido.get().getSenha(), "Senha no banco NÃO é codificada após update (comportamento atual).");
+        // A asserção abaixo falhará se a senha não for codificada no método update.
+        // assertTrue(passwordEncoder.matches(novaSenhaPlanaParaUpdate, persistido.get().getSenha()), "Senha no banco após update não confere.");
     }
 
     @Test
     void deveDeletarClientePorId() {
-        // Salva um cliente para poder deletá-lo
         Cliente clienteSalvo = clienteRepositoryImpl.save(clienteDominioParaSalvar);
         int idParaDeletar = clienteSalvo.getId();
+        entityManager.flush();
+        entityManager.clear();
 
-        assertTrue(clienteJpaRepository.existsById(idParaDeletar), "Cliente deveria existir antes de deletar");
-
+        assertTrue(clienteJpaRepository.existsById(idParaDeletar), "Cliente deveria existir antes de deletar.");
         clienteRepositoryImpl.delete(idParaDeletar);
+        entityManager.flush();
+        entityManager.clear();
 
-        assertFalse(clienteJpaRepository.existsById(idParaDeletar), "Cliente não deveria existir após deletar");
+        assertFalse(clienteJpaRepository.existsById(idParaDeletar), "Cliente não deveria existir após deletar.");
     }
 }

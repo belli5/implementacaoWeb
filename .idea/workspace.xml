@@ -5,12 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="Implementando os testes /2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/OfereceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/exemple/backend/apresentacao/controllers/OfereceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.angular/cache/19.2.12/frontend/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.angular/cache/19.2.12/frontend/.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/service/home.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/home.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/BackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/BackendApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobreClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobreClienteControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobrePrestadorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/AvaliacaoSobrePrestadorControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ClienteControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/FavoritadoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/FavoritadoControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/OfereceControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/OfereceControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/PedidoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/PedidoControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/PrestadorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/PrestadorControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ServicoControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/apresentacao/controllers/ServicoControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/AvaliacaoSobreClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/AvaliacaoSobreClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/AvaliacaoSobrePrestadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/AvaliacaoSobrePrestadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/ClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/FavoritadoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/FavoritadoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/OfereceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/OfereceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/PedidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/PedidoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/PrestadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/PrestadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/ServicoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/ServicoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/compartilhados/EnderecoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/models/compartilhados/EnderecoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/AvaliacaoSobreClienteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/AvaliacaoSobreClienteServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/AvaliacaoSobrePrestadorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/AvaliacaoSobrePrestadorServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/ClienteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/ClienteServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/FavoritadoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/FavoritadoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/OfereceServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/OfereceServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/PedidoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/PedidoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/PrestadorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/PrestadorServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/ServicoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/dominio/services/ServicoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/AvaliacaoSobreClienteJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/AvaliacaoSobreClienteJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/AvaliacaoSobrePrestadorJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/AvaliacaoSobrePrestadorJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/ClienteJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/ClienteJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/FavoritadoJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/FavoritadoJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/OfereceJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/OfereceJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PedidoJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PrestadorJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/PrestadorJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/ServicoJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/ServicoJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/compartilhados/EnderecoJpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jpamodels/compartilhados/EnderecoJpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobreClienteJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobreClienteJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobrePrestadorJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/AvaliacaoSobrePrestadorJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/ClienteJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/ClienteJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/FavoritadoJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/FavoritadoJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/OfereceJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/OfereceJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/PedidoJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/PedidoJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/PrestadorJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/PrestadorJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/ServicoJpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorys/ServicoJpaRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/AvaliacaoSobreClienteRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/AvaliacaoSobreClienteRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/AvaliacaoSobrePrestadorRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/AvaliacaoSobrePrestadorRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/ClienteRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/ClienteRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/FavoritadoRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/FavoritadoRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/OfereceRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/OfereceRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/PedidoRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/PedidoRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/PrestadorRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/PrestadorRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/ServicoRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/jparepositorysimpl/ServicoRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/AvaliacaoSobreClienteMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/AvaliacaoSobreClienteMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/AvaliacaoSobrePrestadorMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/AvaliacaoSobrePrestadorMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/ClienteMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/ClienteMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/FavoritadoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/FavoritadoMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/OfereceMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/OfereceMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/PedidoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/PedidoMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/PrestadorMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/PrestadorMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/ServicoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/ServicoMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/compartilhados/EnderecoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/compartilhados/EnderecoMapperTest.java" afterDir="false" />
     </list>
     <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,6 +145,7 @@
     "Application.src.main.java.org.example.Main.executor": "Run",
     "JUnit.AvaliacaoClienteTest.executor": "Run",
     "JUnit.AvaliacaoServiceTest.executor": "Run",
+    "JUnit.AvaliacaoSobreClienteControllerTest.executor": "Run",
     "JUnit.AvaliacaoSobreClienteJpaRepositoryTest.executor": "Run",
     "JUnit.AvaliacaoSobreClienteJpaTest.executor": "Run",
     "JUnit.AvaliacaoSobreClienteTest.executor": "Run",
@@ -205,7 +260,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.AvaliacaoSobreClienteJpaRepositoryTest">
+    <configuration name="AvaliacaoSobreClienteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exemple.backend.apresentacao.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exemple.backend.apresentacao.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.apresentacao.controllers.AvaliacaoSobreClienteControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AvaliacaoSobreClienteJpaRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -231,21 +301,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.exemple.backend.infraestrutura.jparepositorys" />
       <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jparepositorys.AvaliacaoSobrePrestadorJpaRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PedidoJpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.exemple.backend.infraestrutura.jpamodels.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.exemple.backend.infraestrutura.jpamodels" />
-      <option name="MAIN_CLASS_NAME" value="com.exemple.backend.infraestrutura.jpamodels.PedidoJpaTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -319,10 +374,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AvaliacaoSobreClienteJpaRepositoryTest" />
+        <item itemvalue="JUnit.AvaliacaoSobreClienteControllerTest" />
         <item itemvalue="JUnit.AvaliacaoSobrePrestadorJpaRepositoryTest" />
         <item itemvalue="JUnit.ServicoJpaTest" />
         <item itemvalue="JUnit.PrestadorJpaTest" />
-        <item itemvalue="JUnit.PedidoJpaTest" />
       </list>
     </recent_temporary>
   </component>
