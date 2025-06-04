@@ -38,21 +38,19 @@ Protótipos de Baixa Fidelidade: https://www.figma.com/design/N4CYtO4mzZJMHILO6n
 
 ## Histórias Implementadas 
 
-- Como cliente, desejo contratar um prestador de serviço para resolver uma necessidade específica, de forma prática e segura.
-- Como cliente, quero adicionar prestadores à minha lista de favoritos, para facilitar futuras contratações de profissionais personalizados.
 - Como cliente, desejo filtrar os serviços por categoria para encontrar prestadores que atendam minhas necessidades específicas.
 - Como prestador, quero editar meu perfil para alterar meus serviços ofertados.
-- Como cliente, desejo avaliar o prestador após a conclusão do serviço para registrar minha satisfação com o atendimento recebido.
-- Como prestador, desejo visualizar as avaliações recebidas dos meus clientes, para acompanhar o feedback sobre os serviços que realizei.
 - Como cliente, desejo visualizar o histórico dos meus serviços contratados para acompanhar os serviços realizados anteriormente.
-- Como cliente, desejo agendar novamente um serviço que já contratei anteriormente, para facilitar contratações recorrentes.
-- Como prestador, desejo avaliar o cliente após a conclusão do serviço para registrar minha experiência com ele.
-
 
 ## Padrões de Projeto Adotados
 No backend da aplicação, utilizamos o padrão de projeto comportamental Strategy para a validação de entidades Prestador. Este padrão nos permite definir uma família de algoritmos (neste caso, diferentes lógicas de validação para Prestador). Podem ser encontradas na pasta ``backend/src/main/java/com/exemple/backend/dominio/strategies/``
 
-Também foi utilizado o Template Method para definir o esqueleto de um algoritmo em uma superclasse, permitindo que as subclasses sobrescrevam certos passos do algoritmo sem mudar a estrutura geral. Isso pode ser encontrado dentro de services e nos Services de Prestador e Cliente.
+Também foi utilizado o Template Method. Esses arquivos podem ser encontrados dentro da pasta template ``backend/src/main/java/com/exemple/backend/dominio/services/template``, também pode ser encontrado nos Services de Prestador e Cliente.
+
+Também foi adotado o padrão de projeto Iterator para percorrer coleções de objetos de forma sequencial, sem expor sua representação interna. Esse padrão foi utilizado para encapsular a iteração sobre pedidos associados a um prestador, permitindo que outras partes da aplicação acessem os pedidos de maneira controlada. A implementação do Iterator pode ser encontrada na pasta
+backend/src/main/java/com/exemple/backend/dominio/iterators/.
+
+Com isso, facilitamos a criação de lógicas que percorrem essas coleções (por exemplo, exibir todos os pedidos de um prestador ou filtrar os pedidos por status) de forma desacoplada da estrutura de dados concreta.
 
 
 ## Como Executar
@@ -77,7 +75,7 @@ Para isso, precisamos ter os seguintes softwares instalados:
  E executar os seguintes comandos:
 
 ``
-mvn clean install 
+mvn clean install -DskipTests
 mvn spring-boot:run
 ``
 
