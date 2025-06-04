@@ -54,7 +54,7 @@ Com isso, facilitamos a criação de lógicas que percorrem essas coleções (po
 
 
 ## Como Executar
-É necessário executar o backend(Spring Boot) e o frontend(Angular) para rodar o projeto. 
+É necessário executar o backend(Spring Boot) e o frontend(Angular) para rodar o projeto estando na branch develop. 
 
 Para isso, precisamos ter os seguintes softwares instalados:
 - JDK 17 ou acima (https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
