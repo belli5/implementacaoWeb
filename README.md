@@ -39,3 +39,8 @@ Protótipos de Baixa Fidelidade: https://www.figma.com/design/N4CYtO4mzZJMHILO6n
 # 👥 Grupo
 
 Gabriel Belliato, Gabriel Andrade, Victor Guilherme, Leticia Gomes, Talita Fraga, Julia Felix, Rafaela Vidal, Antonio Paulo Barros, Clara Machado.
+
+
+# 👥 Branch
+
+DEVELOP
