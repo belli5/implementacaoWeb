@@ -2,6 +2,7 @@ package com.exemple.backend.dominio.services;
 
 import com.exemple.backend.dominio.models.Cliente;
 import com.exemple.backend.dominio.repositorys.ClienteRepository;
+import com.exemple.backend.dominio.services.template.CadastroCliente;
 import com.exemple.backend.dominio.strategies.ClienteValidadorStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,11 +16,17 @@ public class ClienteService {
 
     private final ClienteRepository clienteRepository;
     private final ClienteValidadorStrategy validador;
+    private final CadastroCliente cadastroCliente;
 
     @Autowired
-    public ClienteService(ClienteRepository clienteRepository, ClienteValidadorStrategy validador) {
+    public ClienteService(
+            ClienteRepository clienteRepository,
+            ClienteValidadorStrategy validador,
+            CadastroCliente cadastroCliente
+    ) {
         this.clienteRepository = clienteRepository;
         this.validador = validador;
+        this.cadastroCliente = cadastroCliente;
     }
 
     public Optional<Cliente> findById(int id) {
@@ -32,8 +39,7 @@ public class ClienteService {
 
     @Transactional
     public Cliente create(Cliente cliente) {
-        validador.validar(cliente);
-        return clienteRepository.save(cliente);
+        return cadastroCliente.cadastrar(cliente); // uso do Template Method
     }
 
     @Transactional
