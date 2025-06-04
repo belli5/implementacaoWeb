@@ -10,8 +10,14 @@
 - Como cliente, desejo agendar novamente um serviço que já contratei anteriormente, para facilitar contratações recorrentes.
 - Como prestador, desejo avaliar o cliente após a conclusão do serviço para registrar minha experiência com ele.
 
+
+## Padrões de Projeto Adotados
+No backend da aplicação, utilizamos o padrão de projeto comportamental Strategy para a validação de entidades Prestador. Este padrão nos permite definir uma família de algoritmos (neste caso, diferentes lógicas de validação para Prestador). Podem ser encontradas na pasta ``backend/src/main/java/com/exemple/backend/dominio/strategies/``
+
+
+
 ## Como Executar
-É necessário executar o backend(Spring Boot) e o frontend(Angular) para rodar o projeto.
+É necessário executar o backend(Spring Boot) e o frontend(Angular) para rodar o projeto. 
 
 Para isso, precisamos ter os seguintes softwares instalados:
 - JDK 17 ou acima (https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
