@@ -6,12 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5c96c6-aa03-4829-80c3-d8f47e9622e2" name="Changes" comment="Implementando os testes /2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/BackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/BackendApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/AvaliacaoSobrePrestadorMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/AvaliacaoSobrePrestadorMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/FavoritadoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/FavoritadoMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/OfereceMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/OfereceMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/PedidoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/PedidoMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/PrestadorMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/exemple/backend/infraestrutura/mappers/PrestadorMapperTest.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/service/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/service/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/api.js" afterDir="false" />
+>>>>>>> c9bb52d1 (feat: login/register)
     </list>
     <list id="e59a65de-398e-4b79-b80b-713d902244d3" name="Changes by gabri" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +49,11 @@
         <option value="module-info" />
         <option value="Enum" />
         <option value="Class" />
+<<<<<<< HEAD
+=======
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+>>>>>>> c9bb52d1 (feat: login/register)
       </list>
     </option>
   </component>
@@ -97,6 +114,7 @@
     &quot;JUnit.AvaliacaoSobrePrestadorControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AvaliacaoSobrePrestadorJpaRepositoryTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AvaliacaoSobrePrestadorJpaTest.executor&quot;: &quot;Run&quot;,
+<<<<<<< HEAD
     &quot;JUnit.AvaliacaoSobrePrestadorMapperTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AvaliacaoSobrePrestadorServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AvaliacaoSobrePrestadorTest.executor&quot;: &quot;Run&quot;,
@@ -112,28 +130,52 @@
     &quot;JUnit.FavoritadoControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FavoritadoJpaTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FavoritadoMapperTest.executor&quot;: &quot;Run&quot;,
+=======
+    &quot;JUnit.AvaliacaoSobrePrestadorServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AvaliacaoSobrePrestadorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClienteControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClienteJpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClienteServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClienteTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CucumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EnderecoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FavoritadoControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FavoritadoJpaTest.executor&quot;: &quot;Run&quot;,
+>>>>>>> c9bb52d1 (feat: login/register)
     &quot;JUnit.FavoritadoServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FavoritadoTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.FavoritosServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.HistoricoServicosTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.OfereceJpaTest.executor&quot;: &quot;Run&quot;,
+<<<<<<< HEAD
     &quot;JUnit.OfereceMapperTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.OfereceServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.OfereceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PedidoJpaTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PedidoMapperTest.executor&quot;: &quot;Run&quot;,
+=======
+    &quot;JUnit.OfereceServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OfereceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PedidoJpaTest.executor&quot;: &quot;Run&quot;,
+>>>>>>> c9bb52d1 (feat: login/register)
     &quot;JUnit.PedidoServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PedidoTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PrestadorControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PrestadorJpaTest.executor&quot;: &quot;Run&quot;,
+<<<<<<< HEAD
     &quot;JUnit.PrestadorMapperTest.executor&quot;: &quot;Run&quot;,
+=======
+>>>>>>> c9bb52d1 (feat: login/register)
     &quot;JUnit.PrestadorServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PrestadorTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ReagendarServicoTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ServicoControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ServicoJpaRepositoryTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ServicoJpaTest.executor&quot;: &quot;Run&quot;,
+<<<<<<< HEAD
     &quot;JUnit.ServicoMapperTest.executor&quot;: &quot;Run&quot;,
+=======
+>>>>>>> c9bb52d1 (feat: login/register)
     &quot;JUnit.ServicoServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ServicoTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.VisualizarAvaliacoesPrestadorTest.executor&quot;: &quot;Run&quot;,
@@ -166,7 +208,11 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.BackendApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ImplementacaoWeb2Application.executor&quot;: &quot;Run&quot;,
+<<<<<<< HEAD
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+=======
+    &quot;git-widget-placeholder&quot;: &quot;final&quot;,
+>>>>>>> c9bb52d1 (feat: login/register)
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -180,6 +226,10 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+<<<<<<< HEAD
+=======
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+>>>>>>> c9bb52d1 (feat: login/register)
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/guilherme/implementacaoWeb/frontend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -213,7 +263,11 @@
       </set>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="JUnit.PedidoJpaTest">
+=======
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
+>>>>>>> c9bb52d1 (feat: login/register)
     <configuration name="AvaliacaoSobreClienteJpaRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">

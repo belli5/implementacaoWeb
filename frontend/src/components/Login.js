@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export default function Login() {
@@ -61,13 +61,7 @@ export default function Login() {
         </div>
 
         {error && (
-          <div
-            style={{
-              marginBottom: '1rem',
-              color: 'red',
-              fontSize: '0.9rem',
-            }}
-          >
+          <div style={{ marginBottom: '1rem', color: 'red', fontSize: '0.9rem' }}>
             {error}
           </div>
         )}
@@ -81,18 +75,26 @@ export default function Login() {
             color: '#fff',
             border: 'none',
             borderRadius: 4,
+            marginBottom: '1rem',
           }}
         >
           Entrar
         </button>
       </form>
 
-      <p style={{ marginTop: '1rem', textAlign: 'center' }}>
-        Ainda não tem conta?{' '}
-        <Link to="/register" style={{ color: '#007bff', textDecoration: 'none' }}>
-          Cadastre-se
-        </Link>
-      </p>
+      <button
+        onClick={() => navigate('/register')}
+        style={{
+          width: '100%',
+          padding: '0.75rem',
+          background: '#28a745',
+          color: '#fff',
+          border: 'none',
+          borderRadius: 4,
+        }}
+      >
+        Cadastrar
+      </button>
     </div>
   );
 }
