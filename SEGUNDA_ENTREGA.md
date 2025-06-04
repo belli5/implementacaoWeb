@@ -28,6 +28,8 @@ Para isso, precisamos ter os seguintes softwares instalados:
 
 - Angular( execute npm install -g @angular/cli para instalar globalmente)
 
+- PostgresSQL 
+
 ####  Execução do backend:
 	
  Basta navegar até o diretório do backend:
@@ -49,3 +51,9 @@ Instalação dos packages: ``npm i`` e ``npm install -g @angular/cli``
 
 Para ligar o frontend e acessar página inicial, executar o comando: ``ng serve --open``
 
+
+#### Postgres
+
+Nome da DB: requisitos_db
+Nome do usuário: teste123
+senha: 12345test
