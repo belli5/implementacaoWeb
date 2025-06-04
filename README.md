@@ -52,6 +52,7 @@ Protótipos de Baixa Fidelidade: https://www.figma.com/design/N4CYtO4mzZJMHILO6n
 ## Padrões de Projeto Adotados
 No backend da aplicação, utilizamos o padrão de projeto comportamental Strategy para a validação de entidades Prestador. Este padrão nos permite definir uma família de algoritmos (neste caso, diferentes lógicas de validação para Prestador). Podem ser encontradas na pasta ``backend/src/main/java/com/exemple/backend/dominio/strategies/``
 
+Também foi utilizado o Template Method para definir o esqueleto de um algoritmo em uma superclasse, permitindo que as subclasses sobrescrevam certos passos do algoritmo sem mudar a estrutura geral. Isso pode ser encontrado dentro de services e nos Services de Prestador e Cliente.
 
 
 ## Como Executar
